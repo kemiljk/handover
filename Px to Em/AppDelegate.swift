@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Px to Em
+//  Px ›› Em
 //
 //  Created by Karl Koch on 16/06/2020.
 //  Copyright © 2020 KEJK. All rights reserved.
@@ -32,14 +32,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
-    /*func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-
-        let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
-        let compSepByCharInSet = string.components(separatedBy: aSet)
-        let numberFiltered = compSepByCharInSet.joined(separator: "")
-        return string == numberFiltered
-    }*/
-
-
+    override func buildMenu(with builder: UIMenuBuilder) {
+        super.buildMenu(with: builder)
+        
+        builder.replaceChildren(ofMenu: .help) { _ in
+            []
+        }
+    }
 }
 
