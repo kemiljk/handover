@@ -15,6 +15,14 @@
 		CF255A39249911A700F4849F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF255A37249911A700F4849F /* LaunchScreen.storyboard */; };
 		CF255A44249911A700F4849F /* Px_to_EmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A43249911A700F4849F /* Px_to_EmTests.swift */; };
 		CF255A4F249911A700F4849F /* Px_to_EmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A4E249911A700F4849F /* Px_to_EmUITests.swift */; };
+		CF816B3224ADE43E0092A2E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A30249911A500F4849F /* ContentView.swift */; };
+		CF816B3324ADE44E0092A2E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A30249911A500F4849F /* ContentView.swift */; };
+		CF816B3424ADE44E0092A2E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A30249911A500F4849F /* ContentView.swift */; };
+		CF99977524ADD84F005076B9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF42A4624ADCFB80013FE2E /* WidgetKit.framework */; };
+		CF99977624ADD84F005076B9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF42A4824ADCFB90013FE2E /* SwiftUI.framework */; };
+		CF99977924ADD84F005076B9 /* Px_to_Em_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF99977824ADD84F005076B9 /* Px_to_Em_Widget.swift */; };
+		CF99977B24ADD850005076B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF99977A24ADD850005076B9 /* Assets.xcassets */; };
+		CF99977F24ADD850005076B9 /* Px to Em WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CF99977424ADD84F005076B9 /* Px to Em WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +40,28 @@
 			remoteGlobalIDString = CF255A28249911A500F4849F;
 			remoteInfo = "Px to Em";
 		};
+		CF99977D24ADD850005076B9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF255A21249911A500F4849F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF99977324ADD84F005076B9;
+			remoteInfo = "Px to Em WidgetExtension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CFF42A5A24ADCFBA0013FE2E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CF99977F24ADD850005076B9 /* Px to Em WidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CF133471249A201B00D04D02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,6 +79,13 @@
 		CF255A4E249911A700F4849F /* Px_to_EmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Px_to_EmUITests.swift; sourceTree = "<group>"; };
 		CF255A50249911A700F4849F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF255A5C249A052200F4849F /* Px ›› Em.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Px ›› Em.entitlements"; sourceTree = "<group>"; };
+		CF99977424ADD84F005076B9 /* Px to Em WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Px to Em WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF99977824ADD84F005076B9 /* Px_to_Em_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Px_to_Em_Widget.swift; sourceTree = "<group>"; };
+		CF99977A24ADD850005076B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF99977C24ADD850005076B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF99978024ADD850005076B9 /* Px to Em WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Px to Em WidgetExtension.entitlements"; sourceTree = "<group>"; };
+		CFF42A4624ADCFB80013FE2E /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		CFF42A4824ADCFB90013FE2E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,15 +110,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CF99977124ADD84F005076B9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF99977624ADD84F005076B9 /* SwiftUI.framework in Frameworks */,
+				CF99977524ADD84F005076B9 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		CF255A20249911A500F4849F = {
 			isa = PBXGroup;
 			children = (
+				CF99978024ADD850005076B9 /* Px to Em WidgetExtension.entitlements */,
 				CF255A2B249911A500F4849F /* Px to Em */,
 				CF255A42249911A700F4849F /* Px to EmTests */,
 				CF255A4D249911A700F4849F /* Px to EmUITests */,
+				CF99977724ADD84F005076B9 /* Px to Em Widget */,
+				CFF42A4524ADCFB80013FE2E /* Frameworks */,
 				CF255A2A249911A500F4849F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +141,7 @@
 				CF255A29249911A500F4849F /* Px ›› Em.app */,
 				CF255A3F249911A700F4849F /* Px to EmTests.xctest */,
 				CF255A4A249911A700F4849F /* Px to EmUITests.xctest */,
+				CF99977424ADD84F005076B9 /* Px to Em WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,8 +152,8 @@
 				CF255A5C249A052200F4849F /* Px ›› Em.entitlements */,
 				CF255A2C249911A500F4849F /* AppDelegate.swift */,
 				CF255A2E249911A500F4849F /* SceneDelegate.swift */,
-				CF255A30249911A500F4849F /* ContentView.swift */,
 				CF133471249A201B00D04D02 /* Assets.xcassets */,
+				CF255A30249911A500F4849F /* ContentView.swift */,
 				CF255A37249911A700F4849F /* LaunchScreen.storyboard */,
 				CF255A3A249911A700F4849F /* Info.plist */,
 				CF255A34249911A700F4849F /* Preview Content */,
@@ -138,6 +187,25 @@
 			path = "Px to EmUITests";
 			sourceTree = "<group>";
 		};
+		CF99977724ADD84F005076B9 /* Px to Em Widget */ = {
+			isa = PBXGroup;
+			children = (
+				CF99977824ADD84F005076B9 /* Px_to_Em_Widget.swift */,
+				CF99977A24ADD850005076B9 /* Assets.xcassets */,
+				CF99977C24ADD850005076B9 /* Info.plist */,
+			);
+			path = "Px to Em Widget";
+			sourceTree = "<group>";
+		};
+		CFF42A4524ADCFB80013FE2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFF42A4624ADCFB80013FE2E /* WidgetKit.framework */,
+				CFF42A4824ADCFB90013FE2E /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,10 +216,12 @@
 				CF255A25249911A500F4849F /* Sources */,
 				CF255A26249911A500F4849F /* Frameworks */,
 				CF255A27249911A500F4849F /* Resources */,
+				CFF42A5A24ADCFBA0013FE2E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CF99977E24ADD850005076B9 /* PBXTargetDependency */,
 			);
 			name = "Px ›› Em";
 			productName = "Px to Em";
@@ -194,14 +264,31 @@
 			productReference = CF255A4A249911A700F4849F /* Px to EmUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		CF99977324ADD84F005076B9 /* Px to Em WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF99978124ADD850005076B9 /* Build configuration list for PBXNativeTarget "Px to Em WidgetExtension" */;
+			buildPhases = (
+				CF99977024ADD84F005076B9 /* Sources */,
+				CF99977124ADD84F005076B9 /* Frameworks */,
+				CF99977224ADD84F005076B9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Px to Em WidgetExtension";
+			productName = "Px to Em WidgetExtension";
+			productReference = CF99977424ADD84F005076B9 /* Px to Em WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		CF255A21249911A500F4849F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = KEJK;
 				TargetAttributes = {
 					CF255A28249911A500F4849F = {
@@ -214,6 +301,9 @@
 					CF255A49249911A700F4849F = {
 						CreatedOnToolsVersion = 11.5;
 						TestTargetID = CF255A28249911A500F4849F;
+					};
+					CF99977324ADD84F005076B9 = {
+						CreatedOnToolsVersion = 12.0;
 					};
 				};
 			};
@@ -233,6 +323,7 @@
 				CF255A28249911A500F4849F /* Px ›› Em */,
 				CF255A3E249911A700F4849F /* Px to EmTests */,
 				CF255A49249911A700F4849F /* Px to EmUITests */,
+				CF99977324ADD84F005076B9 /* Px to Em WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -262,6 +353,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CF99977224ADD84F005076B9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF99977B24ADD850005076B9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -279,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF816B3324ADE44E0092A2E2 /* ContentView.swift in Sources */,
 				CF255A44249911A700F4849F /* Px_to_EmTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,7 +387,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF816B3424ADE44E0092A2E2 /* ContentView.swift in Sources */,
 				CF255A4F249911A700F4849F /* Px_to_EmUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF99977024ADD84F005076B9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF816B3224ADE43E0092A2E2 /* ContentView.swift in Sources */,
+				CF99977924ADD84F005076B9 /* Px_to_Em_Widget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +413,11 @@
 			isa = PBXTargetDependency;
 			target = CF255A28249911A500F4849F /* Px ›› Em */;
 			targetProxy = CF255A4B249911A700F4849F /* PBXContainerItemProxy */;
+		};
+		CF99977E24ADD850005076B9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF99977324ADD84F005076B9 /* Px to Em WidgetExtension */;
+			targetProxy = CF99977D24ADD850005076B9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -344,6 +459,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -368,7 +484,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -405,6 +521,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -423,7 +540,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -437,48 +554,52 @@
 		CF255A54249911A700F4849F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Px to Em/Px ›› Em.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.9;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Px to Em/Preview Content\"";
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Px to Em/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.9;
+				MARKETING_VERSION = 2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = "Px ›› Em";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
 		CF255A55249911A700F4849F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Px to Em/Px ›› Em.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.9;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Px to Em/Preview Content\"";
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Px to Em/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.9;
+				MARKETING_VERSION = 2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = "Px ›› Em";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
@@ -562,6 +683,56 @@
 			};
 			name = Release;
 		};
+		CF99978224ADD850005076B9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Px to Em WidgetExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = WMGJ7B26TT;
+				INFOPLIST_FILE = "Px to Em Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.Px-to-Em-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF99978324ADD850005076B9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Px to Em WidgetExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = WMGJ7B26TT;
+				INFOPLIST_FILE = "Px to Em Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.Px-to-Em-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -597,6 +768,15 @@
 			buildConfigurations = (
 				CF255A5A249911A700F4849F /* Debug */,
 				CF255A5B249911A700F4849F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF99978124ADD850005076B9 /* Build configuration list for PBXNativeTarget "Px to Em WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF99978224ADD850005076B9 /* Debug */,
+				CF99978324ADD850005076B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
