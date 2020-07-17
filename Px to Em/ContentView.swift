@@ -11,13 +11,19 @@ import SwiftUI
 import Combine
 import UIKit
 
-#if canImport(UIKit)
-extension View {
-    func hideKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+//#if canImport(UIKit)
+//extension View {
+//    func hideKeyboard() {
+//        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+//    }
+//}
+//#endif
+
+extension SceneDelegate: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }
-#endif
 
 struct AdaptsToSoftwareKeyboard: ViewModifier {
     
@@ -53,17 +59,17 @@ struct AdaptsToSoftwareKeyboard: ViewModifier {
     }
 }
 
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tapGesture = UITapGestureRecognizer(target: self,
-                         action: #selector(hideKeyboard))
-        view.addGestureRecognizer(tapGesture)
-    }
-
-    @objc func hideKeyboard() {
-        view.endEditing(true)
-    }
-}
+//extension UIViewController {
+//    func hideKeyboardWhenTappedAround() {
+//        let tapGesture = UITapGestureRecognizer(target: self,
+//                         action: #selector(hideKeyboard))
+//        view.addGestureRecognizer(tapGesture)
+//    }
+//
+//    @objc func hideKeyboard() {
+//        view.endEditing(true)
+//    }
+//}
 
 struct ContentView: View {
     @State private var baseText = "16"
@@ -129,11 +135,11 @@ struct ContentView: View {
                 Spacer()
                }.padding()
                 
-            VStack {
-                Button("Dismiss") {
-                    self.hideKeyboard()
-                }.padding()
-            }
+//            VStack {
+//                Button("Dismiss") {
+//                    self.hideKeyboard()
+//                }.padding()
+//            }
         }.modifier(AdaptsToSoftwareKeyboard())
     }
 }
