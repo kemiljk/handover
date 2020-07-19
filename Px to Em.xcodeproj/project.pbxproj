@@ -15,6 +15,20 @@
 		CF255A39249911A700F4849F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF255A37249911A700F4849F /* LaunchScreen.storyboard */; };
 		CF255A44249911A700F4849F /* Px_to_EmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A43249911A700F4849F /* Px_to_EmTests.swift */; };
 		CF255A4F249911A700F4849F /* Px_to_EmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A4E249911A700F4849F /* Px_to_EmUITests.swift */; };
+		CF546F9524C4ABE300B0399F /* classic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F8924C4ABE200B0399F /* classic@2x.png */; };
+		CF546F9624C4ABE300B0399F /* innerShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F8A24C4ABE200B0399F /* innerShadow@2x.png */; };
+		CF546F9724C4ABE300B0399F /* white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F8B24C4ABE300B0399F /* white@3x.png */; };
+		CF546F9824C4ABE300B0399F /* white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F8C24C4ABE300B0399F /* white@2x.png */; };
+		CF546F9924C4ABE300B0399F /* gradient@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F8D24C4ABE300B0399F /* gradient@3x.png */; };
+		CF546F9A24C4ABE300B0399F /* gradient@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F8E24C4ABE300B0399F /* gradient@2x.png */; };
+		CF546F9B24C4ABE300B0399F /* innerShadow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F8F24C4ABE300B0399F /* innerShadow@3x.png */; };
+		CF546F9C24C4ABE300B0399F /* neuomorphic@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F9024C4ABE300B0399F /* neuomorphic@3x.png */; };
+		CF546F9D24C4ABE300B0399F /* classic@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F9124C4ABE300B0399F /* classic@3x.png */; };
+		CF546F9E24C4ABE300B0399F /* neuomorphic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F9224C4ABE300B0399F /* neuomorphic@2x.png */; };
+		CF546F9F24C4ABE300B0399F /* shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F9324C4ABE300B0399F /* shadow@2x.png */; };
+		CF546FA024C4ABE300B0399F /* shadow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F9424C4ABE300B0399F /* shadow@3x.png */; };
+		CF546FA324C4ACA700B0399F /* black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546FA124C4ACA600B0399F /* black@2x.png */; };
+		CF546FA424C4ACA700B0399F /* black@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546FA224C4ACA700B0399F /* black@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +64,20 @@
 		CF255A4E249911A700F4849F /* Px_to_EmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Px_to_EmUITests.swift; sourceTree = "<group>"; };
 		CF255A50249911A700F4849F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF255A5C249A052200F4849F /* Px ›› Em.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Px ›› Em.entitlements"; sourceTree = "<group>"; };
+		CF546F8924C4ABE200B0399F /* classic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "classic@2x.png"; sourceTree = "<group>"; };
+		CF546F8A24C4ABE200B0399F /* innerShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "innerShadow@2x.png"; sourceTree = "<group>"; };
+		CF546F8B24C4ABE300B0399F /* white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white@3x.png"; sourceTree = "<group>"; };
+		CF546F8C24C4ABE300B0399F /* white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white@2x.png"; sourceTree = "<group>"; };
+		CF546F8D24C4ABE300B0399F /* gradient@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient@3x.png"; sourceTree = "<group>"; };
+		CF546F8E24C4ABE300B0399F /* gradient@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gradient@2x.png"; sourceTree = "<group>"; };
+		CF546F8F24C4ABE300B0399F /* innerShadow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "innerShadow@3x.png"; sourceTree = "<group>"; };
+		CF546F9024C4ABE300B0399F /* neuomorphic@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "neuomorphic@3x.png"; sourceTree = "<group>"; };
+		CF546F9124C4ABE300B0399F /* classic@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "classic@3x.png"; sourceTree = "<group>"; };
+		CF546F9224C4ABE300B0399F /* neuomorphic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "neuomorphic@2x.png"; sourceTree = "<group>"; };
+		CF546F9324C4ABE300B0399F /* shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shadow@2x.png"; sourceTree = "<group>"; };
+		CF546F9424C4ABE300B0399F /* shadow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shadow@3x.png"; sourceTree = "<group>"; };
+		CF546FA124C4ACA600B0399F /* black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black@2x.png"; sourceTree = "<group>"; };
+		CF546FA224C4ACA700B0399F /* black@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +128,7 @@
 		CF255A2B249911A500F4849F /* Px to Em */ = {
 			isa = PBXGroup;
 			children = (
+				CF546F8824C4ABD200B0399F /* Alt Icons */,
 				CF255A5C249A052200F4849F /* Px ›› Em.entitlements */,
 				CF255A2C249911A500F4849F /* AppDelegate.swift */,
 				CF255A2E249911A500F4849F /* SceneDelegate.swift */,
@@ -136,6 +165,27 @@
 				CF255A50249911A700F4849F /* Info.plist */,
 			);
 			path = "Px to EmUITests";
+			sourceTree = "<group>";
+		};
+		CF546F8824C4ABD200B0399F /* Alt Icons */ = {
+			isa = PBXGroup;
+			children = (
+				CF546FA124C4ACA600B0399F /* black@2x.png */,
+				CF546FA224C4ACA700B0399F /* black@3x.png */,
+				CF546F8924C4ABE200B0399F /* classic@2x.png */,
+				CF546F9124C4ABE300B0399F /* classic@3x.png */,
+				CF546F8E24C4ABE300B0399F /* gradient@2x.png */,
+				CF546F8D24C4ABE300B0399F /* gradient@3x.png */,
+				CF546F8A24C4ABE200B0399F /* innerShadow@2x.png */,
+				CF546F8F24C4ABE300B0399F /* innerShadow@3x.png */,
+				CF546F9224C4ABE300B0399F /* neuomorphic@2x.png */,
+				CF546F9024C4ABE300B0399F /* neuomorphic@3x.png */,
+				CF546F9324C4ABE300B0399F /* shadow@2x.png */,
+				CF546F9424C4ABE300B0399F /* shadow@3x.png */,
+				CF546F8C24C4ABE300B0399F /* white@2x.png */,
+				CF546F8B24C4ABE300B0399F /* white@3x.png */,
+			);
+			path = "Alt Icons";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,9 +292,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF546F9A24C4ABE300B0399F /* gradient@2x.png in Resources */,
+				CF546FA024C4ABE300B0399F /* shadow@3x.png in Resources */,
+				CF546F9724C4ABE300B0399F /* white@3x.png in Resources */,
 				CF255A39249911A700F4849F /* LaunchScreen.storyboard in Resources */,
+				CF546F9824C4ABE300B0399F /* white@2x.png in Resources */,
+				CF546F9E24C4ABE300B0399F /* neuomorphic@2x.png in Resources */,
+				CF546FA324C4ACA700B0399F /* black@2x.png in Resources */,
+				CF546FA424C4ACA700B0399F /* black@3x.png in Resources */,
 				CF133472249A201B00D04D02 /* Assets.xcassets in Resources */,
+				CF546F9B24C4ABE300B0399F /* innerShadow@3x.png in Resources */,
+				CF546F9F24C4ABE300B0399F /* shadow@2x.png in Resources */,
+				CF546F9924C4ABE300B0399F /* gradient@3x.png in Resources */,
+				CF546F9624C4ABE300B0399F /* innerShadow@2x.png in Resources */,
+				CF546F9C24C4ABE300B0399F /* neuomorphic@3x.png in Resources */,
+				CF546F9D24C4ABE300B0399F /* classic@3x.png in Resources */,
 				CF255A36249911A700F4849F /* Preview Assets.xcassets in Resources */,
+				CF546F9524C4ABE300B0399F /* classic@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,7 +504,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Px to Em/Px ›› Em.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.10;
+				CURRENT_PROJECT_VERSION = 1.14;
 				DEVELOPMENT_ASSET_PATHS = "\"Px to Em/Preview Content\"";
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				ENABLE_PREVIEWS = YES;
@@ -449,7 +513,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.10;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = "Px ›› Em";
 				SUPPORTS_MACCATALYST = YES;
@@ -464,7 +528,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Px to Em/Px ›› Em.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.10;
+				CURRENT_PROJECT_VERSION = 1.14;
 				DEVELOPMENT_ASSET_PATHS = "\"Px to Em/Preview Content\"";
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				ENABLE_PREVIEWS = YES;
@@ -473,7 +537,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.10;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = "Px ›› Em";
 				SUPPORTS_MACCATALYST = YES;
