@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)"
+options: "ad93bd2f109a0c56e6aa1779175a799e"
+build_time: [1595188797, 878471000]
+inputs:
+  "/Users/karlkoch/GitHub/px-to-em-swiftui/Px to Em/ContentView.swift": [1595184741, 435672682]
+  "/Users/karlkoch/GitHub/px-to-em-swiftui/Px to Em/SceneDelegate.swift": [1595188036, 284224369]
+  "/Users/karlkoch/GitHub/px-to-em-swiftui/Px to Em/AppDelegate.swift": [1595180183, 502244088]

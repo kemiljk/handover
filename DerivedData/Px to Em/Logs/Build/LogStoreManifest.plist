@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>0F1DD6CC-8C58-4F30-9163-34C87F70908F</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>0F1DD6CC-8C58-4F30-9163-34C87F70908F.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Px to Em project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Px ›› Em</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Px ›› Em</string>
+			<key>timeStartedRecording</key>
+			<real>616881709.79657495</real>
+			<key>timeStoppedRecording</key>
+			<real>616881709.89252901</real>
+			<key>title</key>
+			<string>Build Px ›› Em</string>
+			<key>uniqueIdentifier</key>
+			<string>0F1DD6CC-8C58-4F30-9163-34C87F70908F</string>
+		</dict>
+		<key>2A414E8D-9909-4A3B-B253-443FB9F4E408</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>2A414E8D-9909-4A3B-B253-443FB9F4E408.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Px to Em project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Px ›› Em</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Px ›› Em</string>
+			<key>timeStartedRecording</key>
+			<real>616881748.88472497</real>
+			<key>timeStoppedRecording</key>
+			<real>616881748.94922996</real>
+			<key>title</key>
+			<string>Build Px ›› Em</string>
+			<key>uniqueIdentifier</key>
+			<string>2A414E8D-9909-4A3B-B253-443FB9F4E408</string>
+		</dict>
+		<key>2B64A534-686A-44F1-9E10-D4AEAE186EC8</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>2B64A534-686A-44F1-9E10-D4AEAE186EC8.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Px to Em project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Px ›› Em</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Px ›› Em</string>
+			<key>timeStartedRecording</key>
+			<real>616881656.69217098</real>
+			<key>timeStoppedRecording</key>
+			<real>616881656.79511595</real>
+			<key>title</key>
+			<string>Build Px ›› Em</string>
+			<key>uniqueIdentifier</key>
+			<string>2B64A534-686A-44F1-9E10-D4AEAE186EC8</string>
+		</dict>
+		<key>30DF13FD-F2D3-4AB5-AEBB-45AD9EA22AFE</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>30DF13FD-F2D3-4AB5-AEBB-45AD9EA22AFE.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Px to Em project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Px ›› Em</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Px ›› Em</string>
+			<key>timeStartedRecording</key>
+			<real>616881705.73197603</real>
+			<key>timeStoppedRecording</key>
+			<real>616881705.83455002</real>
+			<key>title</key>
+			<string>Build Px ›› Em</string>
+			<key>uniqueIdentifier</key>
+			<string>30DF13FD-F2D3-4AB5-AEBB-45AD9EA22AFE</string>
+		</dict>
+		<key>3C1D0222-5D43-48B1-9942-B46565F831B4</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>3C1D0222-5D43-48B1-9942-B46565F831B4.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Px to Em project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Px ›› Em</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Px ›› Em</string>
+			<key>timeStartedRecording</key>
+			<real>616881649.10046101</real>
+			<key>timeStoppedRecording</key>
+			<real>616881649.20065796</real>
+			<key>title</key>
+			<string>Build Px ›› Em</string>
+			<key>uniqueIdentifier</key>
+			<string>3C1D0222-5D43-48B1-9942-B46565F831B4</string>
+		</dict>
+		<key>584CD2EF-9187-44FF-81B8-3CBAAA301097</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>584CD2EF-9187-44FF-81B8-3CBAAA301097.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Px to Em project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Px ›› Em</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Px ›› Em</string>
+			<key>timeStartedRecording</key>
+			<real>616881597.77376199</real>
+			<key>timeStoppedRecording</key>
+			<real>616881601.480582</real>
+			<key>title</key>
+			<string>Build Px ›› Em</string>
+			<key>uniqueIdentifier</key>
+			<string>584CD2EF-9187-44FF-81B8-3CBAAA301097</string>
+		</dict>
+		<key>5DD5BA59-42A8-4427-AC64-C499712C90F0</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>5DD5BA59-42A8-4427-AC64-C499712C90F0.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Px to Em project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Px ›› Em</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Px ›› Em</string>
+			<key>timeStartedRecording</key>
+			<real>616881650.53345203</real>
+			<key>timeStoppedRecording</key>
+			<real>616881650.57896495</real>
+			<key>title</key>
+			<string>Build Px ›› Em</string>
+			<key>uniqueIdentifier</key>
+			<string>5DD5BA59-42A8-4427-AC64-C499712C90F0</string>
+		</dict>
+		<key>88346689-EF33-43B3-8ADF-E95318A6D4DA</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>88346689-EF33-43B3-8ADF-E95318A6D4DA.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Px to Em project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Px ›› Em</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Px ›› Em</string>
+			<key>timeStartedRecording</key>
+			<real>616881548.57289696</real>
+			<key>timeStoppedRecording</key>
+			<real>616881548.657511</real>
+			<key>title</key>
+			<string>Build Px ›› Em</string>
+			<key>uniqueIdentifier</key>
+			<string>88346689-EF33-43B3-8ADF-E95318A6D4DA</string>
+		</dict>
+		<key>A141B956-900F-4CEA-90AA-C7387A9E64C4</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>A141B956-900F-4CEA-90AA-C7387A9E64C4.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Px to Em project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Px ›› Em</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build Px ›› Em</string>
+			<key>timeStartedRecording</key>
+			<real>616881749.76231503</real>
+			<key>timeStoppedRecording</key>
+			<real>616881749.818416</real>
+			<key>title</key>
+			<string>Build Px ›› Em</string>
+			<key>uniqueIdentifier</key>
+			<string>A141B956-900F-4CEA-90AA-C7387A9E64C4</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

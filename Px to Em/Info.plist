@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<array>
+		<string></string>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIcons</key>
 	<dict>
 		<key>CFBundleAlternateIcons</key>
@@ -11,6 +19,13 @@
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>black</string>
+				</array>
+			</dict>
+			<key>gradientIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>gradient</string>
 				</array>
 			</dict>
 			<key>innerShadowIcon</key>
@@ -25,13 +40,6 @@
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>neuomorphic</string>
-				</array>
-			</dict>
-			<key>gradientIcon</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>gradient</string>
 				</array>
 			</dict>
 			<key>shadowIcon</key>
@@ -58,22 +66,64 @@
 			<key>UIPrerenderedIcon</key>
 			<false/>
 		</dict>
-		<key>UINewsstandIcon</key>
+	</dict>
+	<key>CFBundleIcons~ipad</key>
+	<dict>
+		<key>CFBundleAlternateIcons</key>
+		<dict>
+			<key>blackIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>black</string>
+				</array>
+			</dict>
+			<key>gradientIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>gradient</string>
+				</array>
+			</dict>
+			<key>innerShadowIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>innerShadow</string>
+				</array>
+			</dict>
+			<key>neuomorphicIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>neuomorphic</string>
+				</array>
+			</dict>
+			<key>shadowIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>shadow</string>
+				</array>
+			</dict>
+			<key>whiteIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>white</string>
+				</array>
+			</dict>
+		</dict>
+		<key>CFBundlePrimaryIcon</key>
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string></string>
+				<string>AppIcon</string>
 			</array>
-			<key>UINewsstandBindingType</key>
-			<string>UINewsstandBindingTypeMagazine</string>
-			<key>UINewsstandBindingEdge</key>
-			<string>UINewsstandBindingEdgeLeft</string>
+			<key>UIPrerenderedIcon</key>
+			<false/>
 		</dict>
 	</dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
-	<key>CFBundleExecutable</key>
-	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>

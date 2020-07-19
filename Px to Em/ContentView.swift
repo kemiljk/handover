@@ -71,9 +71,7 @@ struct ContentView: View {
         return emValue
     }
     
-    func haptic(type: UINotificationFeedbackGenerator.FeedbackType) {
-        UINotificationFeedbackGenerator().notificationOccurred(type)
-    }
+    let modal = UIImpactFeedbackGenerator(style: .light)
     
         var body: some View {
             VStack {
@@ -86,7 +84,7 @@ struct ContentView: View {
                         Spacer()
                         Button(action: {
                             self.show_settings_modal = true
-                            self.haptic(type: .success)
+                            self.modal.impactOccurred()
                         }) {
                             Image(systemName: "square.grid.2x2.fill").padding().padding(.top, 44)
                                 .font(.title)
@@ -119,7 +117,7 @@ struct ContentView: View {
                                 Text("Scale").font(.headline)
                                 Button(action: {
                                     self.show_modal = true
-                                    self.haptic(type: .success)
+                                    self.modal.impactOccurred()
                                 }) {
                                 Image(systemName: "info.circle").padding(.leading, 16).padding(.trailing, 16)
                                     .foregroundColor(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
@@ -205,19 +203,19 @@ struct SettingsModalView: View {
         var preview: UIImage {
             switch self {
                 case .classic:
-                    return #imageLiteral(resourceName: "icon-60@2x.png")
+                    return #imageLiteral(resourceName: "classic")
                 case .innerShadow:
-                    return #imageLiteral(resourceName: "innerShadow@2x.png")
+                    return #imageLiteral(resourceName: "innerShadow")
                 case .neuomorphic:
-                    return #imageLiteral(resourceName: "neuomorphic@2x.png")
+                    return #imageLiteral(resourceName: "neuomorphic")
                 case .gradient:
-                    return #imageLiteral(resourceName: "gradient@2x.png")
+                    return #imageLiteral(resourceName: "gradient")
                 case .shadow:
-                    return #imageLiteral(resourceName: "shadow@2x.png")
+                    return #imageLiteral(resourceName: "shadow")
                 case .white:
-                    return #imageLiteral(resourceName: "white@2x.png")
+                    return #imageLiteral(resourceName: "white")
                 case .black:
-                    return #imageLiteral(resourceName: "black@2x.png")
+                    return #imageLiteral(resourceName: "black")
             }
         }
     }
@@ -242,6 +240,8 @@ struct SettingsModalView: View {
          }
        }
     
+    let success = UIImpactFeedbackGenerator(style: .medium)
+    
     var body: some View {
         VStack (alignment: .center, spacing: 16) {
             VStack {
@@ -254,6 +254,7 @@ struct SettingsModalView: View {
                 HStack {
                     Button(action: {
                         self.setIcon(.classic)
+                        self.success.impactOccurred()
                     }) {
                     Text("Default")
                         .foregroundColor(Color.primary)
@@ -265,6 +266,7 @@ struct SettingsModalView: View {
                 HStack {
                     Button(action: {
                         self.setIcon(.innerShadow)
+                        self.success.impactOccurred()
                     }) {
                     Text("Inner Shadow")
                         .foregroundColor(Color.primary)
@@ -276,6 +278,7 @@ struct SettingsModalView: View {
                 HStack {
                     Button(action: {
                         self.setIcon(.neuomorphic)
+                        self.success.impactOccurred()
                     }) {
                     Text("Neuomorphic")
                         .foregroundColor(Color.primary)
@@ -287,6 +290,7 @@ struct SettingsModalView: View {
                 HStack {
                     Button(action: {
                         self.setIcon(.gradient)
+                        self.success.impactOccurred()
                     }) {
                         Text("Gradient")
                             .foregroundColor(Color.primary)
@@ -298,6 +302,7 @@ struct SettingsModalView: View {
                 HStack {
                     Button(action: {
                         self.setIcon(.shadow)
+                        self.success.impactOccurred()
                     }) {
                     Text("Shadow")
                         .foregroundColor(Color.primary)
@@ -309,6 +314,7 @@ struct SettingsModalView: View {
                 HStack {
                     Button(action: {
                         self.setIcon(.white)
+                        self.success.impactOccurred()
                     }) {
                     Text("White")
                         .foregroundColor(Color.primary)
@@ -321,6 +327,7 @@ struct SettingsModalView: View {
                 HStack {
                     Button(action: {
                         self.setIcon(.black)
+                        self.success.impactOccurred()
                     }) {
                     Text("Black")
                         .foregroundColor(Color.primary)
