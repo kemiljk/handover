@@ -259,9 +259,10 @@ struct SettingsModalView: View {
                     Text("Default")
                         .foregroundColor(Color.primary)
                     Spacer()
-                    }
                     Image("classic")
+                    .renderingMode(.original)
                     .cornerRadius(15)
+                    }
                 }
                 HStack {
                     Button(action: {
@@ -271,9 +272,12 @@ struct SettingsModalView: View {
                     Text("Inner Shadow")
                         .foregroundColor(Color.primary)
                     Spacer()
-                    }
+                    
                     Image("innerShadow")
+                    .renderingMode(.original)
                     .cornerRadius(15)
+                        
+                    }
                 }
                 HStack {
                     Button(action: {
@@ -283,9 +287,10 @@ struct SettingsModalView: View {
                     Text("Neuomorphic")
                         .foregroundColor(Color.primary)
                     Spacer()
-                    }
                     Image("neuomorphic")
+                    .renderingMode(.original)
                     .cornerRadius(15)
+                    }
                 }
                 HStack {
                     Button(action: {
@@ -295,9 +300,10 @@ struct SettingsModalView: View {
                         Text("Gradient")
                             .foregroundColor(Color.primary)
                     Spacer()
-                    }
                     Image("gradient")
+                    .renderingMode(.original)
                     .cornerRadius(15)
+                    }
                 }
                 HStack {
                     Button(action: {
@@ -307,9 +313,10 @@ struct SettingsModalView: View {
                     Text("Shadow")
                         .foregroundColor(Color.primary)
                     Spacer()
-                    }
                     Image("shadow")
+                    .renderingMode(.original)
                     .cornerRadius(15)
+                    }
                 }
                 HStack {
                     Button(action: {
@@ -319,10 +326,11 @@ struct SettingsModalView: View {
                     Text("White")
                         .foregroundColor(Color.primary)
                     Spacer()
-                    }
                     Image("white")
+                    .renderingMode(.original)
                     .cornerRadius(15)
                         .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 0.4), lineWidth: 1))
+                    }
                 }
                 HStack {
                     Button(action: {
@@ -332,9 +340,11 @@ struct SettingsModalView: View {
                     Text("Black")
                         .foregroundColor(Color.primary)
                     Spacer()
-                    }
                     Image("black")
+                    .renderingMode(.original)
                     .cornerRadius(15)
+                        .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 0.4), lineWidth: 1))
+                    }
                 }
             }.padding()
             Spacer()
