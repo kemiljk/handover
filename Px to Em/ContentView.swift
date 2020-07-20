@@ -11,49 +11,8 @@ import SwiftUI
 import Combine
 import UIKit
 
-extension SceneDelegate: UIGestureRecognizerDelegate {
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
-    }
-}
-
-struct AdaptsToSoftwareKeyboard: ViewModifier {
-    
-    @State var currentHeight: CGFloat = 0
-
-
-    func body(content: Content) -> some View {
-        content
-            .padding(.bottom, currentHeight).animation(.easeOut(duration: 0.25))
-            .edgesIgnoringSafeArea(currentHeight == 0 ? Edge.Set() : .bottom)
-            .onAppear(perform: subscribeToKeyboardChanges)
-    }
-
-    private let keyboardHeightOnOpening = NotificationCenter.default
-        .publisher(for: UIResponder.keyboardWillShowNotification)
-        .map { $0.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect }
-        .map { $0.height }
-
-    
-    private let keyboardHeightOnHiding = NotificationCenter.default
-        .publisher(for: UIResponder.keyboardWillHideNotification)
-        .map {_ in return CGFloat(0) }
-    
-    private func subscribeToKeyboardChanges() {
-        
-        _ = Publishers.Merge(keyboardHeightOnOpening, keyboardHeightOnHiding)
-            .subscribe(on: RunLoop.main)
-            .sink { height in
-                if self.currentHeight == 0 || height == 0 {
-                    self.currentHeight = height
-                }
-        }
-    }
-}
-
 struct ContentView: View {
     @State private var show_modal: Bool = false
-    @State private var show_settings_modal: Bool = false
     
     @State private var baseText = "16"
     @State private var pixelText = "16"
@@ -71,8 +30,6 @@ struct ContentView: View {
         return emValue
     }
     
-    let modal = UIImpactFeedbackGenerator(style: .light)
-    
         var body: some View {
             VStack {
                 VStack (alignment: .leading)  {
@@ -81,18 +38,6 @@ struct ContentView: View {
                         .multilineTextAlignment(.leading)
                             .font(.system(.largeTitle, design: .rounded))
                             .padding()
-                        Spacer()
-                        Button(action: {
-                            self.show_settings_modal = true
-                            self.modal.impactOccurred()
-                        }) {
-                            Image(systemName: "square.grid.2x2.fill").padding().padding(.top, 44)
-                                .font(.title)
-                                .foregroundColor(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
-                        }
-                        .sheet(isPresented: self.$show_settings_modal) {
-                        SettingsModalView()
-                    }
                     }
                     VStack (alignment: .leading) {
                         Text("Baseline pixel value").font(.headline)
@@ -117,7 +62,6 @@ struct ContentView: View {
                                 Text("Scale").font(.headline)
                                 Button(action: {
                                     self.show_modal = true
-                                    self.modal.impactOccurred()
                                 }) {
                                 Image(systemName: "info.circle").padding(.leading, 16).padding(.trailing, 16)
                                     .foregroundColor(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
@@ -142,7 +86,6 @@ struct ContentView: View {
                     .font(.system(.title, design: .monospaced)).bold()
                 Spacer()
             }.padding()
-        }.modifier(AdaptsToSoftwareKeyboard())
     }
 }
 
@@ -156,197 +99,16 @@ struct ScaleModalView: View {
                     .padding()
             }
             VStack (alignment: .leading, spacing: 16) {
-                Text("Browser default: 1.000").font(.system(.body, design: .monospaced))
-                Text("Minor second: 1.067").font(.system(.body, design: .monospaced))
-                Text("Major second: 1.125").font(.system(.body, design: .monospaced))
-                Text("Minor third: 1.200").font(.system(.body, design: .monospaced))
-                Text("Major third: 1.250").font(.system(.body, design: .monospaced))
-                Text("Perfect fourth: 1.333").font(.system(.body, design: .monospaced))
-                Text("Augmented fourth: 1.414").font(.system(.body, design: .monospaced))
-                Text("Perfect fifth: 1.500").font(.system(.body, design: .monospaced))
-                Text("Golden ratio: 1.618").font(.system(.body, design: .monospaced))
+                Text("1.000: Browser default").font(.system(.body, design: .monospaced))
+                Text("1.067: Minor second").font(.system(.body, design: .monospaced))
+                Text("1.125: Major second").font(.system(.body, design: .monospaced))
+                Text("1.200: Minor third").font(.system(.body, design: .monospaced))
+                Text("1.250: Major third").font(.system(.body, design: .monospaced))
+                Text("1.333: Perfect fourth").font(.system(.body, design: .monospaced))
+                Text("1.414: Augmented fourth").font(.system(.body, design: .monospaced))
+                Text("1.500: Perfect fifth").font(.system(.body, design: .monospaced))
+                Text("1.618: Golden ratio").font(.system(.body, design: .monospaced))
                 }.padding()
-            Spacer()
-        }
-    }
-}
-
-struct SettingsModalView: View {
-    enum BMAppIcon: CaseIterable {
-        case classic,
-        innerShadow,
-        neuomorphic,
-        gradient,
-        shadow,
-        white,
-        black
-
-        var name: String? {
-            switch self {
-               case .classic:
-                    return nil
-                case .innerShadow:
-                    return "innerShadowIcon"
-                case .neuomorphic:
-                    return "neuomorphicIcon"
-                case .gradient:
-                    return "gradientIcon"
-                case .shadow:
-                    return "shadowIcon"
-                case .white:
-                    return "whiteIcon"
-                case .black:
-                return "blackIcon"
-            }
-        }
-
-        var preview: UIImage {
-            switch self {
-                case .classic:
-                    return #imageLiteral(resourceName: "classic")
-                case .innerShadow:
-                    return #imageLiteral(resourceName: "innerShadow")
-                case .neuomorphic:
-                    return #imageLiteral(resourceName: "neuomorphic")
-                case .gradient:
-                    return #imageLiteral(resourceName: "gradient")
-                case .shadow:
-                    return #imageLiteral(resourceName: "shadow")
-                case .white:
-                    return #imageLiteral(resourceName: "white")
-                case .black:
-                    return #imageLiteral(resourceName: "black")
-            }
-        }
-    }
-    
-    var current: BMAppIcon {
-         return BMAppIcon.allCases.first(where: {
-           $0.name == UIApplication.shared.alternateIconName
-         }) ?? .classic
-       }
-
-       func setIcon(_ appIcon: BMAppIcon, completion: ((Bool) -> Void)? = nil) {
-         
-         guard current != appIcon,
-           UIApplication.shared.supportsAlternateIcons
-           else { return }
-               
-         UIApplication.shared.setAlternateIconName(appIcon.name) { error in
-           if let error = error {
-             print("Error setting alternate icon \(appIcon.name ?? ""): \(error.localizedDescription)")
-           }
-           completion?(error != nil)
-         }
-       }
-    
-    let success = UIImpactFeedbackGenerator(style: .medium)
-    
-    var body: some View {
-        VStack (alignment: .center, spacing: 16) {
-            VStack {
-                Image(systemName: "chevron.compact.down").font(.system(.largeTitle)).padding(.top, 20).foregroundColor(Color.gray)
-                Text("Change app icon").bold()
-                    .font(.system(.title, design: .rounded))
-                    .padding()
-            }
-            VStack (alignment: .leading, spacing: 16) {
-                HStack {
-                    Button(action: {
-                        self.setIcon(.classic)
-                        self.success.impactOccurred()
-                    }) {
-                    Text("Default")
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    Image("classic")
-                    .renderingMode(.original)
-                    .cornerRadius(15)
-                    }
-                }
-                HStack {
-                    Button(action: {
-                        self.setIcon(.innerShadow)
-                        self.success.impactOccurred()
-                    }) {
-                    Text("Inner Shadow")
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    
-                    Image("innerShadow")
-                    .renderingMode(.original)
-                    .cornerRadius(15)
-                        
-                    }
-                }
-                HStack {
-                    Button(action: {
-                        self.setIcon(.neuomorphic)
-                        self.success.impactOccurred()
-                    }) {
-                    Text("Neuomorphic")
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    Image("neuomorphic")
-                    .renderingMode(.original)
-                    .cornerRadius(15)
-                    }
-                }
-                HStack {
-                    Button(action: {
-                        self.setIcon(.gradient)
-                        self.success.impactOccurred()
-                    }) {
-                        Text("Gradient")
-                            .foregroundColor(Color.primary)
-                    Spacer()
-                    Image("gradient")
-                    .renderingMode(.original)
-                    .cornerRadius(15)
-                    }
-                }
-                HStack {
-                    Button(action: {
-                        self.setIcon(.shadow)
-                        self.success.impactOccurred()
-                    }) {
-                    Text("Shadow")
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    Image("shadow")
-                    .renderingMode(.original)
-                    .cornerRadius(15)
-                    }
-                }
-                HStack {
-                    Button(action: {
-                        self.setIcon(.white)
-                        self.success.impactOccurred()
-                    }) {
-                    Text("White")
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    Image("white")
-                    .renderingMode(.original)
-                    .cornerRadius(15)
-                        .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 0.4), lineWidth: 1))
-                    }
-                }
-                HStack {
-                    Button(action: {
-                        self.setIcon(.black)
-                        self.success.impactOccurred()
-                    }) {
-                    Text("Black")
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    Image("black")
-                    .renderingMode(.original)
-                    .cornerRadius(15)
-                        .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 0.4), lineWidth: 1))
-                    }
-                }
-            }.padding()
             Spacer()
         }
     }
