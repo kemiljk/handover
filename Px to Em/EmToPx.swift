@@ -95,12 +95,16 @@ struct EmToPx: View {
                     }
                 }
             }
-            VStack (alignment: .center) {
-                Spacer()
-                Text("\(String(format: "%.3f", (Double(emTextEmpty) ?? 1.000)))em is \(String(format: "%.0f", emToPxs(baseInt: Double(baseTextEmpty) ?? 16, emInt: Double(emTextEmpty) ?? 1, scaleInt: Double(scaleTextEmpty) ?? 1)))px")
-                    .font(.system(.title, design: .monospaced)).bold()
-                Spacer()
-            }.padding()
+            ZStack {
+                Rectangle()
+                    .fill(Color("shape"))
+                VStack (alignment: .center) {
+                    Spacer()
+                    Text("\(String(format: "%.3f", (Double(emTextEmpty) ?? 1.000)))em is \(String(format: "%.0f", emToPxs(baseInt: Double(baseTextEmpty) ?? 16, emInt: Double(emTextEmpty) ?? 1, scaleInt: Double(scaleTextEmpty) ?? 1)))px")
+                        .font(.system(.title, design: .monospaced)).bold()
+                    Spacer()
+                }.padding()
+                }
         }.modifier(AdaptsToSoftwareKeyboard())
     }
 }

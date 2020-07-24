@@ -70,7 +70,6 @@
 		CF255A5C249A052200F4849F /* Px ›› Em.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Px ›› Em.entitlements"; sourceTree = "<group>"; };
 		CF265C4224C84C8A00D0DA1D /* SettingsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModal.swift; sourceTree = "<group>"; };
 		CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleModalView.swift; sourceTree = "<group>"; };
-		CF2F848324C4E76700074366 /* Px ›› Em.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = "Px ›› Em.app"; path = "DerivedData/Px to Em/Build/Products/Debug-iphonesimulator/Px ›› Em.app"; sourceTree = "<group>"; };
 		CF546F8924C4ABE200B0399F /* classic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "classic@2x.png"; sourceTree = "<group>"; };
 		CF546F8A24C4ABE200B0399F /* innerShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "innerShadow@2x.png"; sourceTree = "<group>"; };
 		CF546F8B24C4ABE300B0399F /* white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white@3x.png"; sourceTree = "<group>"; };
@@ -117,7 +116,6 @@
 		CF255A20249911A500F4849F = {
 			isa = PBXGroup;
 			children = (
-				CF2F848324C4E76700074366 /* Px ›› Em.app */,
 				CF255A2B249911A500F4849F /* Px to Em */,
 				CF255A42249911A700F4849F /* Px to EmTests */,
 				CF255A4D249911A700F4849F /* Px to EmUITests */,
@@ -537,7 +535,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.2;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = "Px ›› Em";
@@ -568,7 +566,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.2;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = "Px ›› Em";

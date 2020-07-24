@@ -103,12 +103,16 @@ struct PxToEm: View {
                    }
                }
            }
-           VStack (alignment: .center) {
-               Spacer()
-               Text("\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.3f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))em")
-                   .font(.system(.title, design: .monospaced)).bold()
-               Spacer()
-           }.padding()
+            ZStack {
+                Rectangle()
+                    .fill(Color("shape"))
+                VStack (alignment: .center) {
+                Spacer()
+                   Text("\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.3f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))em")
+                       .font(.system(.title, design: .monospaced)).bold()
+                    Spacer()
+                }.padding()
+            }
        }.modifier(AdaptsToSoftwareKeyboard())
    }
 }

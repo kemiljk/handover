@@ -53,17 +53,34 @@ struct AdaptsToSoftwareKeyboard: ViewModifier {
 
 struct ContentView: View {
     @State var selected = 0
+    let swipe = UIImpactFeedbackGenerator(style: .light)
     
     var body: some View {
+        GeometryReader { geo in
+        PageControl(current: self.selected)
+          .position(x: geo.size.width/2, y: geo.size.height)
          VStack {
              TopBar(selected: self.$selected)
              
-             if self.selected == 0 {
-                 PxToEm()
-             }
-             else {
-                 EmToPx()
-             }
+                 if self.selected == 0 {
+                     PxToEm()
+                 }
+                 else {
+                     EmToPx()
+                }
+            }
+            .gesture(
+              DragGesture()
+                .onEnded {
+                  if $0.translation.width < -100 {
+                    self.selected = min(1, self.selected + 1)
+                    self.swipe.impactOccurred()
+                  } else if $0.translation.width > 100 {
+                    self.selected = max(0, self.selected - 1)
+                    self.swipe.impactOccurred()
+                  }
+              }
+            )
         }
     }
 }
@@ -82,9 +99,9 @@ struct TopBar : View {
             })
             {
             Text("Px").bold()
-                .frame(width: 32, height: 16)
-                .padding(.vertical, 16)
-                .padding(.horizontal, 24)
+                .frame(width: 24, height: 8)
+                .padding(.vertical, 8)
+                .padding(.horizontal, 16)
                 .background(self.selected == 0 ? Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0) : Color.clear)
                 .clipShape(Capsule())
                 .foregroundColor(self.selected == 0 ? Color.black : Color.primary)
@@ -108,6 +125,23 @@ struct TopBar : View {
         .background(Color("grey"))
         .clipShape(Capsule())
     }
+}
+
+struct PageControl : UIViewRepresentable {
+
+  var current = 0
+
+  func makeUIView(context: UIViewRepresentableContext<PageControl>) -> UIPageControl {
+    let page = UIPageControl()
+    page.numberOfPages = 2
+    page.currentPageIndicatorTintColor = .clear
+    page.pageIndicatorTintColor = .clear
+    return page
+  }
+
+  func updateUIView(_ uiView: UIPageControl, context: UIViewRepresentableContext<PageControl>) {
+    uiView.currentPage = current
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
