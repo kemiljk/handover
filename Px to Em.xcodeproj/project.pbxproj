@@ -12,6 +12,8 @@
 		CF255A39249911A700F4849F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF255A37249911A700F4849F /* LaunchScreen.storyboard */; };
 		CF255A44249911A700F4849F /* Px_to_EmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A43249911A700F4849F /* Px_to_EmTests.swift */; };
 		CF255A4F249911A700F4849F /* Px_to_EmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A4E249911A700F4849F /* Px_to_EmUITests.swift */; };
+		CF265C4324C84C8A00D0DA1D /* SettingsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265C4224C84C8A00D0DA1D /* SettingsModal.swift */; };
+		CF265C4524C84CDC00D0DA1D /* ScaleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */; };
 		CF546F9524C4ABE300B0399F /* classic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F8924C4ABE200B0399F /* classic@2x.png */; };
 		CF546F9624C4ABE300B0399F /* innerShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F8A24C4ABE200B0399F /* innerShadow@2x.png */; };
 		CF546F9724C4ABE300B0399F /* white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F8B24C4ABE300B0399F /* white@3x.png */; };
@@ -26,6 +28,8 @@
 		CF546FA024C4ABE300B0399F /* shadow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F9424C4ABE300B0399F /* shadow@3x.png */; };
 		CF546FA324C4ACA700B0399F /* black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546FA124C4ACA600B0399F /* black@2x.png */; };
 		CF546FA424C4ACA700B0399F /* black@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546FA224C4ACA700B0399F /* black@3x.png */; };
+		CFBE632424C72D96002BAD24 /* EmToPx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632324C72D96002BAD24 /* EmToPx.swift */; };
+		CFBE632624C77D08002BAD24 /* PxToEm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632524C77D08002BAD24 /* PxToEm.swift */; };
 		CFDB5BAF24C4D6B400E1A7D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A2C249911A500F4849F /* AppDelegate.swift */; };
 		CFDB5BB024C4D6B900E1A7D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A2E249911A500F4849F /* SceneDelegate.swift */; };
 		CFDB5BB124C4D6BC00E1A7D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A30249911A500F4849F /* ContentView.swift */; };
@@ -64,6 +68,8 @@
 		CF255A4E249911A700F4849F /* Px_to_EmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Px_to_EmUITests.swift; sourceTree = "<group>"; };
 		CF255A50249911A700F4849F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF255A5C249A052200F4849F /* Px ›› Em.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Px ›› Em.entitlements"; sourceTree = "<group>"; };
+		CF265C4224C84C8A00D0DA1D /* SettingsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModal.swift; sourceTree = "<group>"; };
+		CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleModalView.swift; sourceTree = "<group>"; };
 		CF2F848324C4E76700074366 /* Px ›› Em.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = "Px ›› Em.app"; path = "DerivedData/Px to Em/Build/Products/Debug-iphonesimulator/Px ›› Em.app"; sourceTree = "<group>"; };
 		CF546F8924C4ABE200B0399F /* classic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "classic@2x.png"; sourceTree = "<group>"; };
 		CF546F8A24C4ABE200B0399F /* innerShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "innerShadow@2x.png"; sourceTree = "<group>"; };
@@ -79,6 +85,8 @@
 		CF546F9424C4ABE300B0399F /* shadow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shadow@3x.png"; sourceTree = "<group>"; };
 		CF546FA124C4ACA600B0399F /* black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black@2x.png"; sourceTree = "<group>"; };
 		CF546FA224C4ACA700B0399F /* black@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black@3x.png"; sourceTree = "<group>"; };
+		CFBE632324C72D96002BAD24 /* EmToPx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmToPx.swift; sourceTree = "<group>"; };
+		CFBE632524C77D08002BAD24 /* PxToEm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PxToEm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +143,10 @@
 				CF255A2C249911A500F4849F /* AppDelegate.swift */,
 				CF255A2E249911A500F4849F /* SceneDelegate.swift */,
 				CF255A30249911A500F4849F /* ContentView.swift */,
+				CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */,
+				CF265C4224C84C8A00D0DA1D /* SettingsModal.swift */,
+				CFBE632524C77D08002BAD24 /* PxToEm.swift */,
+				CFBE632324C72D96002BAD24 /* EmToPx.swift */,
 				CF133471249A201B00D04D02 /* Assets.xcassets */,
 				CF255A37249911A700F4849F /* LaunchScreen.storyboard */,
 				CF255A3A249911A700F4849F /* Info.plist */,
@@ -335,9 +347,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFBE632424C72D96002BAD24 /* EmToPx.swift in Sources */,
 				CFDB5BB124C4D6BC00E1A7D5 /* ContentView.swift in Sources */,
+				CF265C4524C84CDC00D0DA1D /* ScaleModalView.swift in Sources */,
+				CF265C4324C84C8A00D0DA1D /* SettingsModal.swift in Sources */,
 				CFDB5BB024C4D6B900E1A7D5 /* SceneDelegate.swift in Sources */,
 				CFDB5BAF24C4D6B400E1A7D5 /* AppDelegate.swift in Sources */,
+				CFBE632624C77D08002BAD24 /* PxToEm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,7 +528,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Px to Em/Px ›› Em.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.7;
+				CURRENT_PROJECT_VERSION = 2.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Px to Em/Preview Content\"";
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				ENABLE_PREVIEWS = YES;
@@ -521,7 +537,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.8;
+				MARKETING_VERSION = 2.0.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = "Px ›› Em";
@@ -543,7 +559,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Px to Em/Px ›› Em.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.7;
+				CURRENT_PROJECT_VERSION = 2.1;
 				DEVELOPMENT_ASSET_PATHS = "\"Px to Em/Preview Content\"";
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				ENABLE_PREVIEWS = YES;
@@ -552,7 +568,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.8;
+				MARKETING_VERSION = 2.0.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = "Px ›› Em";
