@@ -36,23 +36,31 @@ struct PxToEm: View {
     var body: some View {
          VStack {
                VStack (alignment: .leading)  {
-                   HStack {
-                       Text("Px ›› Em").bold().padding()
-                       .multilineTextAlignment(.leading)
-                           .font(.system(.largeTitle, design: .rounded))
-                       Spacer()
-                       Button(action: {
-                           self.show_settings_modal = true
-                           self.modal.impactOccurred()
-                       }) {
-                           Image(systemName: "square.grid.2x2.fill").padding()
-                               .font(.title)
-                               .foregroundColor(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
-                       }
-                       .sheet(isPresented: self.$show_settings_modal) {
-                       SettingsModalView()
+                #if os(iOS)
+                HStack {
+                   Text("Px ›› Em").bold().padding()
+                   .multilineTextAlignment(.leading)
+                       .font(.system(.largeTitle, design: .rounded))
+                   Spacer()
+                   Button(action: {
+                       self.show_settings_modal = true
+                       self.modal.impactOccurred()
+                   }) {
+                       Image(systemName: "square.grid.2x2.fill").padding()
+                           .font(.title)
+                           .foregroundColor(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
                    }
-                   }
+                   .sheet(isPresented: self.$show_settings_modal) {
+                   SettingsModalView()
+                    }
+               }
+                #elseif os(macOS)
+                HStack {
+                    Text("Px ›› Em").bold().padding()
+                    .multilineTextAlignment(.leading)
+                        .font(.system(.largeTitle, design: .rounded))
+                }
+                #endif
                    VStack (alignment: .leading) {
                        Text("Baseline pixel value").font(.headline)
                        TextField("16", text: $baseTextEmpty)

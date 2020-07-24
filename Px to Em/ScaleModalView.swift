@@ -9,9 +9,23 @@
 import SwiftUI
 
 struct ScaleModalView: View {
+    @Environment(\.presentationMode) private var presentationMode
+    
     var body: some View {
         VStack {
+            #if os(iOS)
             Image(systemName: "chevron.compact.down").font(.system(size: 40, weight: .semibold)).padding(.top, 20).foregroundColor(Color.secondary)
+            #elseif os(macOS)
+            HStack {
+                Spacer()
+                Button(action: {
+                  self.presentationMode.wrappedValue.dismiss()
+                }) {
+                Text("Done")
+                }
+                .padding()
+            }
+            #endif
             VStack (alignment: .leading, spacing: 16) {
                 Text("Example scales").bold()
                     .font(.system(.title, design: .rounded))

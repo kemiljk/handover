@@ -72,6 +72,7 @@ struct TopBar : View {
     @Binding var selected : Int
     let switcher = UIImpactFeedbackGenerator(style: .medium)
     
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         HStack {
