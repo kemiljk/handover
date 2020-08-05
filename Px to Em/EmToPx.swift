@@ -46,6 +46,10 @@ struct EmToPx: View {
         var body: some View {
             VStack {
                 VStack (alignment: .leading)  {
+                    Text("Em ›› Px").bold().padding()
+                    .multilineTextAlignment(.leading)
+                        .font(.system(.largeTitle, design: .rounded))
+
                     VStack (alignment: .leading) {
                         Text("Baseline pixel value").font(.headline)
                         TextField("16", text: $baseTextEmpty)
@@ -100,7 +104,7 @@ struct EmToPx: View {
                         Button(action: {
                             save("\(String(format: "%.3f", (Double(emTextEmpty) ?? 1.000)))em is \(String(format: "%.0f", emToPxs(baseInt: Double(baseTextEmpty) ?? 16, emInt: Double(emTextEmpty) ?? 1, scaleInt: Double(scaleTextEmpty) ?? 1)))px")
                         }, label: {
-                            Text("Save result")
+                            Text("Save result").foregroundColor(.white).bold()
                         })
                         .foregroundColor(.primary)
                         .padding(.vertical, 16)

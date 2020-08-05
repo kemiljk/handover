@@ -34,7 +34,7 @@ struct PxToEm: View {
     }
     
     func save(_ result: String) {
-        guard let resultData = try? JSONEncoder().encode(result) else {return }
+        guard let resultData = try? JSONEncoder().encode(result) else { return }
         self.resultData = resultData
         print("\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.3f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))em")
     }
@@ -46,6 +46,10 @@ struct PxToEm: View {
     var body: some View {
          VStack {
                VStack (alignment: .leading)  {
+                    Text("Px ›› Em").bold().padding()
+                    .multilineTextAlignment(.leading)
+                        .font(.system(.largeTitle, design: .rounded))
+
                    VStack (alignment: .leading) {
                        Text("Baseline pixel value").font(.headline)
                        TextField("16", text: $baseTextEmpty)
@@ -100,7 +104,7 @@ struct PxToEm: View {
                         Button(action: {
                             save("\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.3f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))em")
                         }, label: {
-                            Text("Save result")
+                            Text("Save result").foregroundColor(.white).bold()
                         })
                         .foregroundColor(.primary)
                         .padding(.vertical, 16)

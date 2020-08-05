@@ -10,9 +10,15 @@ import WidgetKit
 import SwiftUI
 import Intents
 
+let pxOrange = Color(red: 1.00, green: 0.60, blue: 0.00, opacity: 1.0)
+let pxTeal = Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0)
+
 struct Provider: IntentTimelineProvider {
+    @AppStorage("result", store: UserDefaults(suiteName: "group.com.kejk.px-to-em"))
+    var resultData: Data = Data()
+    
     public func snapshot(for configuration: ConfigurationIntent, with context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration)
+        let entry = SimpleEntry(date: Date(), configuration: configuration, result: "\(resultData)")
         completion(entry)
     }
 
@@ -23,7 +29,7 @@ struct Provider: IntentTimelineProvider {
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
+            let entry = SimpleEntry(date: entryDate, configuration: configuration, result: "\(resultData)")
             entries.append(entry)
         }
 
@@ -35,13 +41,11 @@ struct Provider: IntentTimelineProvider {
 struct SimpleEntry: TimelineEntry {
     public let date: Date
     public let configuration: ConfigurationIntent
-//    public let result: String
+    public let result: String
     
     @AppStorage("result", store: UserDefaults(suiteName: "group.com.kejk.px-to-em"))
     var resultData: Data = Data()
-    
-//    result = "\(Int(entry.pixelTextEmpty) ?? 16)px is \(String(format: "%.3f", entry.pxToEms(baseInt: Double(entry.baseTextEmpty) ?? 16, pixelInt: Double(entry.pixelTextEmpty) ?? 16, scaleInt: Double(entry.scaleTextEmpty) ?? 1)))em"
-}
+
 
 struct PlaceholderView : View {
     var body: some View {
@@ -52,28 +56,19 @@ struct PlaceholderView : View {
 struct SaveStateWidgetEntryView : View {
     var entry: Provider.Entry
     
-//    @AppStorage("result", store: UserDefaults(suiteName: "group.com.kejk.px-to-em"))
-//    var resultData: Data = Data()
-//
-//    @State private var baseText = "16"
-//    @State private var pixelText = "16"
-//    @State private var scaleText = "1.000"
-//    @State private var baseTextEmpty = ""
-//    @State private var pixelTextEmpty = ""
-//    @State private var scaleTextEmpty = ""
-//
-//    lazy var pixelInt = Double(pixelText) ?? 16
-//    lazy var baseInt = Double(baseText) ?? 16
-//    lazy var scaleInt = Double(scaleText) ?? 1.000
-//
-//    func pxToEms(baseInt: Double, pixelInt: Double, scaleInt: Double) -> Double {
-//        let emValue = (pixelInt / baseInt) * scaleInt
-//        return emValue
-//    }
+    @AppStorage("result", store: UserDefaults(suiteName: "group.com.kejk.px-to-em"))
+    var resultData: Data = Data()
 
     var body: some View {
         Text(entry.date, style: .time)
-//        Text("\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.3f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))em")
+        VStack (alignment: .leading) {
+            Text("Recent result").font(.system(.headline, design: .rounded)).bold()
+                .foregroundColor(pxTeal)
+            Spacer()
+            Text("\(resultData)")
+                .font(.system(.title2, design: .monospaced))
+            Spacer()
+        }.padding(.top, 20).padding(.bottom, 10).padding(.leading, -30)
     }
 }
 
@@ -87,12 +82,14 @@ struct SaveStateWidget: Widget {
         }
         .configurationDisplayName("Saved result")
         .description("Your last saved result.")
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }
 }
 
 struct SaveStateWidget_Previews: PreviewProvider {
     static var previews: some View {
-        SaveStateWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+        SaveStateWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), result: "\(entry.self)"))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
+}
 }
