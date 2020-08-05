@@ -10,22 +10,25 @@ import SwiftUI
 
 struct ScaleModalView: View {
     @Environment(\.presentationMode) private var presentationMode
+    var device = UIDevice.current.userInterfaceIdiom
     
     var body: some View {
         VStack {
-            #if os(iOS)
+            if device == .phone {
             Image(systemName: "chevron.compact.down").font(.system(size: 40, weight: .semibold)).padding(.top, 20).foregroundColor(Color.secondary)
-            #elseif os(macOS)
-            HStack {
-                Spacer()
-                Button(action: {
-                  self.presentationMode.wrappedValue.dismiss()
-                }) {
-                Text("Done")
-                }
-                .padding()
             }
-            #endif
+            else {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                      self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                    Text("Done")
+                        .foregroundColor(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
+                    }
+                    .padding()
+                }
+            }
             VStack (alignment: .leading, spacing: 16) {
                 Text("Example scales").bold()
                     .font(.system(.title, design: .rounded))
@@ -68,7 +71,7 @@ struct ScaleModalView: View {
                     Text("1.618:").font(.system(.body, design: .monospaced)).bold()
                     Text("Golden ratio").font(.system(.body, design: .default))
                 }
-            }.padding()
+            }.padding(.leading, 32).padding(.trailing, 32).padding(.top, 32)
         Spacer()
         }
     }

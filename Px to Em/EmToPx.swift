@@ -12,8 +12,10 @@ import Combine
 import UIKit
 
 struct EmToPx: View {
+    @AppStorage("result", store: UserDefaults(suiteName: "group.com.kejk.px-to-em"))
+    var resultData: Data = Data()
+    
     @State private var show_modal: Bool = false
-    @State private var show_settings_modal: Bool = false
     
     @State private var baseText = "16"
     @State private var emText = "1"
@@ -31,28 +33,19 @@ struct EmToPx: View {
         return pxValue
     }
     
+    func save(_ result: String) {
+        guard let resultData = try? JSONEncoder().encode(result) else {return }
+        self.resultData = resultData
+        print("\(String(format: "%.3f", (Double(emTextEmpty) ?? 1.000)))em is \(String(format: "%.0f", emToPxs(baseInt: Double(baseTextEmpty) ?? 16, emInt: Double(emTextEmpty) ?? 1, scaleInt: Double(scaleTextEmpty) ?? 1)))px")
+    }
+    
     let modal = UIImpactFeedbackGenerator(style: .light)
+    
+    var device = UIDevice.current.userInterfaceIdiom
     
         var body: some View {
             VStack {
                 VStack (alignment: .leading)  {
-                    HStack {
-                        Text("Em ›› Px").bold().padding()
-                        .multilineTextAlignment(.leading)
-                            .font(.system(.largeTitle, design: .rounded))
-                        Spacer()
-                        Button(action: {
-                            self.show_settings_modal = true
-                            self.modal.impactOccurred()
-                        }) {
-                            Image(systemName: "square.grid.2x2.fill").padding()
-                                .font(.title)
-                                .foregroundColor(Color(red: 1.00, green: 0.60, blue: 0.00, opacity: 1.0))
-                        }
-                        .sheet(isPresented: self.$show_settings_modal) {
-                        SettingsModalView()
-                    }
-                    }
                     VStack (alignment: .leading) {
                         Text("Baseline pixel value").font(.headline)
                         TextField("16", text: $baseTextEmpty)
@@ -64,7 +57,7 @@ struct EmToPx: View {
                 VStack (alignment: .leading) {
                     HStack {
                         VStack (alignment: .leading) {
-                        Text("Ems to convert").font(.headline)
+                        Text("Ems").font(.headline)
                         TextField("1.000", text: $emTextEmpty)
                         .font(.system(.title, design: .monospaced))
                         .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -103,9 +96,23 @@ struct EmToPx: View {
                     Text("\(String(format: "%.3f", (Double(emTextEmpty) ?? 1.000)))em is \(String(format: "%.0f", emToPxs(baseInt: Double(baseTextEmpty) ?? 16, emInt: Double(emTextEmpty) ?? 1, scaleInt: Double(scaleTextEmpty) ?? 1)))px")
                         .font(.system(.title, design: .monospaced)).bold()
                     Spacer()
+                    VStack {
+                        Button(action: {
+                            save("\(String(format: "%.3f", (Double(emTextEmpty) ?? 1.000)))em is \(String(format: "%.0f", emToPxs(baseInt: Double(baseTextEmpty) ?? 16, emInt: Double(emTextEmpty) ?? 1, scaleInt: Double(scaleTextEmpty) ?? 1)))px")
+                        }, label: {
+                            Text("Save result")
+                        })
+                        .foregroundColor(.primary)
+                        .padding(.vertical, 16)
+                        .padding(.horizontal, 24)
+                        .background(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
+                        .clipShape(Capsule())
+                    }
+                    Spacer()
                 }.padding()
-                }
-        }.modifier(AdaptsToSoftwareKeyboard())
+            }
+        }
+//            .modifier(AdaptsToSoftwareKeyboard())
     }
 }
 

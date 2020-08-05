@@ -16,7 +16,16 @@ struct SettingsModalView: View {
         gradient,
         shadow,
         white,
-        black
+        black,
+        blackSmall,
+        whiteSmall,
+        orangeInnerShadow,
+        orangeNeuo,
+        darkGrey,
+        orangeMono,
+        greyScale,
+        whiteSmallShadow,
+        blackSmallShadow
 
         var name: String? {
             switch self {
@@ -33,7 +42,25 @@ struct SettingsModalView: View {
                 case .white:
                     return "whiteIcon"
                 case .black:
-                return "blackIcon"
+                    return "blackIcon"
+                case .blackSmall:
+                    return "blackSmallIcon"
+                case .whiteSmall:
+                    return "whiteSmallIcon"
+                case .blackSmallShadow:
+                    return "blackSmallShadowIcon"
+                case .whiteSmallShadow:
+                    return "whiteSmallShadowIcon"
+                case .orangeMono:
+                    return "orangeMonoIcon"
+                case .orangeNeuo:
+                    return "orangeNeuoIcon"
+                case .orangeInnerShadow:
+                    return "orangeInnerShadowIcon"
+                case .darkGrey:
+                    return "darkGreyIcon"
+                case .greyScale:
+                    return "greyScaleIcon"
             }
         }
 
@@ -53,6 +80,24 @@ struct SettingsModalView: View {
                     return #imageLiteral(resourceName: "white")
                 case .black:
                     return #imageLiteral(resourceName: "black")
+                case .blackSmall:
+                    return #imageLiteral(resourceName: "blackSmall")
+                case .blackSmallShadow:
+                    return #imageLiteral(resourceName: "blackSmallShadow")
+                case .whiteSmall:
+                    return #imageLiteral(resourceName: "whiteSmall")
+                case .whiteSmallShadow:
+                    return #imageLiteral(resourceName: "whiteSmallShadow")
+                case .orangeMono:
+                    return #imageLiteral(resourceName: "orangeMono")
+                case .orangeNeuo:
+                    return #imageLiteral(resourceName: "orangeNeuo")
+                case .orangeInnerShadow:
+                    return #imageLiteral(resourceName: "orangeInnerShadow")
+                case .darkGrey:
+                    return #imageLiteral(resourceName: "darkGrey")
+                case .greyScale:
+                    return #imageLiteral(resourceName: "greyScale")
             }
         }
     }
@@ -78,112 +123,208 @@ struct SettingsModalView: View {
        }
     
     let success = UIImpactFeedbackGenerator(style: .medium)
+    @Environment(\.presentationMode) private var presentationMode
+    var device = UIDevice.current.userInterfaceIdiom
     
     var body: some View {
         VStack {
+            if device == .phone {
             Image(systemName: "chevron.compact.down").font(.system(size: 40, weight: .semibold)).padding(.top, 20).foregroundColor(Color.secondary)
+            }
+            else {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                      self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                    Text("Done")
+                        .foregroundColor(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
+                    }
+                    .padding()
+                }
+            }
             VStack (alignment: .center) {
                 Text("Change app icon").bold()
                     .font(.system(.title, design: .rounded))
                     .padding()
             }
-            VStack (alignment: .leading, spacing: 16) {
-                HStack {
-                    Button(action: {
-                        self.setIcon(.classic)
-                        self.success.impactOccurred()
-                    }) {
-                    Text("Default")
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    Image("classic")
-                    .renderingMode(.original)
-                    .cornerRadius(15)
+            VStack (alignment: .leading, spacing: 24) {
+                HStack (spacing: 24) {
+                    HStack {
+                        Button(action: {
+                            self.setIcon(.classic)
+                            self.success.impactOccurred()
+                        }) {
+                        Image("classic")
+                        .renderingMode(.original)
+                        .cornerRadius(15)
+                        }
+                    }
+                    HStack {
+                        Button(action: {
+                            self.setIcon(.shadow)
+                            self.success.impactOccurred()
+                        }) {
+                        Image("shadow")
+                        .renderingMode(.original)
+                        .cornerRadius(15)
+                            
+                        }
+                    }
+                    HStack {
+                        Button(action: {
+                            self.setIcon(.gradient)
+                            self.success.impactOccurred()
+                        }) {
+                        Image("gradient")
+                        .renderingMode(.original)
+                        .cornerRadius(15)
+                        }
+                    }
+                    HStack {
+                        Button(action: {
+                            self.setIcon(.innerShadow)
+                            self.success.impactOccurred()
+                        }) {
+                        Image("innerShadow")
+                        .renderingMode(.original)
+                        .cornerRadius(15)
+                        }
                     }
                 }
-                HStack {
-                    Button(action: {
-                        self.setIcon(.innerShadow)
-                        self.success.impactOccurred()
-                    }) {
-                    Text("Inner Shadow")
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    
-                    Image("innerShadow")
-                    .renderingMode(.original)
-                    .cornerRadius(15)
-                        
+                HStack (spacing: 24) {
+                    HStack {
+                        Button(action: {
+                            self.setIcon(.neuomorphic)
+                            self.success.impactOccurred()
+                        }) {
+                        Image("neuomorphic")
+                        .renderingMode(.original)
+                        .cornerRadius(15)
+                        }
+                    }
+                    HStack {
+                        Button(action: {
+                            self.setIcon(.white)
+                            self.success.impactOccurred()
+                        }) {
+                        Image("white")
+                        .renderingMode(.original)
+                        .cornerRadius(15)
+                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 0.4), lineWidth: 1))
+                        }
+                    }
+                    HStack {
+                        Button(action: {
+                            self.setIcon(.black)
+                            self.success.impactOccurred()
+                        }) {
+                        Image("black")
+                        .renderingMode(.original)
+                        .cornerRadius(15)
+                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 0.4), lineWidth: 1))
+                        }
+                    }
+                    HStack {
+                        Button(action: {
+                            self.setIcon(.darkGrey)
+                            self.success.impactOccurred()
+                        }) {
+                        Image("darkGrey")
+                        .renderingMode(.original)
+                        .cornerRadius(15)
+                        }
                     }
                 }
-                HStack {
-                    Button(action: {
-                        self.setIcon(.neuomorphic)
-                        self.success.impactOccurred()
-                    }) {
-                    Text("Neuomorphic")
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    Image("neuomorphic")
-                    .renderingMode(.original)
-                    .cornerRadius(15)
+                HStack (spacing: 24) {
+                    HStack {
+                        Button(action: {
+                            self.setIcon(.greyScale)
+                            self.success.impactOccurred()
+                        }) {
+                        Image("greyScale")
+                        .renderingMode(.original)
+                        .cornerRadius(15)
+                        }
+                    }
+                    HStack {
+                        Button(action: {
+                            self.setIcon(.orangeMono)
+                            self.success.impactOccurred()
+                        }) {
+                        Image("orangeMono")
+                        .renderingMode(.original)
+                        .cornerRadius(15)
+                        }
+                    }
+                    HStack {
+                        Button(action: {
+                            self.setIcon(.orangeInnerShadow)
+                            self.success.impactOccurred()
+                        }) {
+                        Image("orangeInnerShadow")
+                        .renderingMode(.original)
+                        .cornerRadius(15)
+                        }
+                    }
+                    HStack {
+                        Button(action: {
+                            self.setIcon(.orangeNeuo)
+                            self.success.impactOccurred()
+                        }) {
+                        Image("orangeNeuo")
+                        .renderingMode(.original)
+                        .cornerRadius(15)
+                        }
                     }
                 }
-                HStack {
-                    Button(action: {
-                        self.setIcon(.gradient)
-                        self.success.impactOccurred()
-                    }) {
-                        Text("Gradient")
-                            .foregroundColor(Color.primary)
-                    Spacer()
-                    Image("gradient")
-                    .renderingMode(.original)
-                    .cornerRadius(15)
+                HStack (spacing: 24) {
+                    HStack {
+                        Button(action: {
+                            self.setIcon(.blackSmall)
+                            self.success.impactOccurred()
+                        }) {
+                        Image("blackSmall")
+                        .renderingMode(.original)
+                        .cornerRadius(15)
+                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 0.4), lineWidth: 1))
+                        }
+                    }
+                    HStack {
+                        Button(action: {
+                            self.setIcon(.whiteSmall)
+                            self.success.impactOccurred()
+                        }) {
+                        Image("whiteSmall")
+                        .renderingMode(.original)
+                        .cornerRadius(15)
+                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 0.4), lineWidth: 1))
+                        }
+                    }
+                    HStack {
+                        Button(action: {
+                            self.setIcon(.blackSmallShadow)
+                            self.success.impactOccurred()
+                        }) {
+                        Image("blackSmallShadow")
+                        .renderingMode(.original)
+                        .cornerRadius(15)
+                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 0.4), lineWidth: 1))
+                        }
+                    }
+                    HStack {
+                        Button(action: {
+                            self.setIcon(.whiteSmallShadow)
+                            self.success.impactOccurred()
+                        }) {
+                        Image("whiteSmallShadow")
+                        .renderingMode(.original)
+                        .cornerRadius(15)
+                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 0.4), lineWidth: 1))
+                        }
                     }
                 }
-                HStack {
-                    Button(action: {
-                        self.setIcon(.shadow)
-                        self.success.impactOccurred()
-                    }) {
-                    Text("Shadow")
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    Image("shadow")
-                    .renderingMode(.original)
-                    .cornerRadius(15)
-                    }
-                }
-                HStack {
-                    Button(action: {
-                        self.setIcon(.white)
-                        self.success.impactOccurred()
-                    }) {
-                    Text("White")
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    Image("white")
-                    .renderingMode(.original)
-                    .cornerRadius(15)
-                        .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 0.4), lineWidth: 1))
-                    }
-                }
-                HStack {
-                    Button(action: {
-                        self.setIcon(.black)
-                        self.success.impactOccurred()
-                    }) {
-                    Text("Black")
-                        .foregroundColor(Color.primary)
-                    Spacer()
-                    Image("black")
-                    .renderingMode(.original)
-                    .cornerRadius(15)
-                        .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 0.4), lineWidth: 1))
-                    }
-                }
-                }.padding(.leading, 32).padding(.trailing, 32)
+            }.padding(.leading, 32).padding(.trailing, 32).padding(.top, 32)
             Spacer()
         }
     }

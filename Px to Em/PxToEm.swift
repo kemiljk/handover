@@ -12,8 +12,10 @@ import Combine
 import UIKit
 
 struct PxToEm: View {
+    @AppStorage("result", store: UserDefaults(suiteName: "group.com.kejk.px-to-em"))
+    var resultData: Data = Data()
+    
     @State private var show_modal: Bool = false
-    @State private var show_settings_modal: Bool = false
     
     @State private var baseText = "16"
     @State private var pixelText = "16"
@@ -31,36 +33,19 @@ struct PxToEm: View {
         return emValue
     }
     
+    func save(_ result: String) {
+        guard let resultData = try? JSONEncoder().encode(result) else {return }
+        self.resultData = resultData
+        print("\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.3f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))em")
+    }
+    
     let modal = UIImpactFeedbackGenerator(style: .light)
+    
+    var device = UIDevice.current.userInterfaceIdiom
     
     var body: some View {
          VStack {
                VStack (alignment: .leading)  {
-                #if os(iOS)
-                HStack {
-                   Text("Px ›› Em").bold().padding()
-                   .multilineTextAlignment(.leading)
-                       .font(.system(.largeTitle, design: .rounded))
-                   Spacer()
-                   Button(action: {
-                       self.show_settings_modal = true
-                       self.modal.impactOccurred()
-                   }) {
-                       Image(systemName: "square.grid.2x2.fill").padding()
-                           .font(.title)
-                           .foregroundColor(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
-                   }
-                   .sheet(isPresented: self.$show_settings_modal) {
-                   SettingsModalView()
-                    }
-               }
-                #elseif os(macOS)
-                HStack {
-                    Text("Px ›› Em").bold().padding()
-                    .multilineTextAlignment(.leading)
-                        .font(.system(.largeTitle, design: .rounded))
-                }
-                #endif
                    VStack (alignment: .leading) {
                        Text("Baseline pixel value").font(.headline)
                        TextField("16", text: $baseTextEmpty)
@@ -72,7 +57,7 @@ struct PxToEm: View {
                VStack (alignment: .leading) {
                    HStack {
                        VStack (alignment: .leading) {
-                       Text("Pixels to convert").font(.headline)
+                       Text("Pixels").font(.headline)
                        TextField("16", text: $pixelTextEmpty)
                        .font(.system(.title, design: .monospaced))
                        .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -111,9 +96,23 @@ struct PxToEm: View {
                    Text("\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.3f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))em")
                        .font(.system(.title, design: .monospaced)).bold()
                     Spacer()
+                    VStack {
+                        Button(action: {
+                            save("\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.3f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))em")
+                        }, label: {
+                            Text("Save result")
+                        })
+                        .foregroundColor(.primary)
+                        .padding(.vertical, 16)
+                        .padding(.horizontal, 24)
+                        .background(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
+                        .clipShape(Capsule())
+                    }
+                    Spacer()
                 }.padding()
             }
-       }.modifier(AdaptsToSoftwareKeyboard())
+       }
+//         .modifier(AdaptsToSoftwareKeyboard())
    }
 }
 

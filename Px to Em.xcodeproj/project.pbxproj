@@ -7,13 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF09E95A24CC435F006E73F8 /* blackSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E94824CC435E006E73F8 /* blackSmall@2x.png */; };
+		CF09E95B24CC435F006E73F8 /* darkGrey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E94924CC435E006E73F8 /* darkGrey@2x.png */; };
+		CF09E95C24CC435F006E73F8 /* orangeNeuo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E94A24CC435E006E73F8 /* orangeNeuo@3x.png */; };
+		CF09E95D24CC435F006E73F8 /* orangeNeuo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E94B24CC435E006E73F8 /* orangeNeuo@2x.png */; };
+		CF09E95E24CC435F006E73F8 /* orangeInnerShadow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E94C24CC435E006E73F8 /* orangeInnerShadow@3x.png */; };
+		CF09E95F24CC435F006E73F8 /* darkGrey@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E94D24CC435E006E73F8 /* darkGrey@3x.png */; };
+		CF09E96024CC435F006E73F8 /* blackSmall@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E94E24CC435E006E73F8 /* blackSmall@3x.png */; };
+		CF09E96124CC435F006E73F8 /* blackSmallShadow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E94F24CC435E006E73F8 /* blackSmallShadow@3x.png */; };
+		CF09E96224CC435F006E73F8 /* whiteSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E95024CC435E006E73F8 /* whiteSmall@2x.png */; };
+		CF09E96324CC435F006E73F8 /* orangeMono@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E95124CC435E006E73F8 /* orangeMono@3x.png */; };
+		CF09E96424CC435F006E73F8 /* whiteSmallShadow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E95224CC435E006E73F8 /* whiteSmallShadow@3x.png */; };
+		CF09E96524CC435F006E73F8 /* orangeInnerShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E95324CC435E006E73F8 /* orangeInnerShadow@2x.png */; };
+		CF09E96624CC435F006E73F8 /* orangeMono@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E95424CC435E006E73F8 /* orangeMono@2x.png */; };
+		CF09E96724CC435F006E73F8 /* blackSmallShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E95524CC435F006E73F8 /* blackSmallShadow@2x.png */; };
+		CF09E96824CC435F006E73F8 /* greyScale@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E95624CC435F006E73F8 /* greyScale@2x.png */; };
+		CF09E96924CC435F006E73F8 /* whiteSmall@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E95724CC435F006E73F8 /* whiteSmall@3x.png */; };
+		CF09E96A24CC435F006E73F8 /* whiteSmallShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E95824CC435F006E73F8 /* whiteSmallShadow@2x.png */; };
+		CF09E96B24CC435F006E73F8 /* greyScale@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E95924CC435F006E73F8 /* greyScale@3x.png */; };
 		CF133472249A201B00D04D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF133471249A201B00D04D02 /* Assets.xcassets */; };
+		CF182C0F24D9B741005C0207 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF182C0E24D9B740005C0207 /* WidgetKit.framework */; };
+		CF182C1024D9B741005C0207 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF495E2C24D60B4500D3B4BC /* SwiftUI.framework */; };
+		CF182C1C24D9B744005C0207 /* Px ›› Em WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CF182C0D24D9B740005C0207 /* Px ›› Em WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CF182C2E24D9C1DC005C0207 /* EmToPx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632324C72D96002BAD24 /* EmToPx.swift */; };
+		CF182C2F24D9C1DE005C0207 /* PxToEm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632524C77D08002BAD24 /* PxToEm.swift */; };
+		CF182C3024D9C3F1005C0207 /* ScaleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */; };
+		CF182C3324D9C3FA005C0207 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A2C249911A500F4849F /* AppDelegate.swift */; };
+		CF182C4524DA9100005C0207 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF182C0E24D9B740005C0207 /* WidgetKit.framework */; };
+		CF182C4624DA9100005C0207 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF495E2C24D60B4500D3B4BC /* SwiftUI.framework */; };
+		CF182C4924DA9100005C0207 /* SaveStateWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF182C4824DA9100005C0207 /* SaveStateWidget.swift */; };
+		CF182C4C24DA9101005C0207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF182C4B24DA9101005C0207 /* Assets.xcassets */; };
+		CF182C4E24DA9101005C0207 /* SaveStateWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CF182C4A24DA9100005C0207 /* SaveStateWidget.intentdefinition */; };
+		CF182C4F24DA9101005C0207 /* SaveStateWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CF182C4A24DA9100005C0207 /* SaveStateWidget.intentdefinition */; };
+		CF182C5224DA9101005C0207 /* SaveStateWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CF182C4424DA90FF005C0207 /* SaveStateWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CF255A36249911A700F4849F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF255A35249911A700F4849F /* Preview Assets.xcassets */; };
 		CF255A39249911A700F4849F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF255A37249911A700F4849F /* LaunchScreen.storyboard */; };
 		CF255A44249911A700F4849F /* Px_to_EmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A43249911A700F4849F /* Px_to_EmTests.swift */; };
 		CF255A4F249911A700F4849F /* Px_to_EmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A4E249911A700F4849F /* Px_to_EmUITests.swift */; };
 		CF265C4324C84C8A00D0DA1D /* SettingsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265C4224C84C8A00D0DA1D /* SettingsModal.swift */; };
 		CF265C4524C84CDC00D0DA1D /* ScaleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */; };
+		CF495E2B24D60A9300D3B4BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF495E2A24D60A9300D3B4BC /* Foundation.framework */; };
+		CF495E2D24D60B4500D3B4BC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF495E2C24D60B4500D3B4BC /* SwiftUI.framework */; };
 		CF546F9524C4ABE300B0399F /* classic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F8924C4ABE200B0399F /* classic@2x.png */; };
 		CF546F9624C4ABE300B0399F /* innerShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F8A24C4ABE200B0399F /* innerShadow@2x.png */; };
 		CF546F9724C4ABE300B0399F /* white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F8B24C4ABE300B0399F /* white@3x.png */; };
@@ -36,6 +70,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CF182C1A24D9B744005C0207 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF255A21249911A500F4849F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF182C0C24D9B740005C0207;
+			remoteInfo = "Px ›› Em WidgetExtension";
+		};
+		CF182C5024DA9101005C0207 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF255A21249911A500F4849F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF182C4324DA90FF005C0207;
+			remoteInfo = SaveStateWidgetExtension;
+		};
 		CF255A40249911A700F4849F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CF255A21249911A500F4849F /* Project object */;
@@ -52,8 +100,50 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CF182C2124D9B744005C0207 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CF182C1C24D9B744005C0207 /* Px ›› Em WidgetExtension.appex in Embed App Extensions */,
+				CF182C5224DA9101005C0207 /* SaveStateWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		CF09E94824CC435E006E73F8 /* blackSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackSmall@2x.png"; sourceTree = "<group>"; };
+		CF09E94924CC435E006E73F8 /* darkGrey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "darkGrey@2x.png"; sourceTree = "<group>"; };
+		CF09E94A24CC435E006E73F8 /* orangeNeuo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orangeNeuo@3x.png"; sourceTree = "<group>"; };
+		CF09E94B24CC435E006E73F8 /* orangeNeuo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orangeNeuo@2x.png"; sourceTree = "<group>"; };
+		CF09E94C24CC435E006E73F8 /* orangeInnerShadow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orangeInnerShadow@3x.png"; sourceTree = "<group>"; };
+		CF09E94D24CC435E006E73F8 /* darkGrey@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "darkGrey@3x.png"; sourceTree = "<group>"; };
+		CF09E94E24CC435E006E73F8 /* blackSmall@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackSmall@3x.png"; sourceTree = "<group>"; };
+		CF09E94F24CC435E006E73F8 /* blackSmallShadow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackSmallShadow@3x.png"; sourceTree = "<group>"; };
+		CF09E95024CC435E006E73F8 /* whiteSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteSmall@2x.png"; sourceTree = "<group>"; };
+		CF09E95124CC435E006E73F8 /* orangeMono@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orangeMono@3x.png"; sourceTree = "<group>"; };
+		CF09E95224CC435E006E73F8 /* whiteSmallShadow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteSmallShadow@3x.png"; sourceTree = "<group>"; };
+		CF09E95324CC435E006E73F8 /* orangeInnerShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orangeInnerShadow@2x.png"; sourceTree = "<group>"; };
+		CF09E95424CC435E006E73F8 /* orangeMono@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orangeMono@2x.png"; sourceTree = "<group>"; };
+		CF09E95524CC435F006E73F8 /* blackSmallShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackSmallShadow@2x.png"; sourceTree = "<group>"; };
+		CF09E95624CC435F006E73F8 /* greyScale@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greyScale@2x.png"; sourceTree = "<group>"; };
+		CF09E95724CC435F006E73F8 /* whiteSmall@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteSmall@3x.png"; sourceTree = "<group>"; };
+		CF09E95824CC435F006E73F8 /* whiteSmallShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteSmallShadow@2x.png"; sourceTree = "<group>"; };
+		CF09E95924CC435F006E73F8 /* greyScale@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greyScale@3x.png"; sourceTree = "<group>"; };
 		CF133471249A201B00D04D02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF182C0D24D9B740005C0207 /* Px ›› Em WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Px ›› Em WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF182C0E24D9B740005C0207 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		CF182C1D24D9B744005C0207 /* Px ›› Em WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Px ›› Em WidgetExtension.entitlements"; sourceTree = "<group>"; };
+		CF182C4424DA90FF005C0207 /* SaveStateWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SaveStateWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF182C4824DA9100005C0207 /* SaveStateWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveStateWidget.swift; sourceTree = "<group>"; };
+		CF182C4A24DA9100005C0207 /* SaveStateWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = SaveStateWidget.intentdefinition; sourceTree = "<group>"; };
+		CF182C4B24DA9101005C0207 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF182C4D24DA9101005C0207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF182C5324DA9101005C0207 /* SaveStateWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SaveStateWidgetExtension.entitlements; sourceTree = "<group>"; };
 		CF255A29249911A500F4849F /* Px ›› Em.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Px ›› Em.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF255A2C249911A500F4849F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF255A2E249911A500F4849F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +160,8 @@
 		CF255A5C249A052200F4849F /* Px ›› Em.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Px ›› Em.entitlements"; sourceTree = "<group>"; };
 		CF265C4224C84C8A00D0DA1D /* SettingsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModal.swift; sourceTree = "<group>"; };
 		CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleModalView.swift; sourceTree = "<group>"; };
+		CF495E2A24D60A9300D3B4BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CF495E2C24D60B4500D3B4BC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/iOSSupport/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
 		CF546F8924C4ABE200B0399F /* classic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "classic@2x.png"; sourceTree = "<group>"; };
 		CF546F8A24C4ABE200B0399F /* innerShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "innerShadow@2x.png"; sourceTree = "<group>"; };
 		CF546F8B24C4ABE300B0399F /* white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white@3x.png"; sourceTree = "<group>"; };
@@ -89,10 +181,30 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CF182C0A24D9B740005C0207 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF182C1024D9B741005C0207 /* SwiftUI.framework in Frameworks */,
+				CF182C0F24D9B741005C0207 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF182C4124DA90FF005C0207 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF182C4624DA9100005C0207 /* SwiftUI.framework in Frameworks */,
+				CF182C4524DA9100005C0207 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF255A26249911A500F4849F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF495E2D24D60B4500D3B4BC /* SwiftUI.framework in Frameworks */,
+				CF495E2B24D60A9300D3B4BC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,13 +225,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF182C4724DA9100005C0207 /* SaveStateWidget */ = {
+			isa = PBXGroup;
+			children = (
+				CF182C4824DA9100005C0207 /* SaveStateWidget.swift */,
+				CF182C4A24DA9100005C0207 /* SaveStateWidget.intentdefinition */,
+				CF182C4B24DA9101005C0207 /* Assets.xcassets */,
+				CF182C4D24DA9101005C0207 /* Info.plist */,
+			);
+			path = SaveStateWidget;
+			sourceTree = "<group>";
+		};
 		CF255A20249911A500F4849F = {
 			isa = PBXGroup;
 			children = (
+				CF182C5324DA9101005C0207 /* SaveStateWidgetExtension.entitlements */,
+				CF182C1D24D9B744005C0207 /* Px ›› Em WidgetExtension.entitlements */,
 				CF255A2B249911A500F4849F /* Px to Em */,
 				CF255A42249911A700F4849F /* Px to EmTests */,
 				CF255A4D249911A700F4849F /* Px to EmUITests */,
+				CF182C4724DA9100005C0207 /* SaveStateWidget */,
 				CF255A2A249911A500F4849F /* Products */,
+				CF495E2924D60A9300D3B4BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +256,8 @@
 				CF255A29249911A500F4849F /* Px ›› Em.app */,
 				CF255A3F249911A700F4849F /* Px to EmTests.xctest */,
 				CF255A4A249911A700F4849F /* Px to EmUITests.xctest */,
+				CF182C0D24D9B740005C0207 /* Px ›› Em WidgetExtension.appex */,
+				CF182C4424DA90FF005C0207 /* SaveStateWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,9 +308,37 @@
 			path = "Px to EmUITests";
 			sourceTree = "<group>";
 		};
+		CF495E2924D60A9300D3B4BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF495E2C24D60B4500D3B4BC /* SwiftUI.framework */,
+				CF495E2A24D60A9300D3B4BC /* Foundation.framework */,
+				CF182C0E24D9B740005C0207 /* WidgetKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CF546F8824C4ABD200B0399F /* Alt Icons */ = {
 			isa = PBXGroup;
 			children = (
+				CF09E94824CC435E006E73F8 /* blackSmall@2x.png */,
+				CF09E94E24CC435E006E73F8 /* blackSmall@3x.png */,
+				CF09E95524CC435F006E73F8 /* blackSmallShadow@2x.png */,
+				CF09E94F24CC435E006E73F8 /* blackSmallShadow@3x.png */,
+				CF09E94924CC435E006E73F8 /* darkGrey@2x.png */,
+				CF09E94D24CC435E006E73F8 /* darkGrey@3x.png */,
+				CF09E95624CC435F006E73F8 /* greyScale@2x.png */,
+				CF09E95924CC435F006E73F8 /* greyScale@3x.png */,
+				CF09E95324CC435E006E73F8 /* orangeInnerShadow@2x.png */,
+				CF09E94C24CC435E006E73F8 /* orangeInnerShadow@3x.png */,
+				CF09E95424CC435E006E73F8 /* orangeMono@2x.png */,
+				CF09E95124CC435E006E73F8 /* orangeMono@3x.png */,
+				CF09E94B24CC435E006E73F8 /* orangeNeuo@2x.png */,
+				CF09E94A24CC435E006E73F8 /* orangeNeuo@3x.png */,
+				CF09E95024CC435E006E73F8 /* whiteSmall@2x.png */,
+				CF09E95724CC435F006E73F8 /* whiteSmall@3x.png */,
+				CF09E95824CC435F006E73F8 /* whiteSmallShadow@2x.png */,
+				CF09E95224CC435E006E73F8 /* whiteSmallShadow@3x.png */,
 				CF546FA124C4ACA600B0399F /* black@2x.png */,
 				CF546FA224C4ACA700B0399F /* black@3x.png */,
 				CF546F8924C4ABE200B0399F /* classic@2x.png */,
@@ -203,6 +360,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CF182C0C24D9B740005C0207 /* Px ›› Em WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF182C1E24D9B744005C0207 /* Build configuration list for PBXNativeTarget "Px ›› Em WidgetExtension" */;
+			buildPhases = (
+				CF182C0924D9B740005C0207 /* Sources */,
+				CF182C0A24D9B740005C0207 /* Frameworks */,
+				CF182C0B24D9B740005C0207 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Px ›› Em WidgetExtension";
+			productName = "Px ›› Em WidgetExtension";
+			productReference = CF182C0D24D9B740005C0207 /* Px ›› Em WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		CF182C4324DA90FF005C0207 /* SaveStateWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF182C5424DA9101005C0207 /* Build configuration list for PBXNativeTarget "SaveStateWidgetExtension" */;
+			buildPhases = (
+				CF182C4024DA90FF005C0207 /* Sources */,
+				CF182C4124DA90FF005C0207 /* Frameworks */,
+				CF182C4224DA90FF005C0207 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SaveStateWidgetExtension;
+			productName = SaveStateWidgetExtension;
+			productReference = CF182C4424DA90FF005C0207 /* SaveStateWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		CF255A28249911A500F4849F /* Px ›› Em */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF255A53249911A700F4849F /* Build configuration list for PBXNativeTarget "Px ›› Em" */;
@@ -210,10 +401,13 @@
 				CF255A25249911A500F4849F /* Sources */,
 				CF255A26249911A500F4849F /* Frameworks */,
 				CF255A27249911A500F4849F /* Resources */,
+				CF182C2124D9B744005C0207 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CF182C1B24D9B744005C0207 /* PBXTargetDependency */,
+				CF182C5124DA9101005C0207 /* PBXTargetDependency */,
 			);
 			name = "Px ›› Em";
 			productName = "Px to Em";
@@ -262,10 +456,16 @@
 		CF255A21249911A500F4849F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1150;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = KEJK;
 				TargetAttributes = {
+					CF182C0C24D9B740005C0207 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					CF182C4324DA90FF005C0207 = {
+						CreatedOnToolsVersion = 12.0;
+					};
 					CF255A28249911A500F4849F = {
 						CreatedOnToolsVersion = 11.5;
 					};
@@ -295,31 +495,66 @@
 				CF255A28249911A500F4849F /* Px ›› Em */,
 				CF255A3E249911A700F4849F /* Px to EmTests */,
 				CF255A49249911A700F4849F /* Px to EmUITests */,
+				CF182C0C24D9B740005C0207 /* Px ›› Em WidgetExtension */,
+				CF182C4324DA90FF005C0207 /* SaveStateWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CF182C0B24D9B740005C0207 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF182C4224DA90FF005C0207 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF182C4C24DA9101005C0207 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF255A27249911A500F4849F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CF546F9A24C4ABE300B0399F /* gradient@2x.png in Resources */,
 				CF546FA024C4ABE300B0399F /* shadow@3x.png in Resources */,
+				CF09E95E24CC435F006E73F8 /* orangeInnerShadow@3x.png in Resources */,
+				CF09E96624CC435F006E73F8 /* orangeMono@2x.png in Resources */,
 				CF546F9724C4ABE300B0399F /* white@3x.png in Resources */,
 				CF255A39249911A700F4849F /* LaunchScreen.storyboard in Resources */,
+				CF09E96B24CC435F006E73F8 /* greyScale@3x.png in Resources */,
+				CF09E96A24CC435F006E73F8 /* whiteSmallShadow@2x.png in Resources */,
+				CF09E96124CC435F006E73F8 /* blackSmallShadow@3x.png in Resources */,
 				CF546F9824C4ABE300B0399F /* white@2x.png in Resources */,
 				CF546F9E24C4ABE300B0399F /* neuomorphic@2x.png in Resources */,
+				CF09E95C24CC435F006E73F8 /* orangeNeuo@3x.png in Resources */,
+				CF09E96324CC435F006E73F8 /* orangeMono@3x.png in Resources */,
 				CF546FA324C4ACA700B0399F /* black@2x.png in Resources */,
+				CF09E96824CC435F006E73F8 /* greyScale@2x.png in Resources */,
 				CF546FA424C4ACA700B0399F /* black@3x.png in Resources */,
+				CF09E96924CC435F006E73F8 /* whiteSmall@3x.png in Resources */,
 				CF133472249A201B00D04D02 /* Assets.xcassets in Resources */,
 				CF546F9B24C4ABE300B0399F /* innerShadow@3x.png in Resources */,
 				CF546F9F24C4ABE300B0399F /* shadow@2x.png in Resources */,
+				CF09E96024CC435F006E73F8 /* blackSmall@3x.png in Resources */,
 				CF546F9924C4ABE300B0399F /* gradient@3x.png in Resources */,
+				CF09E96224CC435F006E73F8 /* whiteSmall@2x.png in Resources */,
+				CF09E96724CC435F006E73F8 /* blackSmallShadow@2x.png in Resources */,
 				CF546F9624C4ABE300B0399F /* innerShadow@2x.png in Resources */,
+				CF09E95F24CC435F006E73F8 /* darkGrey@3x.png in Resources */,
+				CF09E96524CC435F006E73F8 /* orangeInnerShadow@2x.png in Resources */,
 				CF546F9C24C4ABE300B0399F /* neuomorphic@3x.png in Resources */,
+				CF09E96424CC435F006E73F8 /* whiteSmallShadow@3x.png in Resources */,
 				CF546F9D24C4ABE300B0399F /* classic@3x.png in Resources */,
 				CF255A36249911A700F4849F /* Preview Assets.xcassets in Resources */,
+				CF09E95B24CC435F006E73F8 /* darkGrey@2x.png in Resources */,
+				CF09E95A24CC435F006E73F8 /* blackSmall@2x.png in Resources */,
+				CF09E95D24CC435F006E73F8 /* orangeNeuo@2x.png in Resources */,
 				CF546F9524C4ABE300B0399F /* classic@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,12 +576,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CF182C0924D9B740005C0207 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF182C2E24D9C1DC005C0207 /* EmToPx.swift in Sources */,
+				CF182C3024D9C3F1005C0207 /* ScaleModalView.swift in Sources */,
+				CF182C3324D9C3FA005C0207 /* AppDelegate.swift in Sources */,
+				CF182C2F24D9C1DE005C0207 /* PxToEm.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF182C4024DA90FF005C0207 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF182C4E24DA9101005C0207 /* SaveStateWidget.intentdefinition in Sources */,
+				CF182C4924DA9100005C0207 /* SaveStateWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF255A25249911A500F4849F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CFBE632424C72D96002BAD24 /* EmToPx.swift in Sources */,
 				CFDB5BB124C4D6BC00E1A7D5 /* ContentView.swift in Sources */,
+				CF182C4F24DA9101005C0207 /* SaveStateWidget.intentdefinition in Sources */,
 				CF265C4524C84CDC00D0DA1D /* ScaleModalView.swift in Sources */,
 				CF265C4324C84C8A00D0DA1D /* SettingsModal.swift in Sources */,
 				CFDB5BB024C4D6B900E1A7D5 /* SceneDelegate.swift in Sources */,
@@ -374,6 +630,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CF182C1B24D9B744005C0207 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF182C0C24D9B740005C0207 /* Px ›› Em WidgetExtension */;
+			targetProxy = CF182C1A24D9B744005C0207 /* PBXContainerItemProxy */;
+		};
+		CF182C5124DA9101005C0207 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF182C4324DA90FF005C0207 /* SaveStateWidgetExtension */;
+			targetProxy = CF182C5024DA9101005C0207 /* PBXContainerItemProxy */;
+		};
 		CF255A41249911A700F4849F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CF255A28249911A500F4849F /* Px ›› Em */;
@@ -398,6 +664,104 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CF182C1F24D9B744005C0207 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Px ›› Em WidgetExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.4;
+				DEVELOPMENT_TEAM = WMGJ7B26TT;
+				INFOPLIST_FILE = "Px ›› Em Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.PxToEm-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+			};
+			name = Debug;
+		};
+		CF182C2024D9B744005C0207 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Px ›› Em WidgetExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.4;
+				DEVELOPMENT_TEAM = WMGJ7B26TT;
+				INFOPLIST_FILE = "Px ›› Em Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2.5;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.PxToEm-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,6";
+			};
+			name = Release;
+		};
+		CF182C5524DA9101005C0207 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = SaveStateWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WMGJ7B26TT;
+				INFOPLIST_FILE = SaveStateWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.SaveStateWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF182C5624DA9101005C0207 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = SaveStateWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WMGJ7B26TT;
+				INFOPLIST_FILE = SaveStateWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.SaveStateWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		CF255A51249911A700F4849F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -449,7 +813,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -507,7 +871,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = NO;
@@ -524,27 +888,30 @@
 		CF255A54249911A700F4849F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Px to Em/Px ›› Em.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.2;
+				CURRENT_PROJECT_VERSION = 2.4;
 				DEVELOPMENT_ASSET_PATHS = "\"Px to Em/Preview Content\"";
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Px to Em/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3;
+				MARKETING_VERSION = 2.5;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = "Px ›› Em";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 				TVOS_DEPLOYMENT_TARGET = 13.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 				VERSIONING_SYSTEM = "";
@@ -555,27 +922,30 @@
 		CF255A55249911A700F4849F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Px to Em/Px ›› Em.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.2;
+				CURRENT_PROJECT_VERSION = 2.4;
 				DEVELOPMENT_ASSET_PATHS = "\"Px to Em/Preview Content\"";
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Px to Em/Info.plist";
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.3;
+				MARKETING_VERSION = 2.5;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = "Px ›› Em";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 				TVOS_DEPLOYMENT_TARGET = 13.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 				VERSIONING_SYSTEM = "";
@@ -666,6 +1036,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CF182C1E24D9B744005C0207 /* Build configuration list for PBXNativeTarget "Px ›› Em WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF182C1F24D9B744005C0207 /* Debug */,
+				CF182C2024D9B744005C0207 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF182C5424DA9101005C0207 /* Build configuration list for PBXNativeTarget "SaveStateWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF182C5524DA9101005C0207 /* Debug */,
+				CF182C5624DA9101005C0207 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CF255A24249911A500F4849F /* Build configuration list for PBXProject "Px to Em" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

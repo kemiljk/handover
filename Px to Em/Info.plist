@@ -21,11 +21,39 @@
 					<string>black</string>
 				</array>
 			</dict>
+			<key>blackSmallIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>blackSmall</string>
+				</array>
+			</dict>
+			<key>blackSmallShadowIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>blackSmallShadow</string>
+				</array>
+			</dict>
+			<key>darkGreyIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>darkGrey</string>
+				</array>
+			</dict>
 			<key>gradientIcon</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>gradient</string>
+				</array>
+			</dict>
+			<key>greyScaleIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>greyScale</string>
 				</array>
 			</dict>
 			<key>innerShadowIcon</key>
@@ -42,6 +70,27 @@
 					<string>neuomorphic</string>
 				</array>
 			</dict>
+			<key>orangeInnerShadowIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>orangeInnerShadow</string>
+				</array>
+			</dict>
+			<key>orangeMonoIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>orangeMono</string>
+				</array>
+			</dict>
+			<key>orangeNeuoIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>orangeNeuo</string>
+				</array>
+			</dict>
 			<key>shadowIcon</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
@@ -54,6 +103,20 @@
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>white</string>
+				</array>
+			</dict>
+			<key>whiteSmallIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>whiteSmall</string>
+				</array>
+			</dict>
+			<key>whiteSmallShadowIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>whiteSmallShadow</string>
 				</array>
 			</dict>
 		</dict>
@@ -78,11 +141,39 @@
 					<string>black</string>
 				</array>
 			</dict>
+			<key>blackSmallIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>blackSmall</string>
+				</array>
+			</dict>
+			<key>blackSmallShadowIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>blackSmallShadow</string>
+				</array>
+			</dict>
+			<key>darkGreyIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>darkGrey</string>
+				</array>
+			</dict>
 			<key>gradientIcon</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>gradient</string>
+				</array>
+			</dict>
+			<key>greyScaleIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>greyScale</string>
 				</array>
 			</dict>
 			<key>innerShadowIcon</key>
@@ -99,6 +190,27 @@
 					<string>neuomorphic</string>
 				</array>
 			</dict>
+			<key>orangeInnerShadowIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>orangeInnerShadow</string>
+				</array>
+			</dict>
+			<key>orangeMonoIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>orangeMono</string>
+				</array>
+			</dict>
+			<key>orangeNeuoIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>orangeNeuo</string>
+				</array>
+			</dict>
 			<key>shadowIcon</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
@@ -111,6 +223,20 @@
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>white</string>
+				</array>
+			</dict>
+			<key>whiteSmallIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>whiteSmall</string>
+				</array>
+			</dict>
+			<key>whiteSmallShadowIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>whiteSmallShadow</string>
 				</array>
 			</dict>
 		</dict>
