@@ -30,8 +30,6 @@
 		CF1AD1DA24DAA5E600A271E6 /* SavesModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1AD1D924DAA5E600A271E6 /* SavesModalView.swift */; };
 		CF255A36249911A700F4849F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF255A35249911A700F4849F /* Preview Assets.xcassets */; };
 		CF255A39249911A700F4849F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF255A37249911A700F4849F /* LaunchScreen.storyboard */; };
-		CF255A44249911A700F4849F /* Px_to_EmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A43249911A700F4849F /* Px_to_EmTests.swift */; };
-		CF255A4F249911A700F4849F /* Px_to_EmUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A4E249911A700F4849F /* Px_to_EmUITests.swift */; };
 		CF265C4324C84C8A00D0DA1D /* SettingsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265C4224C84C8A00D0DA1D /* SettingsModal.swift */; };
 		CF265C4524C84CDC00D0DA1D /* ScaleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */; };
 		CF495E2B24D60A9300D3B4BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF495E2A24D60A9300D3B4BC /* Foundation.framework */; };
@@ -66,20 +64,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CF255A40249911A700F4849F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CF255A21249911A500F4849F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CF255A28249911A500F4849F;
-			remoteInfo = "Px to Em";
-		};
-		CF255A4B249911A700F4849F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CF255A21249911A500F4849F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CF255A28249911A500F4849F;
-			remoteInfo = "Px to Em";
-		};
 		CFA875C824DBE589003DE91B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CF255A21249911A500F4849F /* Project object */;
@@ -140,12 +124,6 @@
 		CF255A35249911A700F4849F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CF255A38249911A700F4849F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF255A3A249911A700F4849F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF255A3F249911A700F4849F /* Px to EmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Px to EmTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF255A43249911A700F4849F /* Px_to_EmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Px_to_EmTests.swift; sourceTree = "<group>"; };
-		CF255A45249911A700F4849F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF255A4A249911A700F4849F /* Px to EmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Px to EmUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF255A4E249911A700F4849F /* Px_to_EmUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Px_to_EmUITests.swift; sourceTree = "<group>"; };
-		CF255A50249911A700F4849F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF255A5C249A052200F4849F /* Px ›› Em.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Px ›› Em.entitlements"; sourceTree = "<group>"; };
 		CF265C4224C84C8A00D0DA1D /* SettingsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModal.swift; sourceTree = "<group>"; };
 		CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleModalView.swift; sourceTree = "<group>"; };
@@ -184,20 +162,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CF255A3C249911A700F4849F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CF255A47249911A700F4849F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CFA875CB24DBE910003DE91B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -215,8 +179,6 @@
 			children = (
 				CFA875DA24DBE911003DE91B /* SavedStateWidgetExtension.entitlements */,
 				CF255A2B249911A500F4849F /* Px to Em */,
-				CF255A42249911A700F4849F /* Px to EmTests */,
-				CF255A4D249911A700F4849F /* Px to EmUITests */,
 				CFA875D124DBE910003DE91B /* SavedStateWidget */,
 				CF255A2A249911A500F4849F /* Products */,
 				CF495E2924D60A9300D3B4BC /* Frameworks */,
@@ -227,8 +189,6 @@
 			isa = PBXGroup;
 			children = (
 				CF255A29249911A500F4849F /* Px ›› Em.app */,
-				CF255A3F249911A700F4849F /* Px to EmTests.xctest */,
-				CF255A4A249911A700F4849F /* Px to EmUITests.xctest */,
 				CFA875CE24DBE910003DE91B /* SavedStateWidgetExtension.appex */,
 			);
 			name = Products;
@@ -262,24 +222,6 @@
 				CF255A35249911A700F4849F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		CF255A42249911A700F4849F /* Px to EmTests */ = {
-			isa = PBXGroup;
-			children = (
-				CF255A43249911A700F4849F /* Px_to_EmTests.swift */,
-				CF255A45249911A700F4849F /* Info.plist */,
-			);
-			path = "Px to EmTests";
-			sourceTree = "<group>";
-		};
-		CF255A4D249911A700F4849F /* Px to EmUITests */ = {
-			isa = PBXGroup;
-			children = (
-				CF255A4E249911A700F4849F /* Px_to_EmUITests.swift */,
-				CF255A50249911A700F4849F /* Info.plist */,
-			);
-			path = "Px to EmUITests";
 			sourceTree = "<group>";
 		};
 		CF495E2924D60A9300D3B4BC /* Frameworks */ = {
@@ -364,42 +306,6 @@
 			productReference = CF255A29249911A500F4849F /* Px ›› Em.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CF255A3E249911A700F4849F /* Px to EmTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CF255A56249911A700F4849F /* Build configuration list for PBXNativeTarget "Px to EmTests" */;
-			buildPhases = (
-				CF255A3B249911A700F4849F /* Sources */,
-				CF255A3C249911A700F4849F /* Frameworks */,
-				CF255A3D249911A700F4849F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CF255A41249911A700F4849F /* PBXTargetDependency */,
-			);
-			name = "Px to EmTests";
-			productName = "Px to EmTests";
-			productReference = CF255A3F249911A700F4849F /* Px to EmTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		CF255A49249911A700F4849F /* Px to EmUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CF255A59249911A700F4849F /* Build configuration list for PBXNativeTarget "Px to EmUITests" */;
-			buildPhases = (
-				CF255A46249911A700F4849F /* Sources */,
-				CF255A47249911A700F4849F /* Frameworks */,
-				CF255A48249911A700F4849F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CF255A4C249911A700F4849F /* PBXTargetDependency */,
-			);
-			name = "Px to EmUITests";
-			productName = "Px to EmUITests";
-			productReference = CF255A4A249911A700F4849F /* Px to EmUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		CFA875CD24DBE910003DE91B /* SavedStateWidgetExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFA875DB24DBE911003DE91B /* Build configuration list for PBXNativeTarget "SavedStateWidgetExtension" */;
@@ -430,14 +336,6 @@
 					CF255A28249911A500F4849F = {
 						CreatedOnToolsVersion = 11.5;
 					};
-					CF255A3E249911A700F4849F = {
-						CreatedOnToolsVersion = 11.5;
-						TestTargetID = CF255A28249911A500F4849F;
-					};
-					CF255A49249911A700F4849F = {
-						CreatedOnToolsVersion = 11.5;
-						TestTargetID = CF255A28249911A500F4849F;
-					};
 					CFA875CD24DBE910003DE91B = {
 						CreatedOnToolsVersion = 12.0;
 					};
@@ -457,8 +355,6 @@
 			projectRoot = "";
 			targets = (
 				CF255A28249911A500F4849F /* Px ›› Em */,
-				CF255A3E249911A700F4849F /* Px to EmTests */,
-				CF255A49249911A700F4849F /* Px to EmUITests */,
 				CFA875CD24DBE910003DE91B /* SavedStateWidgetExtension */,
 			);
 		};
@@ -507,20 +403,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CF255A3D249911A700F4849F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CF255A48249911A700F4849F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CFA875CC24DBE910003DE91B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -548,22 +430,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CF255A3B249911A700F4849F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CF255A44249911A700F4849F /* Px_to_EmTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CF255A46249911A700F4849F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CF255A4F249911A700F4849F /* Px_to_EmUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CFA875CA24DBE910003DE91B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -578,16 +444,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CF255A41249911A700F4849F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CF255A28249911A500F4849F /* Px ›› Em */;
-			targetProxy = CF255A40249911A700F4849F /* PBXContainerItemProxy */;
-		};
-		CF255A4C249911A700F4849F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CF255A28249911A500F4849F /* Px ›› Em */;
-			targetProxy = CF255A4B249911A700F4849F /* PBXContainerItemProxy */;
-		};
 		CFA875C924DBE589003DE91B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			targetProxy = CFA875C824DBE589003DE91B /* PBXContainerItemProxy */;
@@ -742,7 +598,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Px to Em/Px ›› Em.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.7.3;
+				CURRENT_PROJECT_VERSION = 2.7.4;
 				DEVELOPMENT_ASSET_PATHS = "\"Px to Em/Preview Content\"";
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				ENABLE_PREVIEWS = YES;
@@ -776,7 +632,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Px to Em/Px ›› Em.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.7.3;
+				CURRENT_PROJECT_VERSION = 2.7.4;
 				DEVELOPMENT_ASSET_PATHS = "\"Px to Em/Preview Content\"";
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				ENABLE_PREVIEWS = YES;
@@ -802,86 +658,6 @@
 			};
 			name = Release;
 		};
-		CF255A57249911A700F4849F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Px to EmTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kejk.Px-to-EmTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Px to Em.app/Px to Em";
-			};
-			name = Debug;
-		};
-		CF255A58249911A700F4849F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Px to EmTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kejk.Px-to-EmTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Px to Em.app/Px to Em";
-			};
-			name = Release;
-		};
-		CF255A5A249911A700F4849F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Px to EmUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kejk.Px-to-EmUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Px to Em";
-			};
-			name = Debug;
-		};
-		CF255A5B249911A700F4849F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Px to EmUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "kejk.Px-to-EmUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Px to Em";
-			};
-			name = Release;
-		};
 		CFA875DC24DBE911003DE91B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -889,7 +665,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = SavedStateWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.7.3;
+				CURRENT_PROJECT_VERSION = 2.7.4;
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				INFOPLIST_FILE = SavedStateWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -914,7 +690,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = SavedStateWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.7.3;
+				CURRENT_PROJECT_VERSION = 2.7.4;
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				INFOPLIST_FILE = SavedStateWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -949,24 +725,6 @@
 			buildConfigurations = (
 				CF255A54249911A700F4849F /* Debug */,
 				CF255A55249911A700F4849F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CF255A56249911A700F4849F /* Build configuration list for PBXNativeTarget "Px to EmTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CF255A57249911A700F4849F /* Debug */,
-				CF255A58249911A700F4849F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CF255A59249911A700F4849F /* Build configuration list for PBXNativeTarget "Px to EmUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CF255A5A249911A700F4849F /* Debug */,
-				CF255A5B249911A700F4849F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

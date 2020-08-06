@@ -36,7 +36,7 @@ struct EmToPx: View {
     func save(_ calcResult: String) {
         guard let calculation = try? JSONEncoder().encode(calcResult) else { return }
         self.resultData = calculation
-        print("\(String(format: "%.3f", (Double(emTextEmpty) ?? 1.000)))em is \(String(format: "%.0f", emToPxs(baseInt: Double(baseTextEmpty) ?? 16, emInt: Double(emTextEmpty) ?? 1, scaleInt: Double(scaleTextEmpty) ?? 1)))px")
+        print("\(String(format: "%.3f", (Double(emTextEmpty) ?? 1.000)))em is \(String(format: "%.0f", emToPxs(baseInt: Double(baseTextEmpty) ?? 16, emInt: Double(emTextEmpty) ?? 1, scaleInt: Double(scaleTextEmpty) ?? 1)))px at \(String(format: "%.3f", (Double(scaleTextEmpty) ?? 1))) with a baseline of \(Int(baseTextEmpty) ?? 16)px")
     }
     
     let modal = UIImpactFeedbackGenerator(style: .light)
@@ -102,14 +102,14 @@ struct EmToPx: View {
                     Spacer()
                     VStack {
                         Button(action: {
-                            save("\(String(format: "%.3f", (Double(emTextEmpty) ?? 1.000)))em is \(String(format: "%.0f", emToPxs(baseInt: Double(baseTextEmpty) ?? 16, emInt: Double(emTextEmpty) ?? 1, scaleInt: Double(scaleTextEmpty) ?? 1)))px")
+                            save("\(String(format: "%.3f", (Double(emTextEmpty) ?? 1.000)))em is \(String(format: "%.0f", emToPxs(baseInt: Double(baseTextEmpty) ?? 16, emInt: Double(emTextEmpty) ?? 1, scaleInt: Double(scaleTextEmpty) ?? 1)))px at \(String(format: "%.3f", (Double(scaleTextEmpty) ?? 1))) with a baseline of \(Int(baseTextEmpty) ?? 16)px")
                         }, label: {
                             Text("Save result").foregroundColor(.white).bold()
                         })
                         .foregroundColor(.primary)
                         .padding(.vertical, 16)
                         .padding(.horizontal, 24)
-                        .background(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
+                        .background(Color(red: 1.00, green: 0.60, blue: 0.00, opacity: 1.0))
                         .clipShape(Capsule())
                     }
                     Spacer()

@@ -16,9 +16,6 @@ struct SimpleEntry: TimelineEntry {
     let date = Date()
 
     public let calculation: String
-    
-//    @AppStorage("result", store: UserDefaults(suiteName: "group.com.kejk.px-to-em"))
-//    var resultData: Data = Data()
 }
 
 struct Provider: TimelineProvider {
@@ -32,9 +29,6 @@ struct Provider: TimelineProvider {
     }
 
     public func timeline(with context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
-//        let date = Date()
-//        let nextUpdateDate = Calendar.current.date(byAdding: .minute, value: 15, to: date)!
-
         guard let calculation = try? JSONDecoder().decode(String.self, from: resultData) else { return }
         let entry = SimpleEntry(calculation: calculation)
         let timeline = Timeline(entries: [entry], policy: .atEnd)
@@ -54,11 +48,11 @@ struct SavedStateWidgetEntryView : View {
 
     var body: some View {
         VStack (alignment: .leading) {
-            Text("Recent result").font(.system(.headline, design: .rounded)).bold()
+            Text("Recent result").font(.system(.title2, design: .rounded)).bold()
                 .foregroundColor(pxTeal)
             Spacer()
             Text("\(entry.calculation)")
-                .font(.system(.title2, design: .monospaced))
+                .font(.system(.body, design: .monospaced))
             Spacer()
         }.padding()
     }
@@ -74,13 +68,6 @@ struct SavedStateWidget: Widget {
         }
         .configurationDisplayName("Saved calculation")
         .description("Your last saved calculation.")
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
-
-//struct SavedStateWidget_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SavedStateWidgetEntryView(entry: SimpleEntry(calculation: "\(entry.self)"))
-//            .previewContext(WidgetPreviewContext(family: .systemSmall))
-//    }
-//}
