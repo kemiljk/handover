@@ -26,11 +26,6 @@
 		CF09E96A24CC435F006E73F8 /* whiteSmallShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E95824CC435F006E73F8 /* whiteSmallShadow@2x.png */; };
 		CF09E96B24CC435F006E73F8 /* greyScale@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E95924CC435F006E73F8 /* greyScale@3x.png */; };
 		CF133472249A201B00D04D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF133471249A201B00D04D02 /* Assets.xcassets */; };
-		CF182C4624DA9100005C0207 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF495E2C24D60B4500D3B4BC /* SwiftUI.framework */; };
-		CF182C4924DA9100005C0207 /* SaveStateWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF182C4824DA9100005C0207 /* SaveStateWidget.swift */; };
-		CF182C4C24DA9101005C0207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF182C4B24DA9101005C0207 /* Assets.xcassets */; };
-		CF182C4E24DA9101005C0207 /* SaveStateWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CF182C4A24DA9100005C0207 /* SaveStateWidget.intentdefinition */; };
-		CF182C4F24DA9101005C0207 /* SaveStateWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CF182C4A24DA9100005C0207 /* SaveStateWidget.intentdefinition */; };
 		CF182C5824DAA02A005C0207 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF182C5724DAA02A005C0207 /* TopBar.swift */; };
 		CF1AD1DA24DAA5E600A271E6 /* SavesModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1AD1D924DAA5E600A271E6 /* SavesModalView.swift */; };
 		CF255A36249911A700F4849F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF255A35249911A700F4849F /* Preview Assets.xcassets */; };
@@ -55,12 +50,14 @@
 		CF546FA024C4ABE300B0399F /* shadow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F9424C4ABE300B0399F /* shadow@3x.png */; };
 		CF546FA324C4ACA700B0399F /* black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546FA124C4ACA600B0399F /* black@2x.png */; };
 		CF546FA424C4ACA700B0399F /* black@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546FA224C4ACA700B0399F /* black@3x.png */; };
-		CFA875BF24DBE309003DE91B /* SaveStateWidgetExtension.appex in Resources */ = {isa = PBXBuildFile; fileRef = CF182C4424DA90FF005C0207 /* SaveStateWidgetExtension.appex */; };
-		CFA875C024DBE349003DE91B /* PxToEm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632524C77D08002BAD24 /* PxToEm.swift */; };
-		CFA875C124DBE34B003DE91B /* EmToPx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632324C72D96002BAD24 /* EmToPx.swift */; };
-		CFA875C224DBE34F003DE91B /* ScaleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */; };
-		CFA875C724DBE589003DE91B /* SaveStateWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CF182C4424DA90FF005C0207 /* SaveStateWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CFB21F9824DBD51D00AC38EA /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF182C0E24D9B740005C0207 /* WidgetKit.framework */; };
+		CFA875CF24DBE910003DE91B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF182C0E24D9B740005C0207 /* WidgetKit.framework */; };
+		CFA875D024DBE910003DE91B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF495E2C24D60B4500D3B4BC /* SwiftUI.framework */; };
+		CFA875D324DBE910003DE91B /* SavedStateWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA875D224DBE910003DE91B /* SavedStateWidget.swift */; };
+		CFA875D524DBE911003DE91B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFA875D424DBE911003DE91B /* Assets.xcassets */; };
+		CFA875D924DBE911003DE91B /* SavedStateWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CFA875CE24DBE910003DE91B /* SavedStateWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CFA875DE24DBE91F003DE91B /* PxToEm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632524C77D08002BAD24 /* PxToEm.swift */; };
+		CFA875DF24DBE91F003DE91B /* EmToPx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632324C72D96002BAD24 /* EmToPx.swift */; };
+		CFA875E024DBE922003DE91B /* ScaleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */; };
 		CFBE632424C72D96002BAD24 /* EmToPx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632324C72D96002BAD24 /* EmToPx.swift */; };
 		CFBE632624C77D08002BAD24 /* PxToEm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632524C77D08002BAD24 /* PxToEm.swift */; };
 		CFDB5BAF24C4D6B400E1A7D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A2C249911A500F4849F /* AppDelegate.swift */; };
@@ -69,13 +66,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CF182C5024DA9101005C0207 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CF255A21249911A500F4849F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CF182C4324DA90FF005C0207;
-			remoteInfo = SaveStateWidgetExtension;
-		};
 		CF255A40249911A700F4849F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CF255A21249911A500F4849F /* Project object */;
@@ -97,6 +87,13 @@
 			remoteGlobalIDString = CF182C4324DA90FF005C0207;
 			remoteInfo = SaveStateWidgetExtension;
 		};
+		CFA875D724DBE911003DE91B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF255A21249911A500F4849F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFA875CD24DBE910003DE91B;
+			remoteInfo = SavedStateWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -106,7 +103,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				CFA875C724DBE589003DE91B /* SaveStateWidgetExtension.appex in Embed App Extensions */,
+				CFA875D924DBE911003DE91B /* SavedStateWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,12 +131,6 @@
 		CF09E95924CC435F006E73F8 /* greyScale@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greyScale@3x.png"; sourceTree = "<group>"; };
 		CF133471249A201B00D04D02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF182C0E24D9B740005C0207 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
-		CF182C4424DA90FF005C0207 /* SaveStateWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SaveStateWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF182C4824DA9100005C0207 /* SaveStateWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveStateWidget.swift; sourceTree = "<group>"; };
-		CF182C4A24DA9100005C0207 /* SaveStateWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = SaveStateWidget.intentdefinition; sourceTree = "<group>"; };
-		CF182C4B24DA9101005C0207 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CF182C4D24DA9101005C0207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF182C5324DA9101005C0207 /* SaveStateWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SaveStateWidgetExtension.entitlements; sourceTree = "<group>"; };
 		CF182C5724DAA02A005C0207 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		CF1AD1D924DAA5E600A271E6 /* SavesModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavesModalView.swift; sourceTree = "<group>"; };
 		CF255A29249911A500F4849F /* Px ›› Em.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Px ›› Em.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,20 +165,16 @@
 		CF546F9424C4ABE300B0399F /* shadow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shadow@3x.png"; sourceTree = "<group>"; };
 		CF546FA124C4ACA600B0399F /* black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black@2x.png"; sourceTree = "<group>"; };
 		CF546FA224C4ACA700B0399F /* black@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black@3x.png"; sourceTree = "<group>"; };
+		CFA875CE24DBE910003DE91B /* SavedStateWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SavedStateWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFA875D224DBE910003DE91B /* SavedStateWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedStateWidget.swift; sourceTree = "<group>"; };
+		CFA875D424DBE911003DE91B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CFA875D624DBE911003DE91B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFA875DA24DBE911003DE91B /* SavedStateWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SavedStateWidgetExtension.entitlements; sourceTree = "<group>"; };
 		CFBE632324C72D96002BAD24 /* EmToPx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmToPx.swift; sourceTree = "<group>"; };
 		CFBE632524C77D08002BAD24 /* PxToEm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PxToEm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CF182C4124DA90FF005C0207 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CF182C4624DA9100005C0207 /* SwiftUI.framework in Frameworks */,
-				CFB21F9824DBD51D00AC38EA /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CF255A26249911A500F4849F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -211,28 +198,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CFA875CB24DBE910003DE91B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFA875D024DBE910003DE91B /* SwiftUI.framework in Frameworks */,
+				CFA875CF24DBE910003DE91B /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CF182C4724DA9100005C0207 /* SaveStateWidget */ = {
-			isa = PBXGroup;
-			children = (
-				CF182C4824DA9100005C0207 /* SaveStateWidget.swift */,
-				CF182C4A24DA9100005C0207 /* SaveStateWidget.intentdefinition */,
-				CF182C4B24DA9101005C0207 /* Assets.xcassets */,
-				CF182C4D24DA9101005C0207 /* Info.plist */,
-			);
-			path = SaveStateWidget;
-			sourceTree = "<group>";
-		};
 		CF255A20249911A500F4849F = {
 			isa = PBXGroup;
 			children = (
-				CF182C5324DA9101005C0207 /* SaveStateWidgetExtension.entitlements */,
+				CFA875DA24DBE911003DE91B /* SavedStateWidgetExtension.entitlements */,
 				CF255A2B249911A500F4849F /* Px to Em */,
 				CF255A42249911A700F4849F /* Px to EmTests */,
 				CF255A4D249911A700F4849F /* Px to EmUITests */,
-				CF182C4724DA9100005C0207 /* SaveStateWidget */,
+				CFA875D124DBE910003DE91B /* SavedStateWidget */,
 				CF255A2A249911A500F4849F /* Products */,
 				CF495E2924D60A9300D3B4BC /* Frameworks */,
 			);
@@ -244,7 +229,7 @@
 				CF255A29249911A500F4849F /* Px ›› Em.app */,
 				CF255A3F249911A700F4849F /* Px to EmTests.xctest */,
 				CF255A4A249911A700F4849F /* Px to EmUITests.xctest */,
-				CF182C4424DA90FF005C0207 /* SaveStateWidgetExtension.appex */,
+				CFA875CE24DBE910003DE91B /* SavedStateWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -346,26 +331,19 @@
 			path = "Alt Icons";
 			sourceTree = "<group>";
 		};
+		CFA875D124DBE910003DE91B /* SavedStateWidget */ = {
+			isa = PBXGroup;
+			children = (
+				CFA875D224DBE910003DE91B /* SavedStateWidget.swift */,
+				CFA875D424DBE911003DE91B /* Assets.xcassets */,
+				CFA875D624DBE911003DE91B /* Info.plist */,
+			);
+			path = SavedStateWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CF182C4324DA90FF005C0207 /* SaveStateWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CF182C5424DA9101005C0207 /* Build configuration list for PBXNativeTarget "SaveStateWidgetExtension" */;
-			buildPhases = (
-				CF182C4024DA90FF005C0207 /* Sources */,
-				CF182C4124DA90FF005C0207 /* Frameworks */,
-				CF182C4224DA90FF005C0207 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SaveStateWidgetExtension;
-			productName = SaveStateWidgetExtension;
-			productReference = CF182C4424DA90FF005C0207 /* SaveStateWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		CF255A28249911A500F4849F /* Px ›› Em */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF255A53249911A700F4849F /* Build configuration list for PBXNativeTarget "Px ›› Em" */;
@@ -378,8 +356,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				CF182C5124DA9101005C0207 /* PBXTargetDependency */,
 				CFA875C924DBE589003DE91B /* PBXTargetDependency */,
+				CFA875D824DBE911003DE91B /* PBXTargetDependency */,
 			);
 			name = "Px ›› Em";
 			productName = "Px to Em";
@@ -422,6 +400,23 @@
 			productReference = CF255A4A249911A700F4849F /* Px to EmUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		CFA875CD24DBE910003DE91B /* SavedStateWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFA875DB24DBE911003DE91B /* Build configuration list for PBXNativeTarget "SavedStateWidgetExtension" */;
+			buildPhases = (
+				CFA875CA24DBE910003DE91B /* Sources */,
+				CFA875CB24DBE910003DE91B /* Frameworks */,
+				CFA875CC24DBE910003DE91B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SavedStateWidgetExtension;
+			productName = SavedStateWidgetExtension;
+			productReference = CFA875CE24DBE910003DE91B /* SavedStateWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -432,9 +427,6 @@
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = KEJK;
 				TargetAttributes = {
-					CF182C4324DA90FF005C0207 = {
-						CreatedOnToolsVersion = 12.0;
-					};
 					CF255A28249911A500F4849F = {
 						CreatedOnToolsVersion = 11.5;
 					};
@@ -445,6 +437,9 @@
 					CF255A49249911A700F4849F = {
 						CreatedOnToolsVersion = 11.5;
 						TestTargetID = CF255A28249911A500F4849F;
+					};
+					CFA875CD24DBE910003DE91B = {
+						CreatedOnToolsVersion = 12.0;
 					};
 				};
 			};
@@ -464,20 +459,12 @@
 				CF255A28249911A500F4849F /* Px ›› Em */,
 				CF255A3E249911A700F4849F /* Px to EmTests */,
 				CF255A49249911A700F4849F /* Px to EmUITests */,
-				CF182C4324DA90FF005C0207 /* SaveStateWidgetExtension */,
+				CFA875CD24DBE910003DE91B /* SavedStateWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CF182C4224DA90FF005C0207 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CF182C4C24DA9101005C0207 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CF255A27249911A500F4849F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -493,7 +480,6 @@
 				CF09E96124CC435F006E73F8 /* blackSmallShadow@3x.png in Resources */,
 				CF546F9824C4ABE300B0399F /* white@2x.png in Resources */,
 				CF546F9E24C4ABE300B0399F /* neuomorphic@2x.png in Resources */,
-				CFA875BF24DBE309003DE91B /* SaveStateWidgetExtension.appex in Resources */,
 				CF09E95C24CC435F006E73F8 /* orangeNeuo@3x.png in Resources */,
 				CF09E96324CC435F006E73F8 /* orangeMono@3x.png in Resources */,
 				CF546FA324C4ACA700B0399F /* black@2x.png in Resources */,
@@ -535,21 +521,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		CF182C4024DA90FF005C0207 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+		CFA875CC24DBE910003DE91B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFA875C224DBE34F003DE91B /* ScaleModalView.swift in Sources */,
-				CFA875C124DBE34B003DE91B /* EmToPx.swift in Sources */,
-				CFA875C024DBE349003DE91B /* PxToEm.swift in Sources */,
-				CF182C4E24DA9101005C0207 /* SaveStateWidget.intentdefinition in Sources */,
-				CF182C4924DA9100005C0207 /* SaveStateWidget.swift in Sources */,
+				CFA875D524DBE911003DE91B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
 		CF255A25249911A500F4849F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -557,7 +539,6 @@
 				CFBE632424C72D96002BAD24 /* EmToPx.swift in Sources */,
 				CF182C5824DAA02A005C0207 /* TopBar.swift in Sources */,
 				CFDB5BB124C4D6BC00E1A7D5 /* ContentView.swift in Sources */,
-				CF182C4F24DA9101005C0207 /* SaveStateWidget.intentdefinition in Sources */,
 				CF265C4524C84CDC00D0DA1D /* ScaleModalView.swift in Sources */,
 				CF1AD1DA24DAA5E600A271E6 /* SavesModalView.swift in Sources */,
 				CF265C4324C84C8A00D0DA1D /* SettingsModal.swift in Sources */,
@@ -583,14 +564,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CFA875CA24DBE910003DE91B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFA875DE24DBE91F003DE91B /* PxToEm.swift in Sources */,
+				CFA875DF24DBE91F003DE91B /* EmToPx.swift in Sources */,
+				CFA875D324DBE910003DE91B /* SavedStateWidget.swift in Sources */,
+				CFA875E024DBE922003DE91B /* ScaleModalView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CF182C5124DA9101005C0207 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CF182C4324DA90FF005C0207 /* SaveStateWidgetExtension */;
-			targetProxy = CF182C5024DA9101005C0207 /* PBXContainerItemProxy */;
-		};
 		CF255A41249911A700F4849F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CF255A28249911A500F4849F /* Px ›› Em */;
@@ -603,8 +590,12 @@
 		};
 		CFA875C924DBE589003DE91B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CF182C4324DA90FF005C0207 /* SaveStateWidgetExtension */;
 			targetProxy = CFA875C824DBE589003DE91B /* PBXContainerItemProxy */;
+		};
+		CFA875D824DBE911003DE91B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFA875CD24DBE910003DE91B /* SavedStateWidgetExtension */;
+			targetProxy = CFA875D724DBE911003DE91B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -620,58 +611,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		CF182C5524DA9101005C0207 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = SaveStateWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.7.2;
-				DEVELOPMENT_TEAM = WMGJ7B26TT;
-				INFOPLIST_FILE = SaveStateWidget/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 2.7.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.SaveStateWidget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
-			};
-			name = Debug;
-		};
-		CF182C5624DA9101005C0207 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = SaveStateWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.7.2;
-				DEVELOPMENT_TEAM = WMGJ7B26TT;
-				INFOPLIST_FILE = SaveStateWidget/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 2.7.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.SaveStateWidget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
-			};
-			name = Release;
-		};
 		CF255A51249911A700F4849F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -803,7 +742,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Px to Em/Px ›› Em.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.7.2;
+				CURRENT_PROJECT_VERSION = 2.7.3;
 				DEVELOPMENT_ASSET_PATHS = "\"Px to Em/Preview Content\"";
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				ENABLE_PREVIEWS = YES;
@@ -837,7 +776,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Px to Em/Px ›› Em.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.7.2;
+				CURRENT_PROJECT_VERSION = 2.7.3;
 				DEVELOPMENT_ASSET_PATHS = "\"Px to Em/Preview Content\"";
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				ENABLE_PREVIEWS = YES;
@@ -943,18 +882,59 @@
 			};
 			name = Release;
 		};
+		CFA875DC24DBE911003DE91B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = SavedStateWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.7.3;
+				DEVELOPMENT_TEAM = WMGJ7B26TT;
+				INFOPLIST_FILE = SavedStateWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2.7.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.SavedStateWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CFA875DD24DBE911003DE91B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = SavedStateWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.7.3;
+				DEVELOPMENT_TEAM = WMGJ7B26TT;
+				INFOPLIST_FILE = SavedStateWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2.7.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.SavedStateWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CF182C5424DA9101005C0207 /* Build configuration list for PBXNativeTarget "SaveStateWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CF182C5524DA9101005C0207 /* Debug */,
-				CF182C5624DA9101005C0207 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		CF255A24249911A500F4849F /* Build configuration list for PBXProject "Px to Em" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -987,6 +967,15 @@
 			buildConfigurations = (
 				CF255A5A249911A700F4849F /* Debug */,
 				CF255A5B249911A700F4849F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFA875DB24DBE911003DE91B /* Build configuration list for PBXNativeTarget "SavedStateWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFA875DC24DBE911003DE91B /* Debug */,
+				CFA875DD24DBE911003DE91B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

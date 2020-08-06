@@ -24,8 +24,8 @@ struct SavesModalView: View {
     @Environment(\.presentationMode) private var presentationMode
     var device = UIDevice.current.userInterfaceIdiom
     
-    @AppStorage("result", store: UserDefaults(suiteName: "group.com.kejk.px-to-em"))
-    var resultData: Data = Data()
+//    @AppStorage("result", store: UserDefaults(suiteName: "group.com.kejk.px-to-em"))
+//    var resultData: Data = Data()
 
     @State private var baseText = "16"
     @State private var pixelText = "16"
