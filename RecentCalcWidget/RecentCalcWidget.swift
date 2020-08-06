@@ -1,4 +1,12 @@
 //
+//  RecentCalcWidget.swift
+//  RecentCalcWidget
+//
+//  Created by Karl Koch on 06/08/2020.
+//  Copyright © 2020 KEJK. All rights reserved.
+//
+
+//
 //  SaveStateWidget.swift
 //  SaveStateWidget
 //
@@ -49,7 +57,7 @@ struct PlaceholderView : View {
     }
 }
 
-struct SaveStateWidgetEntryView : View {
+struct RecentCalcWidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
@@ -65,12 +73,12 @@ struct SaveStateWidgetEntryView : View {
 }
 
 @main
-struct SaveStateWidget: Widget {
-    private let kind: String = "SaveStateWidget"
+struct RecentCalcWidget: Widget {
+    let kind: String = "RecentCalcWidget"
 
-    public var body: some WidgetConfiguration {
+    var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            SaveStateWidgetEntryView(entry: entry)
+            RecentCalcWidgetEntryView(entry: entry)
         }
         .configurationDisplayName("Saved calculation")
         .description("Your last saved calculation.")
@@ -78,9 +86,52 @@ struct SaveStateWidget: Widget {
     }
 }
 
-struct SaveStateWidget_Previews: PreviewProvider {
+struct RecentCalcWidget_Previews: PreviewProvider {
     static var previews: some View {
-        SaveStateWidgetEntryView(entry: SimpleEntry(calculation: "\(entry.self)"))
+        RecentCalcWidgetEntryView(entry: SimpleEntry(calculation: "\(entry.self)"))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
+
+
+
+//import WidgetKit
+//import SwiftUI
+//
+//struct Provider: TimelineProvider {
+//    func placeholder(in context: Context) -> SimpleEntry {
+//        SimpleEntry(date: Date())
+//    }
+//
+//    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
+//        let entry = SimpleEntry(date: Date())
+//        completion(entry)
+//    }
+//
+//    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+//        var entries: [SimpleEntry] = []
+//
+//        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
+//        let currentDate = Date()
+//        for hourOffset in 0 ..< 5 {
+//            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
+//            let entry = SimpleEntry(date: entryDate)
+//            entries.append(entry)
+//        }
+//
+//        let timeline = Timeline(entries: entries, policy: .atEnd)
+//        completion(timeline)
+//    }
+//}
+//
+//struct SimpleEntry: TimelineEntry {
+//    let date: Date
+//}
+//
+//struct RecentCalcWidgetEntryView : View {
+//    var entry: Provider.Entry
+//
+//    var body: some View {
+//        Text(entry.date, style: .time)
+//    }
+//}

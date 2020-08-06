@@ -33,9 +33,9 @@ struct EmToPx: View {
         return pxValue
     }
     
-    func save(_ result: String) {
-        guard let resultData = try? JSONEncoder().encode(result) else {return }
-        self.resultData = resultData
+    func save(_ calcResult: String) {
+        guard let calculation = try? JSONEncoder().encode(calcResult) else { return }
+        self.resultData = calculation
         print("\(String(format: "%.3f", (Double(emTextEmpty) ?? 1.000)))em is \(String(format: "%.0f", emToPxs(baseInt: Double(baseTextEmpty) ?? 16, emInt: Double(emTextEmpty) ?? 1, scaleInt: Double(scaleTextEmpty) ?? 1)))px")
     }
     
@@ -116,7 +116,6 @@ struct EmToPx: View {
                 }.padding()
             }
         }
-//            .modifier(AdaptsToSoftwareKeyboard())
     }
 }
 

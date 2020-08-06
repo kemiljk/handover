@@ -33,9 +33,9 @@ struct PxToEm: View {
         return emValue
     }
     
-    func save(_ result: String) {
-        guard let resultData = try? JSONEncoder().encode(result) else { return }
-        self.resultData = resultData
+    func save(_ calcResult: String) {
+        guard let calculation = try? JSONEncoder().encode(calcResult) else { return }
+        self.resultData = calculation
         print("\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.3f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))em")
     }
     
@@ -97,8 +97,8 @@ struct PxToEm: View {
                     .fill(Color("shape"))
                 VStack (alignment: .center) {
                 Spacer()
-                   Text("\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.3f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))em")
-                       .font(.system(.title, design: .monospaced)).bold()
+                    Text("\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.3f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))em")
+                    .font(.system(.title, design: .monospaced)).bold()
                     Spacer()
                     VStack {
                         Button(action: {
@@ -116,7 +116,6 @@ struct PxToEm: View {
                 }.padding()
             }
        }
-//         .modifier(AdaptsToSoftwareKeyboard())
    }
 }
 
