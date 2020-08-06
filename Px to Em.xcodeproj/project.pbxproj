@@ -31,7 +31,6 @@
 		CF182C4C24DA9101005C0207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF182C4B24DA9101005C0207 /* Assets.xcassets */; };
 		CF182C4E24DA9101005C0207 /* SaveStateWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CF182C4A24DA9100005C0207 /* SaveStateWidget.intentdefinition */; };
 		CF182C4F24DA9101005C0207 /* SaveStateWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CF182C4A24DA9100005C0207 /* SaveStateWidget.intentdefinition */; };
-		CF182C5224DA9101005C0207 /* SaveStateWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CF182C4424DA90FF005C0207 /* SaveStateWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CF182C5824DAA02A005C0207 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF182C5724DAA02A005C0207 /* TopBar.swift */; };
 		CF1AD1DA24DAA5E600A271E6 /* SavesModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1AD1D924DAA5E600A271E6 /* SavesModalView.swift */; };
 		CF255A36249911A700F4849F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF255A35249911A700F4849F /* Preview Assets.xcassets */; };
@@ -56,16 +55,12 @@
 		CF546FA024C4ABE300B0399F /* shadow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F9424C4ABE300B0399F /* shadow@3x.png */; };
 		CF546FA324C4ACA700B0399F /* black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546FA124C4ACA600B0399F /* black@2x.png */; };
 		CF546FA424C4ACA700B0399F /* black@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546FA224C4ACA700B0399F /* black@3x.png */; };
+		CFA875BF24DBE309003DE91B /* SaveStateWidgetExtension.appex in Resources */ = {isa = PBXBuildFile; fileRef = CF182C4424DA90FF005C0207 /* SaveStateWidgetExtension.appex */; };
+		CFA875C024DBE349003DE91B /* PxToEm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632524C77D08002BAD24 /* PxToEm.swift */; };
+		CFA875C124DBE34B003DE91B /* EmToPx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632324C72D96002BAD24 /* EmToPx.swift */; };
+		CFA875C224DBE34F003DE91B /* ScaleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */; };
+		CFA875C724DBE589003DE91B /* SaveStateWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CF182C4424DA90FF005C0207 /* SaveStateWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CFB21F9824DBD51D00AC38EA /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF182C0E24D9B740005C0207 /* WidgetKit.framework */; };
-		CFB21FA024DBDBAB00AC38EA /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF182C0E24D9B740005C0207 /* WidgetKit.framework */; };
-		CFB21FA124DBDBAB00AC38EA /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF495E2C24D60B4500D3B4BC /* SwiftUI.framework */; };
-		CFB21FA424DBDBAB00AC38EA /* RecentCalcWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB21FA324DBDBAB00AC38EA /* RecentCalcWidget.swift */; };
-		CFB21FA624DBDBAC00AC38EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFB21FA524DBDBAC00AC38EA /* Assets.xcassets */; };
-		CFB21FAA24DBDBAC00AC38EA /* RecentCalcWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CFB21F9F24DBDBAA00AC38EA /* RecentCalcWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CFB21FB024DBDE0E00AC38EA /* Px ›› Em.app in Resources */ = {isa = PBXBuildFile; fileRef = CF255A29249911A500F4849F /* Px ›› Em.app */; };
-		CFB21FB624DBDE4300AC38EA /* PxToEm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632524C77D08002BAD24 /* PxToEm.swift */; };
-		CFB21FB724DBDE4300AC38EA /* EmToPx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632324C72D96002BAD24 /* EmToPx.swift */; };
-		CFB21FB924DBDE5E00AC38EA /* ScaleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */; };
 		CFBE632424C72D96002BAD24 /* EmToPx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632324C72D96002BAD24 /* EmToPx.swift */; };
 		CFBE632624C77D08002BAD24 /* PxToEm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632524C77D08002BAD24 /* PxToEm.swift */; };
 		CFDB5BAF24C4D6B400E1A7D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A2C249911A500F4849F /* AppDelegate.swift */; };
@@ -95,12 +90,12 @@
 			remoteGlobalIDString = CF255A28249911A500F4849F;
 			remoteInfo = "Px to Em";
 		};
-		CFB21FA824DBDBAC00AC38EA /* PBXContainerItemProxy */ = {
+		CFA875C824DBE589003DE91B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CF255A21249911A500F4849F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = CFB21F9E24DBDBAA00AC38EA;
-			remoteInfo = RecentCalcWidgetExtension;
+			remoteGlobalIDString = CF182C4324DA90FF005C0207;
+			remoteInfo = SaveStateWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -111,8 +106,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				CFB21FAA24DBDBAC00AC38EA /* RecentCalcWidgetExtension.appex in Embed App Extensions */,
-				CF182C5224DA9101005C0207 /* SaveStateWidgetExtension.appex in Embed App Extensions */,
+				CFA875C724DBE589003DE91B /* SaveStateWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,11 +174,6 @@
 		CF546F9424C4ABE300B0399F /* shadow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shadow@3x.png"; sourceTree = "<group>"; };
 		CF546FA124C4ACA600B0399F /* black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black@2x.png"; sourceTree = "<group>"; };
 		CF546FA224C4ACA700B0399F /* black@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black@3x.png"; sourceTree = "<group>"; };
-		CFB21F9F24DBDBAA00AC38EA /* RecentCalcWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RecentCalcWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		CFB21FA324DBDBAB00AC38EA /* RecentCalcWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCalcWidget.swift; sourceTree = "<group>"; };
-		CFB21FA524DBDBAC00AC38EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CFB21FA724DBDBAC00AC38EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CFB21FAB24DBDBAC00AC38EA /* RecentCalcWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RecentCalcWidgetExtension.entitlements; sourceTree = "<group>"; };
 		CFBE632324C72D96002BAD24 /* EmToPx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmToPx.swift; sourceTree = "<group>"; };
 		CFBE632524C77D08002BAD24 /* PxToEm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PxToEm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,15 +211,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CFB21F9C24DBDBAA00AC38EA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CFB21FA124DBDBAB00AC38EA /* SwiftUI.framework in Frameworks */,
-				CFB21FA024DBDBAB00AC38EA /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -249,12 +229,10 @@
 			isa = PBXGroup;
 			children = (
 				CF182C5324DA9101005C0207 /* SaveStateWidgetExtension.entitlements */,
-				CFB21FAB24DBDBAC00AC38EA /* RecentCalcWidgetExtension.entitlements */,
 				CF255A2B249911A500F4849F /* Px to Em */,
 				CF255A42249911A700F4849F /* Px to EmTests */,
 				CF255A4D249911A700F4849F /* Px to EmUITests */,
 				CF182C4724DA9100005C0207 /* SaveStateWidget */,
-				CFB21FA224DBDBAB00AC38EA /* RecentCalcWidget */,
 				CF255A2A249911A500F4849F /* Products */,
 				CF495E2924D60A9300D3B4BC /* Frameworks */,
 			);
@@ -267,7 +245,6 @@
 				CF255A3F249911A700F4849F /* Px to EmTests.xctest */,
 				CF255A4A249911A700F4849F /* Px to EmUITests.xctest */,
 				CF182C4424DA90FF005C0207 /* SaveStateWidgetExtension.appex */,
-				CFB21F9F24DBDBAA00AC38EA /* RecentCalcWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -369,16 +346,6 @@
 			path = "Alt Icons";
 			sourceTree = "<group>";
 		};
-		CFB21FA224DBDBAB00AC38EA /* RecentCalcWidget */ = {
-			isa = PBXGroup;
-			children = (
-				CFB21FA324DBDBAB00AC38EA /* RecentCalcWidget.swift */,
-				CFB21FA524DBDBAC00AC38EA /* Assets.xcassets */,
-				CFB21FA724DBDBAC00AC38EA /* Info.plist */,
-			);
-			path = RecentCalcWidget;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -412,7 +379,7 @@
 			);
 			dependencies = (
 				CF182C5124DA9101005C0207 /* PBXTargetDependency */,
-				CFB21FA924DBDBAC00AC38EA /* PBXTargetDependency */,
+				CFA875C924DBE589003DE91B /* PBXTargetDependency */,
 			);
 			name = "Px ›› Em";
 			productName = "Px to Em";
@@ -455,23 +422,6 @@
 			productReference = CF255A4A249911A700F4849F /* Px to EmUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		CFB21F9E24DBDBAA00AC38EA /* RecentCalcWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CFB21FAC24DBDBAC00AC38EA /* Build configuration list for PBXNativeTarget "RecentCalcWidgetExtension" */;
-			buildPhases = (
-				CFB21F9B24DBDBAA00AC38EA /* Sources */,
-				CFB21F9C24DBDBAA00AC38EA /* Frameworks */,
-				CFB21F9D24DBDBAA00AC38EA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = RecentCalcWidgetExtension;
-			productName = RecentCalcWidgetExtension;
-			productReference = CFB21F9F24DBDBAA00AC38EA /* RecentCalcWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -496,9 +446,6 @@
 						CreatedOnToolsVersion = 11.5;
 						TestTargetID = CF255A28249911A500F4849F;
 					};
-					CFB21F9E24DBDBAA00AC38EA = {
-						CreatedOnToolsVersion = 12.0;
-					};
 				};
 			};
 			buildConfigurationList = CF255A24249911A500F4849F /* Build configuration list for PBXProject "Px to Em" */;
@@ -518,7 +465,6 @@
 				CF255A3E249911A700F4849F /* Px to EmTests */,
 				CF255A49249911A700F4849F /* Px to EmUITests */,
 				CF182C4324DA90FF005C0207 /* SaveStateWidgetExtension */,
-				CFB21F9E24DBDBAA00AC38EA /* RecentCalcWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -547,6 +493,7 @@
 				CF09E96124CC435F006E73F8 /* blackSmallShadow@3x.png in Resources */,
 				CF546F9824C4ABE300B0399F /* white@2x.png in Resources */,
 				CF546F9E24C4ABE300B0399F /* neuomorphic@2x.png in Resources */,
+				CFA875BF24DBE309003DE91B /* SaveStateWidgetExtension.appex in Resources */,
 				CF09E95C24CC435F006E73F8 /* orangeNeuo@3x.png in Resources */,
 				CF09E96324CC435F006E73F8 /* orangeMono@3x.png in Resources */,
 				CF546FA324C4ACA700B0399F /* black@2x.png in Resources */,
@@ -588,15 +535,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CFB21F9D24DBDBAA00AC38EA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CFB21FA624DBDBAC00AC38EA /* Assets.xcassets in Resources */,
-				CFB21FB024DBDE0E00AC38EA /* Px ›› Em.app in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -604,6 +542,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFA875C224DBE34F003DE91B /* ScaleModalView.swift in Sources */,
+				CFA875C124DBE34B003DE91B /* EmToPx.swift in Sources */,
+				CFA875C024DBE349003DE91B /* PxToEm.swift in Sources */,
 				CF182C4E24DA9101005C0207 /* SaveStateWidget.intentdefinition in Sources */,
 				CF182C4924DA9100005C0207 /* SaveStateWidget.swift in Sources */,
 			);
@@ -642,17 +583,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CFB21F9B24DBDBAA00AC38EA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CFB21FB624DBDE4300AC38EA /* PxToEm.swift in Sources */,
-				CFB21FB724DBDE4300AC38EA /* EmToPx.swift in Sources */,
-				CFB21FA424DBDBAB00AC38EA /* RecentCalcWidget.swift in Sources */,
-				CFB21FB924DBDE5E00AC38EA /* ScaleModalView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -671,10 +601,10 @@
 			target = CF255A28249911A500F4849F /* Px ›› Em */;
 			targetProxy = CF255A4B249911A700F4849F /* PBXContainerItemProxy */;
 		};
-		CFB21FA924DBDBAC00AC38EA /* PBXTargetDependency */ = {
+		CFA875C924DBE589003DE91B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CFB21F9E24DBDBAA00AC38EA /* RecentCalcWidgetExtension */;
-			targetProxy = CFB21FA824DBDBAC00AC38EA /* PBXContainerItemProxy */;
+			target = CF182C4324DA90FF005C0207 /* SaveStateWidgetExtension */;
+			targetProxy = CFA875C824DBE589003DE91B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1013,52 +943,6 @@
 			};
 			name = Release;
 		};
-		CFB21FAD24DBDBAC00AC38EA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = RecentCalcWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WMGJ7B26TT;
-				INFOPLIST_FILE = RecentCalcWidget/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.RecentCalcWidget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		CFB21FAE24DBDBAC00AC38EA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = RecentCalcWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WMGJ7B26TT;
-				INFOPLIST_FILE = RecentCalcWidget/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.RecentCalcWidget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1103,15 +987,6 @@
 			buildConfigurations = (
 				CF255A5A249911A700F4849F /* Debug */,
 				CF255A5B249911A700F4849F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CFB21FAC24DBDBAC00AC38EA /* Build configuration list for PBXNativeTarget "RecentCalcWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CFB21FAD24DBDBAC00AC38EA /* Debug */,
-				CFB21FAE24DBDBAC00AC38EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
