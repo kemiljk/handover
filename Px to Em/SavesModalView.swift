@@ -23,7 +23,7 @@ struct Calculation: Codable {
 struct SavesModalView: View {
     @Environment(\.presentationMode) private var presentationMode
     var device = UIDevice.current.userInterfaceIdiom
-    
+//    
 //    @AppStorage("result", store: UserDefaults(suiteName: "group.com.kejk.px-to-em"))
 //    var resultData: Data = Data()
 
@@ -42,18 +42,6 @@ struct SavesModalView: View {
         let emValue = (pixelInt / baseInt) * scaleInt
         return emValue
     }
-
-//    func calculationStore(_ result: String) {
-//        guard let calculation = try? JSONDecoder().decode(String.self, from: resultData) else { return }
-//        self.resultData = calculation
-//        print("\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.3f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))em")
-//    }
-    
-//    var result = try? JSONDecoder().decode(Calculation.self, from: Data())
-    
-//    func getCalculation() {
-//        let
-//    }
     
     var body: some View {
         VStack {
@@ -67,7 +55,7 @@ struct SavesModalView: View {
                       self.presentationMode.wrappedValue.dismiss()
                     }) {
                     Text("Done")
-                        .foregroundColor(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
+                        .foregroundColor(Color("teal"))
                     }
                     .padding()
                 }

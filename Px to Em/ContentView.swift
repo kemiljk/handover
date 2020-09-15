@@ -21,66 +21,82 @@ struct ContentView: View {
     @State var selected = 0
     @State private var show_settings_modal: Bool = false
     @State private var show_saves_modal: Bool = false
-    
-    let modal = UIImpactFeedbackGenerator(style: .light)
-    
-    let swipe = UIImpactFeedbackGenerator(style: .light)
     var device = UIDevice.current.userInterfaceIdiom
     
+    let modal = UIImpactFeedbackGenerator(style: .light)
+    let swipe = UIImpactFeedbackGenerator(style: .light)
+    
     var body: some View {
-        GeometryReader { geo in
-            PageControl(current: self.selected)
-              .position(x: geo.size.width/2, y: geo.size.height)
-             VStack {
-                TopBar(selected: self.$selected).padding(.top, 16)
-                 
-                     if self.selected == 0 {
-                         PxToEm()
-                     }
-                     else {
-                         EmToPx()
-                    }
-             }
-            Spacer()
-                HStack {
-//                    Button(action: {
-//                        self.show_saves_modal = true
-//                        self.modal.impactOccurred()
-//                    }) {
-//                        Image(systemName: "equal.square.fill").padding()
-//                            .font(.title)
-//                            .foregroundColor(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
-//                    }.padding(.top, 4)
-//                    .sheet(isPresented: self.$show_saves_modal) {
-//                        SavesModalView()
-//                     }
-                   Spacer()
-                    if device == .phone || device == .pad {
-                       Button(action: {
-                           self.show_settings_modal = true
-                           self.modal.impactOccurred()
-                       }) {
-                           Image(systemName: "square.grid.2x2.fill").padding()
-                               .font(.title)
-                               .foregroundColor(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
-                       }.padding(.top, 4)
-                       .sheet(isPresented: self.$show_settings_modal) {
-                        SettingsModalView()
+            if device == .phone || device == .pad {
+            GeometryReader { geo in
+                PageControl(current: self.selected)
+                  .position(x: geo.size.width/2, y: geo.size.height)
+                 VStack {
+                    TopBar(selected: self.$selected).padding(.top, 16)
+                     
+                         if self.selected == 0 {
+                             PxToEm()
                          }
+                         else {
+                             EmToPx()
+                        }
+                 }
+                Spacer()
+                    HStack {
+    //                    Button(action: {
+    //                        self.show_saves_modal = true
+    //                        self.modal.impactOccurred()
+    //                    }) {
+    //                        Image(systemName: "equal.square.fill").padding()
+    //                            .font(.title)
+    //                            .foregroundColor(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
+    //                    }.padding(.top, 4)
+    //                    .sheet(isPresented: self.$show_saves_modal) {
+    //                        SavesModalView()
+    //                     }
+                       Spacer()
+                           Button(action: {
+                               self.show_settings_modal = true
+                               self.modal.impactOccurred()
+                           }) {
+                               Image(systemName: "square.grid.2x2.fill").padding()
+                                   .font(.title)
+                                   .foregroundColor(Color("teal"))
+                           }.padding(.top, 4)
+                           .sheet(isPresented: self.$show_settings_modal) {
+                            SettingsModalView()
+                             }
                     }
                 }
-            }.gesture(
-                DragGesture()
-                  .onEnded {
-                    if $0.translation.width < -100 {
-                      self.selected = min(1, self.selected + 1)
-                      self.swipe.impactOccurred()
-                    } else if $0.translation.width > 100 {
-                      self.selected = max(0, self.selected - 1)
-                      self.swipe.impactOccurred()
+                .gesture(
+                    DragGesture()
+                      .onEnded {
+                        if $0.translation.width < -100 {
+                          self.selected = min(1, self.selected + 1)
+                          self.swipe.impactOccurred()
+                        } else if $0.translation.width > 100 {
+                          self.selected = max(0, self.selected - 1)
+                          self.swipe.impactOccurred()
+                        }
                     }
-                }
-          )
+                )
+            }
+            if device == .mac {
+                GeometryReader { geo in
+                    PageControl(current: self.selected)
+                      .position(x: geo.size.width/2, y: geo.size.height)
+                     VStack {
+                        TopBar(selected: self.$selected).padding(.top, 16)
+                         
+                             if self.selected == 0 {
+                                 PxToEm()
+                             }
+                             else {
+                                 EmToPx()
+                            }
+                     }
+            }
+        }
     }
 }
 

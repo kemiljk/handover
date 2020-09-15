@@ -15,6 +15,14 @@ struct PxToEm: View {
     @AppStorage("result", store: UserDefaults(suiteName: "group.com.kejk.px-to-em"))
     var resultData: Data = Data()
     
+    func resetDefaults() {
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
+    }
+    
     @State private var show_modal: Bool = false
     
     @State private var baseText = "16"
@@ -36,10 +44,13 @@ struct PxToEm: View {
     func save(_ calcResult: String) {
         guard let calculation = try? JSONEncoder().encode(calcResult) else { return }
         self.resultData = calculation
-        print("\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.3f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))em at \(String(format: "%.3f", (Double(scaleTextEmpty) ?? 1))) with a baseline of \(Int(baseTextEmpty) ?? 16)px")
+        print("\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.3f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))em at a scale of \(String(format: "%.3f", (Double(scaleTextEmpty) ?? 1))) with a baseline of \(Int(baseTextEmpty) ?? 16)px")
     }
     
     let modal = UIImpactFeedbackGenerator(style: .light)
+    
+    let save = UINotificationFeedbackGenerator()
+    @State private var saveAlert = false
     
     var device = UIDevice.current.userInterfaceIdiom
     
@@ -55,7 +66,7 @@ struct PxToEm: View {
                        TextField("16", text: $baseTextEmpty)
                        .font(.system(.title, design: .monospaced))
                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                       .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color(red: 1.00, green: 0.60, blue: 0.00, opacity: 1.0), lineWidth: 3))
+                       .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color("orange"), lineWidth: 3))
                        .keyboardType(.decimalPad)
                    }.padding(20)
                VStack (alignment: .leading) {
@@ -65,7 +76,7 @@ struct PxToEm: View {
                        TextField("16", text: $pixelTextEmpty)
                        .font(.system(.title, design: .monospaced))
                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                           .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0), lineWidth: 3))
+                           .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color("teal"), lineWidth: 3))
                        .keyboardType(.decimalPad)
                        }.padding(.leading, 20).padding(.trailing, 20)
                        VStack (alignment: .leading) {
@@ -73,10 +84,12 @@ struct PxToEm: View {
                                Text("Scale").font(.headline)
                                Button(action: {
                                    self.show_modal = true
+                                if device == .phone {
                                    self.modal.impactOccurred()
+                                }
                                }) {
                                Image(systemName: "info.circle").padding(.leading, 16).padding(.trailing, 16)
-                                   .foregroundColor(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
+                                .foregroundColor(Color("teal"))
                                    .font(.system(size: 20, weight: .semibold))
                                }
                                .sheet(isPresented: self.$show_modal) {
@@ -86,7 +99,7 @@ struct PxToEm: View {
                        TextField("1.000", text: $scaleTextEmpty)
                        .font(.system(.title, design: .monospaced))
                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                       .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0), lineWidth: 3))
+                       .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color("teal"), lineWidth: 3))
                        .keyboardType(.decimalPad)
                        }.padding(.leading, 20).padding(.trailing, 20)
                    }
@@ -97,21 +110,28 @@ struct PxToEm: View {
                     .fill(Color("shape"))
                 VStack (alignment: .center) {
                 Spacer()
-                    Text("\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.3f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))em")
+                    Text("\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.2f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))em")
                     .font(.system(.title, design: .monospaced)).bold()
                     Spacer()
                     VStack {
                         Button(action: {
-                            save("\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.3f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))em at \(String(format: "%.3f", (Double(scaleTextEmpty) ?? 1))) with a baseline of \(Int(baseTextEmpty) ?? 16)px")
+                            save("\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.2f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))em at a scale of \(String(format: "%.3f", (Double(scaleTextEmpty) ?? 1))) with a baseline of \(Int(baseTextEmpty) ?? 16)px")
+                                if device == .phone {
+                                    save.notificationOccurred(.success)
+                                }
+                                self.saveAlert = true
+                            resetDefaults()
                         }, label: {
-                            Text("Save result").foregroundColor(.white).bold()
+                            Text("Save result to widget").foregroundColor(.white).bold()
                         })
-                        .foregroundColor(.primary)
+                        .alert(isPresented: self.$saveAlert, content: {
+                                    Alert(title: Text("Saved to widget!"), message: Text("The update won't always appear instantly"), dismissButton: .default(Text("Dismiss")))
+                                })
                         .padding(.vertical, 16)
                         .padding(.horizontal, 24)
-                        .background(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
+                        .background(Color("teal"))
                         .clipShape(Capsule())
-                    }
+                        }
                     Spacer()
                 }.padding()
             }

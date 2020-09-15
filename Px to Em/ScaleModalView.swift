@@ -8,9 +8,27 @@
 
 import SwiftUI
 
+struct ScaleItem: Identifiable {
+    var id = UUID()
+    var scaleNumber: String
+    var scaleName: String
+}
+
 struct ScaleModalView: View {
     @Environment(\.presentationMode) private var presentationMode
     var device = UIDevice.current.userInterfaceIdiom
+    
+    let scaleItems: [ScaleItem] = [
+        ScaleItem(scaleNumber: "1.000:", scaleName: "Browser default"),
+        ScaleItem(scaleNumber: "1.067:", scaleName: "Minor second"),
+        ScaleItem(scaleNumber: "1.125:", scaleName: "Major second"),
+        ScaleItem(scaleNumber: "1.200:", scaleName: "Minor third"),
+        ScaleItem(scaleNumber: "1.250:", scaleName: "Minor third"),
+        ScaleItem(scaleNumber: "1.333:", scaleName: "Perfect fourth"),
+        ScaleItem(scaleNumber: "1.414:", scaleName: "Augmented fourth"),
+        ScaleItem(scaleNumber: "1.500:", scaleName: "Perfect fifth"),
+        ScaleItem(scaleNumber: "1.618:", scaleName: "Golden ratio")
+    ]
     
     var body: some View {
         VStack {
@@ -24,7 +42,7 @@ struct ScaleModalView: View {
                       self.presentationMode.wrappedValue.dismiss()
                     }) {
                     Text("Done")
-                        .foregroundColor(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
+                        .foregroundColor(Color("teal"))
                     }
                     .padding()
                 }
@@ -36,40 +54,10 @@ struct ScaleModalView: View {
             }
             VStack (alignment: .leading, spacing: 16) {
                 HStack {
-                    Text("1.000:").font(.system(.body, design: .monospaced)).bold()
-                    Text("Browser default").font(.system(.body, design: .default))
-                }
-                HStack {
-                    Text("1.067:").font(.system(.body, design: .monospaced)).bold()
-                    Text("Minor second").font(.system(.body, design: .default))
-                }
-                HStack {
-                    Text("1.125:").font(.system(.body, design: .monospaced)).bold()
-                    Text("Major second").font(.system(.body, design: .default))
-                }
-                HStack {
-                    Text("1.200:").font(.system(.body, design: .monospaced)).bold()
-                    Text("Minor third").font(.system(.body, design: .default))
-                }
-                HStack {
-                    Text("1.250:").font(.system(.body, design: .monospaced)).bold()
-                    Text("Major third").font(.system(.body, design: .default))
-                }
-                HStack {
-                    Text("1.333:").font(.system(.body, design: .monospaced)).bold()
-                    Text("Perfect fourth").font(.system(.body, design: .default))
-                }
-                HStack {
-                    Text("1.414:").font(.system(.body, design: .monospaced)).bold()
-                    Text("Augmented fourth").font(.system(.body, design: .default))
-                }
-                HStack {
-                    Text("1.500:").font(.system(.body, design: .monospaced)).bold()
-                    Text("Perfect fifth").font(.system(.body, design: .default))
-                }
-                HStack {
-                    Text("1.618:").font(.system(.body, design: .monospaced)).bold()
-                    Text("Golden ratio").font(.system(.body, design: .default))
+                    List(scaleItems) { scaleItem in
+                        Text(scaleItem.scaleNumber).font(.system(.body, design: .monospaced)).bold()
+                        Text(scaleItem.scaleName).font(.system(.body, design: .default))
+                      }
                 }
             }.padding(.leading, 32).padding(.trailing, 32).padding(.top, 32)
         Spacer()

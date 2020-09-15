@@ -29,11 +29,11 @@
 		CF182C5824DAA02A005C0207 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF182C5724DAA02A005C0207 /* TopBar.swift */; };
 		CF1AD1DA24DAA5E600A271E6 /* SavesModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1AD1D924DAA5E600A271E6 /* SavesModalView.swift */; };
 		CF255A36249911A700F4849F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF255A35249911A700F4849F /* Preview Assets.xcassets */; };
-		CF255A39249911A700F4849F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF255A37249911A700F4849F /* LaunchScreen.storyboard */; };
 		CF265C4324C84C8A00D0DA1D /* SettingsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265C4224C84C8A00D0DA1D /* SettingsModal.swift */; };
 		CF265C4524C84CDC00D0DA1D /* ScaleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */; };
 		CF495E2B24D60A9300D3B4BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF495E2A24D60A9300D3B4BC /* Foundation.framework */; };
 		CF495E2D24D60B4500D3B4BC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF495E2C24D60B4500D3B4BC /* SwiftUI.framework */; };
+		CF53849324E2A7E400B81ADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF53849224E2A7E400B81ADB /* LaunchScreen.storyboard */; };
 		CF546F9524C4ABE300B0399F /* classic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F8924C4ABE200B0399F /* classic@2x.png */; };
 		CF546F9624C4ABE300B0399F /* innerShadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F8A24C4ABE200B0399F /* innerShadow@2x.png */; };
 		CF546F9724C4ABE300B0399F /* white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF546F8B24C4ABE300B0399F /* white@3x.png */; };
@@ -53,9 +53,6 @@
 		CFA875D324DBE910003DE91B /* SavedStateWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA875D224DBE910003DE91B /* SavedStateWidget.swift */; };
 		CFA875D524DBE911003DE91B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFA875D424DBE911003DE91B /* Assets.xcassets */; };
 		CFA875D924DBE911003DE91B /* SavedStateWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CFA875CE24DBE910003DE91B /* SavedStateWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CFA875DE24DBE91F003DE91B /* PxToEm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632524C77D08002BAD24 /* PxToEm.swift */; };
-		CFA875DF24DBE91F003DE91B /* EmToPx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632324C72D96002BAD24 /* EmToPx.swift */; };
-		CFA875E024DBE922003DE91B /* ScaleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */; };
 		CFBE632424C72D96002BAD24 /* EmToPx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632324C72D96002BAD24 /* EmToPx.swift */; };
 		CFBE632624C77D08002BAD24 /* PxToEm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632524C77D08002BAD24 /* PxToEm.swift */; };
 		CFDB5BAF24C4D6B400E1A7D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A2C249911A500F4849F /* AppDelegate.swift */; };
@@ -122,13 +119,13 @@
 		CF255A2E249911A500F4849F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CF255A30249911A500F4849F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CF255A35249911A700F4849F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CF255A38249911A700F4849F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF255A3A249911A700F4849F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF255A5C249A052200F4849F /* Px ›› Em.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Px ›› Em.entitlements"; sourceTree = "<group>"; };
 		CF265C4224C84C8A00D0DA1D /* SettingsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModal.swift; sourceTree = "<group>"; };
 		CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleModalView.swift; sourceTree = "<group>"; };
 		CF495E2A24D60A9300D3B4BC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CF495E2C24D60B4500D3B4BC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/iOSSupport/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
+		CF53849224E2A7E400B81ADB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF546F8924C4ABE200B0399F /* classic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "classic@2x.png"; sourceTree = "<group>"; };
 		CF546F8A24C4ABE200B0399F /* innerShadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "innerShadow@2x.png"; sourceTree = "<group>"; };
 		CF546F8B24C4ABE300B0399F /* white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "white@3x.png"; sourceTree = "<group>"; };
@@ -209,9 +206,9 @@
 				CF265C4224C84C8A00D0DA1D /* SettingsModal.swift */,
 				CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */,
 				CF133471249A201B00D04D02 /* Assets.xcassets */,
-				CF255A37249911A700F4849F /* LaunchScreen.storyboard */,
 				CF255A3A249911A700F4849F /* Info.plist */,
 				CF255A34249911A700F4849F /* Preview Content */,
+				CF53849224E2A7E400B81ADB /* LaunchScreen.storyboard */,
 			);
 			path = "Px to Em";
 			sourceTree = "<group>";
@@ -370,7 +367,6 @@
 				CF09E95E24CC435F006E73F8 /* orangeInnerShadow@3x.png in Resources */,
 				CF09E96624CC435F006E73F8 /* orangeMono@2x.png in Resources */,
 				CF546F9724C4ABE300B0399F /* white@3x.png in Resources */,
-				CF255A39249911A700F4849F /* LaunchScreen.storyboard in Resources */,
 				CF09E96B24CC435F006E73F8 /* greyScale@3x.png in Resources */,
 				CF09E96A24CC435F006E73F8 /* whiteSmallShadow@2x.png in Resources */,
 				CF09E96124CC435F006E73F8 /* blackSmallShadow@3x.png in Resources */,
@@ -379,6 +375,7 @@
 				CF09E95C24CC435F006E73F8 /* orangeNeuo@3x.png in Resources */,
 				CF09E96324CC435F006E73F8 /* orangeMono@3x.png in Resources */,
 				CF546FA324C4ACA700B0399F /* black@2x.png in Resources */,
+				CF53849324E2A7E400B81ADB /* LaunchScreen.storyboard in Resources */,
 				CF09E96824CC435F006E73F8 /* greyScale@2x.png in Resources */,
 				CF546FA424C4ACA700B0399F /* black@3x.png in Resources */,
 				CF09E96924CC435F006E73F8 /* whiteSmall@3x.png in Resources */,
@@ -434,10 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFA875DE24DBE91F003DE91B /* PxToEm.swift in Sources */,
-				CFA875DF24DBE91F003DE91B /* EmToPx.swift in Sources */,
 				CFA875D324DBE910003DE91B /* SavedStateWidget.swift in Sources */,
-				CFA875E024DBE922003DE91B /* ScaleModalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,17 +448,6 @@
 			targetProxy = CFA875D724DBE911003DE91B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		CF255A37249911A700F4849F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CF255A38249911A700F4849F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CF255A51249911A700F4849F /* Debug */ = {
@@ -598,25 +581,26 @@
 				CODE_SIGN_ENTITLEMENTS = "Px to Em/Px ›› Em.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.7.4;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"Px to Em/Preview Content\"";
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
+				ENABLE_BITCODE = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Px to Em/Info.plist";
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.7.1;
+				MARKETING_VERSION = 3;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = "Px ›› Em";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 13.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 				VERSIONING_SYSTEM = "";
@@ -632,25 +616,26 @@
 				CODE_SIGN_ENTITLEMENTS = "Px to Em/Px ›› Em.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.7.4;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"Px to Em/Preview Content\"";
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
+				ENABLE_BITCODE = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Px to Em/Info.plist";
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.7.1;
+				MARKETING_VERSION = 3;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = "Px ›› Em";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,6";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 13.0;
 				VALID_ARCHS = "$(ARCHS_STANDARD)";
 				VERSIONING_SYSTEM = "";
@@ -665,21 +650,24 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = SavedStateWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.7.4;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				INFOPLIST_FILE = SavedStateWidget/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.7.1;
+				MARKETING_VERSION = 3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.SavedStateWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -690,21 +678,24 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = SavedStateWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.7.4;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				INFOPLIST_FILE = SavedStateWidget/Info.plist;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.7.1;
+				MARKETING_VERSION = 3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.SavedStateWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};

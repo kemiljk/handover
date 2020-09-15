@@ -137,8 +137,8 @@ struct SettingsModalView: View {
                     Button(action: {
                       self.presentationMode.wrappedValue.dismiss()
                     }) {
-                    Text("Done")
-                        .foregroundColor(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
+                        Text("Done").bold()
+                        .foregroundColor(Color("teal"))
                     }
                     .padding()
                 }
@@ -211,7 +211,7 @@ struct SettingsModalView: View {
                         Image("white")
                         .renderingMode(.original)
                         .cornerRadius(15)
-                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 0.4), lineWidth: 1))
+                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color("teal"), lineWidth: 1))
                         }
                     }
                     HStack {
@@ -222,7 +222,7 @@ struct SettingsModalView: View {
                         Image("black")
                         .renderingMode(.original)
                         .cornerRadius(15)
-                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 0.4), lineWidth: 1))
+                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color("teal"), lineWidth: 1))
                         }
                     }
                     HStack {
@@ -287,7 +287,7 @@ struct SettingsModalView: View {
                         Image("blackSmall")
                         .renderingMode(.original)
                         .cornerRadius(15)
-                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 0.4), lineWidth: 1))
+                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color("teal"), lineWidth: 1))
                         }
                     }
                     HStack {
@@ -298,7 +298,7 @@ struct SettingsModalView: View {
                         Image("whiteSmall")
                         .renderingMode(.original)
                         .cornerRadius(15)
-                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 0.4), lineWidth: 1))
+                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color("teal"), lineWidth: 1))
                         }
                     }
                     HStack {
@@ -309,7 +309,7 @@ struct SettingsModalView: View {
                         Image("blackSmallShadow")
                         .renderingMode(.original)
                         .cornerRadius(15)
-                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 0.4), lineWidth: 1))
+                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color("teal"), lineWidth: 1))
                         }
                     }
                     HStack {
@@ -320,7 +320,7 @@ struct SettingsModalView: View {
                         Image("whiteSmallShadow")
                         .renderingMode(.original)
                         .cornerRadius(15)
-                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 0.4), lineWidth: 1))
+                            .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color("teal"), lineWidth: 1))
                         }
                     }
                 }
