@@ -138,6 +138,7 @@ struct SettingsModalView: View {
                       self.presentationMode.wrappedValue.dismiss()
                     }) {
                         Text("Done").bold()
+                        .font(.system(size: 20, weight: .semibold))
                         .foregroundColor(Color("teal"))
                     }
                     .padding()
@@ -148,8 +149,8 @@ struct SettingsModalView: View {
                     .font(.system(.title, design: .rounded))
                     .padding()
             }
-            VStack (alignment: .leading, spacing: 24) {
-                HStack (spacing: 24) {
+            VStack (alignment: .leading, spacing: device == .phone ? 24 : 32) {
+                HStack (spacing: device == .phone ? 24 : 32) {
                     HStack {
                         Button(action: {
                             self.setIcon(.classic)
@@ -192,7 +193,7 @@ struct SettingsModalView: View {
                         }
                     }
                 }
-                HStack (spacing: 24) {
+                HStack (spacing: device == .phone ? 24 : 32) {
                     HStack {
                         Button(action: {
                             self.setIcon(.neuomorphic)
@@ -236,7 +237,7 @@ struct SettingsModalView: View {
                         }
                     }
                 }
-                HStack (spacing: 24) {
+                HStack (spacing: device == .phone ? 24 : 32) {
                     HStack {
                         Button(action: {
                             self.setIcon(.greyScale)
@@ -278,7 +279,7 @@ struct SettingsModalView: View {
                         }
                     }
                 }
-                HStack (spacing: 24) {
+                HStack (spacing: device == .phone ? 24 : 32) {
                     HStack {
                         Button(action: {
                             self.setIcon(.blackSmall)
@@ -324,7 +325,7 @@ struct SettingsModalView: View {
                         }
                     }
                 }
-            }.padding(.leading, 32).padding(.trailing, 32).padding(.top, 32)
+            }.padding(.horizontal, 32).padding(.top, 32)
             Spacer()
         }
     }

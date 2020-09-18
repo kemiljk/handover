@@ -22,7 +22,7 @@ struct TopBar : View {
             })
             {
             Text("Px").bold()
-                .frame(width: 24, height: 16)
+                .frame(width: 30, height: 16)
                 .padding(.vertical, 8)
                 .padding(.horizontal, 16)
                 .background(self.selected == 0 ? Color("teal") : Color.clear)
@@ -36,7 +36,7 @@ struct TopBar : View {
             })
             {
             Text("Em").bold()
-            .frame(width: 24, height: 16)
+            .frame(width: 30, height: 16)
             .padding(.vertical, 8)
             .padding(.horizontal, 16)
             .background(self.selected == 1 ? Color("orange") : Color.clear)

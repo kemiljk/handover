@@ -89,3 +89,12 @@ struct SavedStateWidget: Widget {
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
+
+struct Widget_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            PlaceholderView()
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+        }
+    }
+}

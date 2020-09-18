@@ -10,6 +10,7 @@ import Foundation
 import SwiftUI
 import Combine
 import UIKit
+import WidgetKit
 
 struct EmToPx: View {
     @AppStorage("result", store: UserDefaults(suiteName: "group.com.kejk.px-to-em"))
@@ -24,17 +25,18 @@ struct EmToPx: View {
     }
     
     @State private var show_modal: Bool = false
+    @State var show_toast: Bool = false
     
-    @State private var baseText = "16"
-    @State private var emText = "1"
-    @State private var scaleText = "1.000"
+//    @State private var baseText = "16"
+//    @State private var emText = "1"
+//    @State private var scaleText = "1.000"
     @State private var baseTextEmpty = ""
     @State private var emTextEmpty = ""
     @State private var scaleTextEmpty = ""
     
-    lazy var emInt = Double(emText) ?? 1
-    lazy var baseInt = Double(baseText) ?? 16
-    lazy var scaleInt = Double(scaleText) ?? 1.000
+//    lazy var emInt = Double(emText) ?? 1
+//    lazy var baseInt = Double(baseText) ?? 16
+//    lazy var scaleInt = Double(scaleText) ?? 1.000
     
     func emToPxs(baseInt: Double, emInt: Double, scaleInt: Double) -> Double {
         let pxValue = (emInt * baseInt) / scaleInt
@@ -45,12 +47,12 @@ struct EmToPx: View {
         guard let calculation = try? JSONEncoder().encode(calcResult) else { return }
         self.resultData = calculation
         print("\(String(format: "%.2f", (Double(emTextEmpty) ?? 1.000)))em is \(String(format: "%.0f", emToPxs(baseInt: Double(baseTextEmpty) ?? 16, emInt: Double(emTextEmpty) ?? 1, scaleInt: Double(scaleTextEmpty) ?? 1)))px at a scale of \(String(format: "%.3f", (Double(scaleTextEmpty) ?? 1))) with a baseline of \(Int(baseTextEmpty) ?? 16)px")
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     let modal = UIImpactFeedbackGenerator(style: .light)
     
     let save = UINotificationFeedbackGenerator()
-    @State private var saveAlert = false
     
     var device = UIDevice.current.userInterfaceIdiom
     
@@ -119,14 +121,11 @@ struct EmToPx: View {
                                 if device == .phone {
                                 save.notificationOccurred(.success)
                                 }
-                                self.saveAlert = true
+                                self.show_toast = true
                             resetDefaults()
                         }, label: {
                             Text("Save result to widget").foregroundColor(.white).bold()
                         })
-                        .alert(isPresented: self.$saveAlert, content: {
-                                Alert(title: Text("Saved to widget!"), message: Text("The update won't always appear instantly"), dismissButton: .default(Text("Dismiss")))
-                            })
                         .padding(.vertical, 16)
                         .padding(.horizontal, 24)
                         .background(Color("orange"))
@@ -135,6 +134,17 @@ struct EmToPx: View {
                     Spacer()
                 }.padding()
             }
+        }
+        .popup(isPresented: $show_toast, type: .floater(verticalPadding: device == .phone ? 60 : 40), position: .top, autohideIn: 2) {
+            HStack {
+                Image(systemName: "checkmark").padding(.trailing, 4)
+                    .font(.system(size: 20, weight: .semibold))
+                Text("Saved").bold()
+            }
+            .padding(.vertical, 16)
+            .padding(.horizontal, 32)
+            .background(Color("lightGrey"))
+            .clipShape(Capsule())
         }
     }
 }

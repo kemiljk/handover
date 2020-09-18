@@ -28,7 +28,8 @@ struct ContentView: View {
     
     var body: some View {
             if device == .phone || device == .pad {
-            GeometryReader { geo in
+            ZStack {
+                GeometryReader { geo in
                 PageControl(current: self.selected)
                   .position(x: geo.size.width/2, y: geo.size.height)
                  VStack {
@@ -95,6 +96,7 @@ struct ContentView: View {
                                  EmToPx()
                             }
                      }
+                }
             }
         }
     }

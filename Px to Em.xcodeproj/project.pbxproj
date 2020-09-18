@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF018AB72513A2D4005BB13D /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF018AB62513A2D4005BB13D /* PopupView.swift */; };
 		CF09E95A24CC435F006E73F8 /* blackSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E94824CC435E006E73F8 /* blackSmall@2x.png */; };
 		CF09E95B24CC435F006E73F8 /* darkGrey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E94924CC435E006E73F8 /* darkGrey@2x.png */; };
 		CF09E95C24CC435F006E73F8 /* orangeNeuo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E94A24CC435E006E73F8 /* orangeNeuo@3x.png */; };
@@ -92,6 +93,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CF018AB62513A2D4005BB13D /* PopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupView.swift; sourceTree = "<group>"; };
 		CF09E94824CC435E006E73F8 /* blackSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackSmall@2x.png"; sourceTree = "<group>"; };
 		CF09E94924CC435E006E73F8 /* darkGrey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "darkGrey@2x.png"; sourceTree = "<group>"; };
 		CF09E94A24CC435E006E73F8 /* orangeNeuo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orangeNeuo@3x.png"; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				CF1AD1D924DAA5E600A271E6 /* SavesModalView.swift */,
 				CF265C4224C84C8A00D0DA1D /* SettingsModal.swift */,
 				CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */,
+				CF018AB62513A2D4005BB13D /* PopupView.swift */,
 				CF133471249A201B00D04D02 /* Assets.xcassets */,
 				CF255A3A249911A700F4849F /* Info.plist */,
 				CF255A34249911A700F4849F /* Preview Content */,
@@ -418,6 +421,7 @@
 				CFBE632424C72D96002BAD24 /* EmToPx.swift in Sources */,
 				CF182C5824DAA02A005C0207 /* TopBar.swift in Sources */,
 				CFDB5BB124C4D6BC00E1A7D5 /* ContentView.swift in Sources */,
+				CF018AB72513A2D4005BB13D /* PopupView.swift in Sources */,
 				CF265C4524C84CDC00D0DA1D /* ScaleModalView.swift in Sources */,
 				CF1AD1DA24DAA5E600A271E6 /* SavesModalView.swift in Sources */,
 				CF265C4324C84C8A00D0DA1D /* SettingsModal.swift in Sources */,
@@ -484,6 +488,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -548,6 +553,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -592,7 +598,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3;
+				MARKETING_VERSION = 4.3;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = "Px ›› Em";
@@ -627,7 +633,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3;
+				MARKETING_VERSION = 4.3;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = "Px ›› Em";
@@ -660,7 +666,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 3;
+				MARKETING_VERSION = 4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.SavedStateWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -688,7 +694,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 3;
+				MARKETING_VERSION = 4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.SavedStateWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

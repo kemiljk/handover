@@ -41,7 +41,8 @@ struct ScaleModalView: View {
                     Button(action: {
                       self.presentationMode.wrappedValue.dismiss()
                     }) {
-                    Text("Done")
+                    Text("Done").bold()
+                        .font(.system(size: 20, weight: .semibold))
                         .foregroundColor(Color("teal"))
                     }
                     .padding()
