@@ -28,7 +28,6 @@
 		CF09E96B24CC435F006E73F8 /* greyScale@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF09E95924CC435F006E73F8 /* greyScale@3x.png */; };
 		CF133472249A201B00D04D02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF133471249A201B00D04D02 /* Assets.xcassets */; };
 		CF182C5824DAA02A005C0207 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF182C5724DAA02A005C0207 /* TopBar.swift */; };
-		CF1AD1DA24DAA5E600A271E6 /* SavesModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1AD1D924DAA5E600A271E6 /* SavesModalView.swift */; };
 		CF255A36249911A700F4849F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF255A35249911A700F4849F /* Preview Assets.xcassets */; };
 		CF265C4324C84C8A00D0DA1D /* SettingsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265C4224C84C8A00D0DA1D /* SettingsModal.swift */; };
 		CF265C4524C84CDC00D0DA1D /* ScaleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */; };
@@ -56,6 +55,9 @@
 		CFA875D924DBE911003DE91B /* SavedStateWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CFA875CE24DBE910003DE91B /* SavedStateWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CFBE632424C72D96002BAD24 /* EmToPx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632324C72D96002BAD24 /* EmToPx.swift */; };
 		CFBE632624C77D08002BAD24 /* PxToEm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE632524C77D08002BAD24 /* PxToEm.swift */; };
+		CFC488132517898600769A3A /* AppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC488122517898600769A3A /* AppIconView.swift */; };
+		CFC48819251789C800769A3A /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC48818251789C800769A3A /* AboutView.swift */; };
+		CFC4881D251789E100769A3A /* SavesModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC4881C251789E100769A3A /* SavesModalView.swift */; };
 		CFDB5BAF24C4D6B400E1A7D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A2C249911A500F4849F /* AppDelegate.swift */; };
 		CFDB5BB024C4D6B900E1A7D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A2E249911A500F4849F /* SceneDelegate.swift */; };
 		CFDB5BB124C4D6BC00E1A7D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF255A30249911A500F4849F /* ContentView.swift */; };
@@ -115,7 +117,6 @@
 		CF133471249A201B00D04D02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF182C0E24D9B740005C0207 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		CF182C5724DAA02A005C0207 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
-		CF1AD1D924DAA5E600A271E6 /* SavesModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavesModalView.swift; sourceTree = "<group>"; };
 		CF255A29249911A500F4849F /* Px ›› Em.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Px ›› Em.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF255A2C249911A500F4849F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF255A2E249911A500F4849F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +150,9 @@
 		CFA875DA24DBE911003DE91B /* SavedStateWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SavedStateWidgetExtension.entitlements; sourceTree = "<group>"; };
 		CFBE632324C72D96002BAD24 /* EmToPx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmToPx.swift; sourceTree = "<group>"; };
 		CFBE632524C77D08002BAD24 /* PxToEm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PxToEm.swift; sourceTree = "<group>"; };
+		CFC488122517898600769A3A /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
+		CFC48818251789C800769A3A /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		CFC4881C251789E100769A3A /* SavesModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavesModalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,8 +208,10 @@
 				CF255A30249911A500F4849F /* ContentView.swift */,
 				CFBE632524C77D08002BAD24 /* PxToEm.swift */,
 				CFBE632324C72D96002BAD24 /* EmToPx.swift */,
-				CF1AD1D924DAA5E600A271E6 /* SavesModalView.swift */,
 				CF265C4224C84C8A00D0DA1D /* SettingsModal.swift */,
+				CFC48818251789C800769A3A /* AboutView.swift */,
+				CFC488122517898600769A3A /* AppIconView.swift */,
+				CFC4881C251789E100769A3A /* SavesModalView.swift */,
 				CF265C4424C84CDC00D0DA1D /* ScaleModalView.swift */,
 				CF018AB62513A2D4005BB13D /* PopupView.swift */,
 				CF133471249A201B00D04D02 /* Assets.xcassets */,
@@ -420,14 +426,16 @@
 			files = (
 				CFBE632424C72D96002BAD24 /* EmToPx.swift in Sources */,
 				CF182C5824DAA02A005C0207 /* TopBar.swift in Sources */,
+				CFC48819251789C800769A3A /* AboutView.swift in Sources */,
 				CFDB5BB124C4D6BC00E1A7D5 /* ContentView.swift in Sources */,
 				CF018AB72513A2D4005BB13D /* PopupView.swift in Sources */,
+				CFC4881D251789E100769A3A /* SavesModalView.swift in Sources */,
 				CF265C4524C84CDC00D0DA1D /* ScaleModalView.swift in Sources */,
-				CF1AD1DA24DAA5E600A271E6 /* SavesModalView.swift in Sources */,
 				CF265C4324C84C8A00D0DA1D /* SettingsModal.swift in Sources */,
 				CFDB5BB024C4D6B900E1A7D5 /* SceneDelegate.swift in Sources */,
 				CFDB5BAF24C4D6B400E1A7D5 /* AppDelegate.swift in Sources */,
 				CFBE632624C77D08002BAD24 /* PxToEm.swift in Sources */,
+				CFC488132517898600769A3A /* AppIconView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,7 +606,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.3;
+				MARKETING_VERSION = 4.4;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = "Px ›› Em";
@@ -633,7 +641,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.3;
+				MARKETING_VERSION = 4.4;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = "Px ›› Em";
@@ -666,7 +674,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 4.3;
+				MARKETING_VERSION = 4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.SavedStateWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -694,7 +702,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 4.3;
+				MARKETING_VERSION = 4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.SavedStateWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

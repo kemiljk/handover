@@ -27,16 +27,9 @@ struct EmToPx: View {
     @State private var show_modal: Bool = false
     @State var show_toast: Bool = false
     
-//    @State private var baseText = "16"
-//    @State private var emText = "1"
-//    @State private var scaleText = "1.000"
     @State private var baseTextEmpty = ""
     @State private var emTextEmpty = ""
     @State private var scaleTextEmpty = ""
-    
-//    lazy var emInt = Double(emText) ?? 1
-//    lazy var baseInt = Double(baseText) ?? 16
-//    lazy var scaleInt = Double(scaleText) ?? 1.000
     
     func emToPxs(baseInt: Double, emInt: Double, scaleInt: Double) -> Double {
         let pxValue = (emInt * baseInt) / scaleInt

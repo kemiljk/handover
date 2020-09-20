@@ -44,29 +44,18 @@ struct ContentView: View {
                  }
                 Spacer()
                     HStack {
-    //                    Button(action: {
-    //                        self.show_saves_modal = true
-    //                        self.modal.impactOccurred()
-    //                    }) {
-    //                        Image(systemName: "equal.square.fill").padding()
-    //                            .font(.title)
-    //                            .foregroundColor(Color(red: 0.00, green: 0.60, blue: 0.53, opacity: 1.0))
-    //                    }.padding(.top, 4)
-    //                    .sheet(isPresented: self.$show_saves_modal) {
-    //                        SavesModalView()
-    //                     }
                        Spacer()
                            Button(action: {
                                self.show_settings_modal = true
                                self.modal.impactOccurred()
                            }) {
-                               Image(systemName: "square.grid.2x2.fill").padding()
-                                   .font(.title)
+                               Image(systemName: "gearshape.fill").padding()
+                                   .font(.system(size: 24))
                                    .foregroundColor(Color("teal"))
-                           }.padding(.top, 4)
+                           }.padding(.vertical, 8)
                            .sheet(isPresented: self.$show_settings_modal) {
                             SettingsModalView()
-                             }
+                         }
                     }
                 }
                 .gesture(

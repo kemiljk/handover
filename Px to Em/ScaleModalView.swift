@@ -18,6 +18,31 @@ struct ScaleModalView: View {
     @Environment(\.presentationMode) private var presentationMode
     var device = UIDevice.current.userInterfaceIdiom
     
+    var body: some View {
+        VStack {
+            if device == .phone {
+            Image(systemName: "chevron.compact.down").font(.system(size: 40, weight: .semibold)).padding(.top, 20).foregroundColor(Color.secondary)
+            }
+            else {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                      self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                    Text("Done").bold()
+                        .font(.system(size: 18, weight: .semibold))
+                        .foregroundColor(Color("teal"))
+                    }
+                    .padding()
+                }
+            }
+            ScalesView()
+        Spacer()
+        }
+    }
+}
+
+struct ScalesView: View {
     let scaleItems: [ScaleItem] = [
         ScaleItem(scaleNumber: "1.000:", scaleName: "Browser default"),
         ScaleItem(scaleNumber: "1.067:", scaleName: "Minor second"),
@@ -31,37 +56,13 @@ struct ScaleModalView: View {
     ]
     
     var body: some View {
-        VStack {
-            if device == .phone {
-            Image(systemName: "chevron.compact.down").font(.system(size: 40, weight: .semibold)).padding(.top, 20).foregroundColor(Color.secondary)
-            }
-            else {
-                HStack {
-                    Spacer()
-                    Button(action: {
-                      self.presentationMode.wrappedValue.dismiss()
-                    }) {
-                    Text("Done").bold()
-                        .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(Color("teal"))
-                    }
-                    .padding()
-                }
-            }
-            VStack (alignment: .leading, spacing: 16) {
-                Text("Example scales").bold()
-                    .font(.system(.title, design: .rounded))
-                    .padding()
-            }
-            VStack (alignment: .leading, spacing: 16) {
-                HStack {
-                    List(scaleItems) { scaleItem in
-                        Text(scaleItem.scaleNumber).font(.system(.body, design: .monospaced)).bold()
-                        Text(scaleItem.scaleName).font(.system(.body, design: .default))
-                      }
-                }
-            }.padding(.leading, 32).padding(.trailing, 32).padding(.top, 32)
-        Spacer()
+        VStack{
+            HStack {
+                List(scaleItems) { scaleItem in
+                    Text(scaleItem.scaleNumber).font(.system(.body, design: .monospaced)).bold()
+                    Text(scaleItem.scaleName).font(.system(.body, design: .default))
+                  }.listStyle(InsetGroupedListStyle()).padding(.top, 8)
+            }.navigationBarTitle(Text("Example scales"))
         }
     }
 }
