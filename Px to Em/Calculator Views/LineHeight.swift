@@ -73,7 +73,7 @@ struct LineHeightContent: View {
     
     
     func idealLineHeight(fontSizeInt: Double, ratioInt: Double) -> Double {
-        let lineheight = fontSizeInt * ratioInt - fontSizeInt
+        let lineheight = fontSizeInt * ratioInt
         return lineheight
     }
     
