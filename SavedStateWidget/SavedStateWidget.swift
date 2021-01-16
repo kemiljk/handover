@@ -9,7 +9,8 @@
 import WidgetKit
 import SwiftUI
 
-struct SimpleEntry: TimelineEntry {
+struct SimpleEntry: TimelineEntry, Identifiable {
+    var id = UUID()
     public let date: Date
     public let calculation: String
 }
@@ -21,12 +22,12 @@ struct Provider: TimelineProvider {
     typealias Entry = SimpleEntry
     
     func placeholder(in context: Context) -> SimpleEntry {
-        let calculation: String = "16px is 1.00em at a scale of 1.000 with a baseline of 16px"
+        let calculation: String = "16px is 1.00rem at a scale of 1.000 with a baseline of 16px"
         return SimpleEntry(date: Date(), calculation: calculation)
     }
     
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
-        let calculation: String = "16px is 1.00em at a scale of 1.000 with a baseline of 16px"
+        let calculation: String = "16px is 1.00rem at a scale of 1.000 with a baseline of 16px"
         let entry = SimpleEntry(date: Date(), calculation: calculation)
         completion(entry)
     }
@@ -41,14 +42,16 @@ struct Provider: TimelineProvider {
 }
 
 struct PlaceholderView : View {
+    @Environment(\.widgetFamily) var family: WidgetFamily
+    
     var body: some View {
         VStack (alignment: .leading) {
-            Text("Saved result").font(.system(.title3, design: .rounded)).bold()
+            Text(family == .systemSmall  ? "Latest save" : "Latest saved result").font(.system(.title3, design: .rounded)).bold()
                 .foregroundColor(Color("AccentColor"))
             Spacer()
-            HStack {
-            Text("16px is 1.00em at a scale of 1.000 with a baseline of 16px ")
-                .font(.system(size: 14, design: .monospaced))
+            VStack {
+                Text("16px is 1.00rem at a scale of 1.000 with a baseline of 16px ")
+                    .font(.system(size: 14, design: .monospaced))
             }
             Spacer()
         }.padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
@@ -58,28 +61,32 @@ struct PlaceholderView : View {
 }
 
 struct SavedStateWidgetEntryView : View {
+    @Environment(\.widgetFamily) var family: WidgetFamily
     var data: Provider.Entry
-
+    var items = [Provider.Entry]()
+    
     var body: some View {
         VStack (alignment: .leading) {
-            Text("Saved result").font(.system(.title3, design: .rounded)).bold()
+            Text(family == .systemSmall  ? "Latest save" : "Latest saved result").font(.system(.title3, design: .rounded)).bold()
                 .foregroundColor(Color("AccentColor"))
             Spacer()
-            HStack {
+            VStack {
+//                ForEach (0..<6, id: \.self) {item in
                 Text("\(data.calculation)")
                     .font(.system(size: 14, design: .monospaced))
-                }
-                Spacer()
-            }.padding(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
-            .frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity, minHeight: 0, idealHeight: 100, maxHeight: .infinity, alignment: .leading)
-            .background(Color("WidgetBackground"))
+//                }
+            }
+            Spacer()
+        }.padding(16)
+        .frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity, minHeight: 0, idealHeight: 100, maxHeight: .infinity, alignment: .leading)
+        .background(Color("WidgetBackground"))
     }
 }
 
 @main
 struct SavedStateWidget: Widget {
     private let kind: String = "SavedStateWidget"
-
+    
     public var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { data in
             SavedStateWidgetEntryView(data: data)
@@ -87,14 +94,5 @@ struct SavedStateWidget: Widget {
         .configurationDisplayName("Saved calculation")
         .description("Your last saved calculation.")
         .supportedFamilies([.systemSmall, .systemMedium])
-    }
-}
-
-struct Widget_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            PlaceholderView()
-                .previewContext(WidgetPreviewContext(family: .systemSmall))
-        }
     }
 }
