@@ -5,9 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<array>
-		<string></string>
-	</array>
+	<string>Hand››over</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIcons</key>
@@ -33,13 +31,6 @@
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>blackSmallShadow</string>
-				</array>
-			</dict>
-			<key>darkGreyIcon</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>darkGrey</string>
 				</array>
 			</dict>
 			<key>gradientIcon</key>
@@ -89,6 +80,27 @@
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>orangeNeuo</string>
+				</array>
+			</dict>
+			<key>purpleMonoIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>purpleMono</string>
+				</array>
+			</dict>
+			<key>rainbowGradientIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>rainbowGradient</string>
+				</array>
+			</dict>
+			<key>rainbowGradientInverseIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>rainbowGradientInverse</string>
 				</array>
 			</dict>
 			<key>shadowIcon</key>
@@ -155,13 +167,6 @@
 					<string>blackSmallShadow</string>
 				</array>
 			</dict>
-			<key>darkGreyIcon</key>
-			<dict>
-				<key>CFBundleIconFiles</key>
-				<array>
-					<string>darkGrey</string>
-				</array>
-			</dict>
 			<key>gradientIcon</key>
 			<dict>
 				<key>CFBundleIconFiles</key>
@@ -209,6 +214,27 @@
 				<key>CFBundleIconFiles</key>
 				<array>
 					<string>orangeNeuo</string>
+				</array>
+			</dict>
+			<key>purpleMonoIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>purpleMono</string>
+				</array>
+			</dict>
+			<key>rainbowGradientIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>rainbowGradient</string>
+				</array>
+			</dict>
+			<key>rainbowGradientInverseIcon</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>rainbowGradientInverse</string>
 				</array>
 			</dict>
 			<key>shadowIcon</key>
@@ -264,6 +290,13 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.graphics-design</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>googlegmail</string>
+		<string>ms-outlook</string>
+		<string>readdle-spark</string>
+		<string>ymail</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIApplicationSceneManifest</key>
