@@ -86,7 +86,7 @@ struct PxToTwView: View {
             .padding(.horizontal, 32)
             .background(Color("lightGrey"))
             .clipShape(Capsule())
-        .navigationBarTitle("Px››Tw")
+        .navigationBarTitle("Px››Tailwind")
         .navigationBarItems(
             leading:
                     Button(action: {
@@ -196,7 +196,7 @@ struct PxToTwView: View {
             }
             VStack (alignment: .center) {
                 VStack {
-                    Button(action: {
+                    Button {
                         save(scaleResult: "", baselineResult: "\(Int(baseTextEmpty) ?? 16)", calcResult: "\(Int(pixelTextEmpty) ?? 16)px is {class}-\(String(format: "%.0f", pxToTws(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16)))")
                         let item = ResultItem(pxResult: "", emResult: "", lhResult: "", twResult: "\(Int(pixelTextEmpty) ?? 16)px is {class}-\(String(format: "%.0f", pxToTws(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16))) with a baseline of \(Int(baseTextEmpty) ?? 16)px")
                         self.twResults.items.insert(item, at: 0)
@@ -207,16 +207,16 @@ struct PxToTwView: View {
                         }
                         self.show_toast = true
                         resetDefaults()
-                    }, label: {
+                    } label: {
                         Text("Save result")
                             .foregroundColor(.white)
-                            .font(.system(size: 16, weight: .bold, design: .rounded))
-                    })
-                    .padding(.vertical, 16)
-                    .padding(.horizontal, 48)
+                            .font(.system(size: 16, weight: .bold))
+                    }
+                    .padding(.vertical, 12)
+                    .padding(.horizontal, 32)
+                    .frame(width: UIScreen.main.bounds.width / 2)
                     .background(Color("teal"))
-                    .clipShape(Capsule())
-                    .contentShape(Capsule(style: .continuous))
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
                     .hoverEffect(.highlight)
                 }
                 if device == .mac {

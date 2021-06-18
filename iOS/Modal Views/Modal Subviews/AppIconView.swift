@@ -137,7 +137,7 @@ struct AppIconView: View {
     @Environment(\.presentationMode) private var presentationMode
     
     var body: some View {
-        VStack (alignment: .leading, spacing: device == .phone ? (UIScreen.screenHeight / 16) : 48) {
+        VStack (alignment: .leading, spacing: device == .phone ? (UIScreen.screenHeight / 32) : 48) {
             HStack (spacing: device == .phone ? (UIScreen.screenWidth / 16) : 48) {
                 HStack {
                     Button(action: {
@@ -389,9 +389,9 @@ struct AppIconView: View {
                     .hoverEffect(.highlight)
                 }
             }
+            Spacer()
         }
         .padding()
         .navigationBarTitle("Change app icon")
-        Spacer()
     }
 }

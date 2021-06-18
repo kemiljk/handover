@@ -24,32 +24,28 @@ struct SidebarView: View {
                     destination: PxToEm(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults),
                     label: {
                         HStack {
-                            Image(systemName: "arrow.right.circle.fill")
-                            Text("Px››Rem")
+                            Label("Px››Rem", systemImage: "arrow.uturn.right.circle.fill")
                         }
                     }).tag(0)
                 NavigationLink(
                     destination: EmToPx(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults),
                     label: {
                         HStack {
-                            Image(systemName: "arrow.left.circle.fill")
-                            Text("Rem››Px")
+                            Label("Rem››Px", systemImage: "arrow.uturn.left.circle.fill")
                         }
                     }).tag(1)
                 NavigationLink(
                     destination: LineHeight(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults),
                     label: {
                         HStack {
-                            Image(systemName: "lineweight")
-                            Text("Line››height")
+                            Label("Line››height", systemImage: "lineweight")
                         }
                     }).tag(2)
                 NavigationLink(
                     destination: PxToTw(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults),
                     label: {
                         HStack {
-                            Image(systemName: "text.and.command.macwindow")
-                            Text("Px››Tailwind")
+                            Label("Px››Tailwind", systemImage: "text.and.command.macwindow")
                         }
                     }).tag(3)
             }
@@ -63,32 +59,28 @@ struct SidebarView: View {
                     destination: PxToEm(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults),
                     label: {
                         HStack {
-                            Image(systemName: "arrow.right.circle.fill")
-                            Text("Px››Rem")
+                            Label("Px››Rem", systemImage: "arrow.uturn.right.circle.fill")
                         }
                     }).tag(0)
                 NavigationLink(
                     destination: EmToPx(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults),
                     label: {
                         HStack {
-                            Image(systemName: "arrow.left.circle.fill")
-                            Text("Rem››Px")
+                            Label("Rem››Px", systemImage: "arrow.uturn.left.circle.fill")
                         }
                     }).tag(1)
                 NavigationLink(
                     destination: LineHeight(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults),
                     label: {
                         HStack {
-                            Image(systemName: "lineweight")
-                            Text("Line››height")
+                            Label("Line››height", systemImage: "lineweight")
                         }
                     }).tag(2)
                 NavigationLink(
                     destination: PxToTw(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults),
                     label: {
                         HStack {
-                            Image(systemName: "text.and.command.macwindow")
-                            Text("Px››Tailwind")
+                            Label("Px››Tailwind", systemImage: "text.and.command.macwindow")
                         }
                     }).tag(3)
                 NavigationLink(

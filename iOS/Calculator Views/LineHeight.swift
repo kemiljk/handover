@@ -290,13 +290,13 @@ struct LineHeightContent: View {
                     }, label: {
                         Text("Save result")
                             .foregroundColor(.white)
-                            .font(.system(size: 16, weight: .bold, design: .rounded))
+                            .font(.system(size: 16, weight: .bold))
                     })
-                    .padding(.vertical, 16)
-                    .padding(.horizontal, 48)
+                    .padding(.vertical, 12)
+                    .padding(.horizontal, 32)
+                    .frame(width: UIScreen.main.bounds.width / 2)
                     .background(Color("teal"))
-                    .clipShape(Capsule())
-                    .contentShape(Capsule(style: .continuous))
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
                     .hoverEffect(.highlight)
                 }
                 if device == .mac {

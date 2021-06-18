@@ -287,8 +287,8 @@
 			children = (
 				CFF457AD25B0DF5500E64363 /* PxToRem.swift */,
 				CFF457AB25B0DF5500E64363 /* RemToPx.swift */,
-				CFC39C4A26793C77006A3FF8 /* PxToTw.swift */,
 				CFF457AC25B0DF5500E64363 /* LineHeight.swift */,
+				CFC39C4A26793C77006A3FF8 /* PxToTw.swift */,
 			);
 			path = "Calculator Views";
 			sourceTree = "<group>";
@@ -640,8 +640,7 @@
 				CURRENT_PROJECT_VERSION = 1.21;
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				INFOPLIST_FILE = LatestSaveWidgetiOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -669,8 +668,7 @@
 				CURRENT_PROJECT_VERSION = 1.21;
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				INFOPLIST_FILE = LatestSaveWidgetiOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
-				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -812,7 +810,7 @@
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -840,7 +838,7 @@
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

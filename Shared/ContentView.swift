@@ -38,32 +38,28 @@ struct ContentView: View {
         TabView {
             PxToEm(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
                 .tabItem {
-                    Image(systemName: "arrow.uturn.right.circle.fill")
-                    Text("Px››Rem")
+                    Label("Px››Rem", systemImage: "arrow.uturn.right.circle")
                 }
                 .onTapGesture {
                     self.hideKeyboard()
                 }
             EmToPx(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
                 .tabItem {
-                    Image(systemName: "arrow.uturn.left.circle.fill")
-                    Text("Rem››Px")
+                    Label("Rem››Px", systemImage: "arrow.uturn.left.circle")
                 }
                 .onTapGesture {
                     self.hideKeyboard()
                 }
             LineHeight(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
                 .tabItem {
-                    Image(systemName: "lineweight")
-                    Text("Line››height")
+                    Label("Line››height", systemImage: "lineweight")
                 }
                 .onTapGesture {
                     self.hideKeyboard()
                 }
             PxToTw(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
                 .tabItem {
-                    Image(systemName: "text.and.command.macwindow")
-                    Text("Px››Tailwind")
+                    Label("Px››Tailwind", systemImage: "text.and.command.macwindow")
                 }
                 .onTapGesture {
                     self.hideKeyboard()
