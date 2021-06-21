@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CFC198F32680D4D9004EF72B /* PerfectRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC198F22680D4D8004EF72B /* PerfectRadius.swift */; };
+		CFC198F52680D60F004EF72B /* prResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC198F42680D60F004EF72B /* prResult.swift */; };
 		CFC39C4B26793C77006A3FF8 /* PxToTw.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC39C4A26793C77006A3FF8 /* PxToTw.swift */; };
-		CFC39C4D26793CE2006A3FF8 /* TwResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC39C4C26793CE2006A3FF8 /* TwResults.swift */; };
+		CFC39C4D26793CE2006A3FF8 /* TwResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC39C4C26793CE2006A3FF8 /* TwResult.swift */; };
 		CFE3EE3425B10C620059A891 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF4584525B0EA8800E64363 /* WidgetKit.framework */; };
 		CFE3EE3525B10C620059A891 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF4584725B0EA8800E64363 /* SwiftUI.framework */; };
 		CFE3EE3825B10C620059A891 /* LatestSaveWidgetiOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE3EE3725B10C620059A891 /* LatestSaveWidgetiOS.swift */; };
@@ -111,8 +113,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CFC198F22680D4D8004EF72B /* PerfectRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfectRadius.swift; sourceTree = "<group>"; };
+		CFC198F42680D60F004EF72B /* prResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prResult.swift; sourceTree = "<group>"; };
 		CFC39C4A26793C77006A3FF8 /* PxToTw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PxToTw.swift; sourceTree = "<group>"; };
-		CFC39C4C26793CE2006A3FF8 /* TwResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwResults.swift; sourceTree = "<group>"; };
+		CFC39C4C26793CE2006A3FF8 /* TwResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwResult.swift; sourceTree = "<group>"; };
 		CFE3EE3325B10C620059A891 /* LatestSaveWidgetiOSExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LatestSaveWidgetiOSExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE3EE3725B10C620059A891 /* LatestSaveWidgetiOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestSaveWidgetiOS.swift; sourceTree = "<group>"; };
 		CFE3EE3925B10C630059A891 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -289,6 +293,7 @@
 				CFF457AB25B0DF5500E64363 /* RemToPx.swift */,
 				CFF457AC25B0DF5500E64363 /* LineHeight.swift */,
 				CFC39C4A26793C77006A3FF8 /* PxToTw.swift */,
+				CFC198F22680D4D8004EF72B /* PerfectRadius.swift */,
 			);
 			path = "Calculator Views";
 			sourceTree = "<group>";
@@ -367,8 +372,9 @@
 			children = (
 				CFF457DF25B0DF5600E64363 /* ResultItem.swift */,
 				CFF457DD25B0DF5600E64363 /* PxResult.swift */,
-				CFC39C4C26793CE2006A3FF8 /* TwResults.swift */,
+				CFC39C4C26793CE2006A3FF8 /* TwResult.swift */,
 				CFF457DE25B0DF5600E64363 /* EmResult.swift */,
+				CFC198F42680D60F004EF72B /* prResult.swift */,
 				CFF457E025B0DF5600E64363 /* LhResult.swift */,
 			);
 			path = Model;
@@ -589,7 +595,7 @@
 			files = (
 				CFF4582125B0DF5600E64363 /* ScaleModalView.swift in Sources */,
 				CFF4581E25B0DF5600E64363 /* AboutView.swift in Sources */,
-				CFC39C4D26793CE2006A3FF8 /* TwResults.swift in Sources */,
+				CFC39C4D26793CE2006A3FF8 /* TwResult.swift in Sources */,
 				CFF4581725B0DF5600E64363 /* PopupView.swift in Sources */,
 				CFF4581A25B0DF5600E64363 /* ResultItem.swift in Sources */,
 				CFF4581D25B0DF5600E64363 /* SettingsModal.swift in Sources */,
@@ -605,7 +611,9 @@
 				CFF4579825B0DC0700E64363 /* HandoverApp.swift in Sources */,
 				CFF457ED25B0DF5600E64363 /* PxToRem.swift in Sources */,
 				CFF4582025B0DF5600E64363 /* RequestView.swift in Sources */,
+				CFC198F52680D60F004EF72B /* prResult.swift in Sources */,
 				CFF4581B25B0DF5600E64363 /* LhResult.swift in Sources */,
+				CFC198F32680D4D9004EF72B /* PerfectRadius.swift in Sources */,
 				CFF4581425B0DF5600E64363 /* SidebarView.swift in Sources */,
 				CFF4581C25B0DF5600E64363 /* ClearButton.swift in Sources */,
 			);
@@ -637,7 +645,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = LatestSaveWidgetiOSExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.21;
+				CURRENT_PROJECT_VERSION = 1.22;
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				INFOPLIST_FILE = LatestSaveWidgetiOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -646,7 +654,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 15;
+				MARKETING_VERSION = 17;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.LatestSaveWidgetiOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -665,7 +673,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = LatestSaveWidgetiOSExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.21;
+				CURRENT_PROJECT_VERSION = 1.22;
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				INFOPLIST_FILE = LatestSaveWidgetiOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -674,7 +682,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 15;
+				MARKETING_VERSION = 17;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em.LatestSaveWidgetiOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -806,7 +814,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Handover.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.21;
+				CURRENT_PROJECT_VERSION = 1.22;
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -815,7 +823,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 15;
+				MARKETING_VERSION = 17;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = "Hand››over";
 				SDKROOT = iphoneos;
@@ -834,7 +842,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Handover.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.21;
+				CURRENT_PROJECT_VERSION = 1.22;
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
@@ -843,7 +851,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 15;
+				MARKETING_VERSION = 17;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = "Hand››over";
 				SDKROOT = iphoneos;
@@ -864,7 +872,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.21;
+				CURRENT_PROJECT_VERSION = 1.22;
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -874,7 +882,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 15;
+				MARKETING_VERSION = 17;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = Handover;
 				SDKROOT = macosx;
@@ -891,7 +899,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.21;
+				CURRENT_PROJECT_VERSION = 1.22;
 				DEVELOPMENT_TEAM = WMGJ7B26TT;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -901,7 +909,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 15;
+				MARKETING_VERSION = 17;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kejk.px-to-em";
 				PRODUCT_NAME = Handover;
 				SDKROOT = macosx;

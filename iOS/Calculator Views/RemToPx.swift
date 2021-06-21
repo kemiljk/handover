@@ -14,16 +14,17 @@ struct EmToPx: View {
     @ObservedObject var emResults: EMResults
     @ObservedObject var lhResults: LHResults
     @ObservedObject var twResults: TWResults
+    @ObservedObject var prResults: PRResults
     
     var device = UIDevice.current.userInterfaceIdiom
     
     var body: some View {
         if device == .phone {
             NavigationView {
-                EmToPxView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+                EmToPxView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
             }
         } else {
-            EmToPxView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+            EmToPxView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
         }
     }
 }
@@ -64,6 +65,7 @@ struct EmToPxView: View {
     @ObservedObject var emResults: EMResults
     @ObservedObject var lhResults: LHResults
     @ObservedObject var twResults: TWResults
+    @ObservedObject var prResults: PRResults
     
     @State private var show_settings_modal: Bool = false
     @State private var show_saves_modal: Bool = false
@@ -109,19 +111,19 @@ struct EmToPxView: View {
                         self.show_saves_modal = true
                         self.modal.impactOccurred()
                     }) {
-                        Image(systemName: "bookmark.circle.fill")
+                        Image(systemName: "bookmark.circle")
                             .font(.system(size: 24))
                             .foregroundColor(Color("teal"))
                     }
                     .sheet(isPresented: self.$show_saves_modal) {
-                        SavesModalView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+                        SavesModalView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
                     },
             trailing:
                     Button(action: {
                         self.show_settings_modal = true
                         self.modal.impactOccurred()
                     }) {
-                        Image(systemName: "gearshape.fill")
+                        Image(systemName: "gearshape.circle")
                             .font(.system(size: 24))
                             .foregroundColor(Color("teal"))
                     }
@@ -150,20 +152,20 @@ struct EmToPxView: View {
                             self.show_saves_modal = true
                             self.modal.impactOccurred()
                         }) {
-                            Image(systemName: "bookmark.circle.fill")
+                            Image(systemName: "bookmark.circle")
                                 .font(.system(size: 24))
                                 .foregroundColor(Color("teal"))
                         }                        .padding(8)
                         .contentShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                         .hoverEffect(.highlight)
                         .sheet(isPresented: self.$show_saves_modal) {
-                            SavesModalView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+                            SavesModalView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
                         }
                         Button(action: {
                             self.show_settings_modal = true
                             self.modal.impactOccurred()
                         }) {
-                            Image(systemName: "gearshape.fill")
+                            Image(systemName: "gearshape.circle")
                                 .font(.system(size: 24))
                                 .foregroundColor(Color("teal"))
                         }
@@ -211,6 +213,7 @@ struct EmToPxView: View {
                     VStack (alignment: .leading) {
                         HStack {
                             Text("Scale").font(.headline)
+                            Spacer()
                             Menu {
                                 VStack {
                                     HStack {
@@ -234,7 +237,6 @@ struct EmToPxView: View {
                                 }
                             } label: {
                                 if device == .phone || device == .pad {
-                                Spacer()
                                 Image(systemName: "plus.circle")
                                     .foregroundColor(Color("teal")) .font(.system(size: 20, weight: .semibold))
                                 } else if device == .mac {
@@ -260,7 +262,7 @@ struct EmToPxView: View {
                 VStack {
                     Button(action: {
                         save(scaleResult: "\(String(format: "%.3f", (Double(scaleTextEmpty) ?? 1)))", baselineResult: "\(Int(baseTextEmpty) ?? 16)", calcResult: "\(String(format: "%.2f", (Double(emTextEmpty) ?? 1.000)))rem is \(String(format: "%.0f", emToPxs(baseInt: Double(baseTextEmpty) ?? 16, emInt: Double(emTextEmpty) ?? 1, scaleInt: Double(scaleTextEmpty) ?? 1)))px")
-                        let item = ResultItem(pxResult: "", emResult: "\(String(format: "%.2f", (Double(emTextEmpty) ?? 1.000)))rem is \(String(format: "%.0f", emToPxs(baseInt: Double(baseTextEmpty) ?? 16, emInt: Double(emTextEmpty) ?? 1, scaleInt: Double(scaleTextEmpty) ?? 1)))px at a scale of \(String(format: "%.3f", (Double(scaleTextEmpty) ?? 1))) with a baseline of \(Int(baseTextEmpty) ?? 16)px", lhResult: "", twResult: "")
+                        let item = ResultItem(pxResult: "", emResult: "\(String(format: "%.2f", (Double(emTextEmpty) ?? 1.000)))rem is \(String(format: "%.0f", emToPxs(baseInt: Double(baseTextEmpty) ?? 16, emInt: Double(emTextEmpty) ?? 1, scaleInt: Double(scaleTextEmpty) ?? 1)))px at a scale of \(String(format: "%.3f", (Double(scaleTextEmpty) ?? 1))) with a baseline of \(Int(baseTextEmpty) ?? 16)px", lhResult: "", twResult: "", prResult: "")
                         self.emResults.items.insert(item, at: 0)
                         self.hideKeyboard()
                         print(item)
@@ -285,7 +287,7 @@ struct EmToPxView: View {
                     VStack {
                         Button(action: {
                             save(scaleResult: "\(String(format: "%.3f", (Double(scaleTextEmpty) ?? 1)))", baselineResult: "\(Int(baseTextEmpty) ?? 16)", calcResult: "\(String(format: "%.2f", (Double(emTextEmpty) ?? 1.000)))rem is \(String(format: "%.0f", emToPxs(baseInt: Double(baseTextEmpty) ?? 16, emInt: Double(emTextEmpty) ?? 1, scaleInt: Double(scaleTextEmpty) ?? 1)))px")
-                            let item = ResultItem(pxResult: "", emResult: "\(String(format: "%.2f", (Double(emTextEmpty) ?? 1.000)))rem is \(String(format: "%.0f", emToPxs(baseInt: Double(baseTextEmpty) ?? 16, emInt: Double(emTextEmpty) ?? 1, scaleInt: Double(scaleTextEmpty) ?? 1)))px at a scale of \(String(format: "%.3f", (Double(scaleTextEmpty) ?? 1))) with a baseline of \(Int(baseTextEmpty) ?? 16)px", lhResult: "", twResult: "")
+                            let item = ResultItem(pxResult: "", emResult: "\(String(format: "%.2f", (Double(emTextEmpty) ?? 1.000)))rem is \(String(format: "%.0f", emToPxs(baseInt: Double(baseTextEmpty) ?? 16, emInt: Double(emTextEmpty) ?? 1, scaleInt: Double(scaleTextEmpty) ?? 1)))px at a scale of \(String(format: "%.3f", (Double(scaleTextEmpty) ?? 1))) with a baseline of \(Int(baseTextEmpty) ?? 16)px", lhResult: "", twResult: "", prResult: "")
                             self.emResults.items.insert(item, at: 0)
                             print(item)
                             self.show_toast = true

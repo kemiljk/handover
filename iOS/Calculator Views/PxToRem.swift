@@ -14,15 +14,16 @@ struct PxToEm: View {
     @ObservedObject var emResults: EMResults
     @ObservedObject var lhResults: LHResults
     @ObservedObject var twResults: TWResults
+    @ObservedObject var prResults: PRResults
     var device = UIDevice.current.userInterfaceIdiom
     
     var body: some View {
         if device == .phone {
             NavigationView {
-                PxToEmView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+                PxToEmView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
             }
         } else {
-            PxToEmView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+            PxToEmView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
         }
     }
 }
@@ -63,6 +64,7 @@ struct PxToEmView: View {
     @ObservedObject var emResults: EMResults
     @ObservedObject var lhResults: LHResults
     @ObservedObject var twResults: TWResults
+    @ObservedObject var prResults: PRResults
     
     @State private var show_settings_modal: Bool = false
     @State private var show_saves_modal: Bool = false
@@ -108,19 +110,19 @@ struct PxToEmView: View {
                         self.show_saves_modal = true
                         self.modal.impactOccurred()
                     }) {
-                        Image(systemName: "bookmark.circle.fill")
+                        Image(systemName: "bookmark.circle")
                             .font(.system(size: 24))
                             .foregroundColor(Color("teal"))
                     }
                     .sheet(isPresented: self.$show_saves_modal) {
-                        SavesModalView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+                        SavesModalView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
                     },
             trailing:
                     Button(action: {
                         self.show_settings_modal = true
                         self.modal.impactOccurred()
                     }) {
-                        Image(systemName: "gearshape.fill")
+                        Image(systemName: "gearshape.circle")
                             .font(.system(size: 24))
                             .foregroundColor(Color("teal"))
                     }
@@ -149,7 +151,7 @@ struct PxToEmView: View {
                 Button(action: {
                     self.show_saves_modal = true
                 }) {
-                    Image(systemName: "bookmark.circle.fill")
+                    Image(systemName: "bookmark.circle")
                         .font(.system(size: 24))
                         .foregroundColor(Color("teal"))
                 }
@@ -157,12 +159,12 @@ struct PxToEmView: View {
                 .contentShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                 .hoverEffect(.highlight)
                 .sheet(isPresented: self.$show_saves_modal) {
-                    SavesModalView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+                    SavesModalView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
                 }
                 Button(action: {
                     self.show_settings_modal = true
                 }) {
-                    Image(systemName: "gearshape.fill")
+                    Image(systemName: "gearshape.circle")
                         .font(.system(size: 24))
                         .foregroundColor(Color("teal"))
                 }
@@ -210,6 +212,7 @@ struct PxToEmView: View {
                     VStack (alignment: .leading) {
                         HStack {
                             Text("Scale").font(.headline)
+                            Spacer()
                             Menu {
                                 VStack {
                                     HStack {
@@ -233,7 +236,6 @@ struct PxToEmView: View {
                                 }
                             } label: {
                                 if device == .phone || device == .pad {
-                                Spacer()
                                 Image(systemName: "plus.circle")
                                     .foregroundColor(Color("teal")) .font(.system(size: 20, weight: .semibold))
                                 } else if device == .mac {
@@ -260,7 +262,7 @@ struct PxToEmView: View {
                 VStack {
                     Button(action: {
                         save(scaleResult: "\(String(format: "%.3f", (Double(scaleTextEmpty) ?? 1)))", baselineResult: "\(Int(baseTextEmpty) ?? 16)", calcResult: "\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.2f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))rem")
-                        let item = ResultItem(pxResult: "\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.2f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))rem at a scale of \(String(format: "%.3f", (Double(scaleTextEmpty) ?? 1))) with a baseline of \(Int(baseTextEmpty) ?? 16)px", emResult: "", lhResult: "", twResult: "")
+                        let item = ResultItem(pxResult: "\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.2f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))rem at a scale of \(String(format: "%.3f", (Double(scaleTextEmpty) ?? 1))) with a baseline of \(Int(baseTextEmpty) ?? 16)px", emResult: "", lhResult: "", twResult: "", prResult: "")
                         self.pxResults.items.insert(item, at: 0)
                         self.hideKeyboard()
                         print(item)
@@ -285,7 +287,7 @@ struct PxToEmView: View {
                     VStack {
                         Button(action: {
                             save(scaleResult: "\(String(format: "%.3f", (Double(scaleTextEmpty) ?? 1)))", baselineResult: "\(Int(baseTextEmpty) ?? 16)", calcResult: "\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.2f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))rem")
-                            let item = ResultItem(pxResult: "\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.2f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))rem at a scale of \(String(format: "%.3f", (Double(scaleTextEmpty) ?? 1))) with a baseline of \(Int(baseTextEmpty) ?? 16)px", emResult: "", lhResult: "", twResult: "")
+                            let item = ResultItem(pxResult: "\(Int(pixelTextEmpty) ?? 16)px is \(String(format: "%.2f", pxToEms(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16, scaleInt: Double(scaleTextEmpty) ?? 1)))rem at a scale of \(String(format: "%.3f", (Double(scaleTextEmpty) ?? 1))) with a baseline of \(Int(baseTextEmpty) ?? 16)px", emResult: "", lhResult: "", twResult: "", prResult: "")
                             self.pxResults.items.insert(item, at: 0)
                             print(item)
                             self.show_toast = true

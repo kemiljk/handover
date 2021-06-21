@@ -14,4 +14,5 @@ struct ResultItem: Identifiable, Codable {
     let emResult: String
     let lhResult: String
     let twResult: String
+    let prResult: String
 }

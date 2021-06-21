@@ -13,15 +13,17 @@ struct PxToTw: View {
     @ObservedObject var emResults: EMResults
     @ObservedObject var lhResults: LHResults
     @ObservedObject var twResults: TWResults
+    @ObservedObject var prResults: PRResults
+    
     var device = UIDevice.current.userInterfaceIdiom
     
     var body: some View {
         if device == .phone {
             NavigationView {
-                PxToTwView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+                PxToTwView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
             }
         } else {
-            PxToTwView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+            PxToTwView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
         }
     }
 }
@@ -30,6 +32,22 @@ struct PxToTwView: View {
     @AppStorage("result", store: UserDefaults(suiteName: "group.com.kejk.handover")) var resultData: Data = Data()
     @AppStorage("scaleResult", store: UserDefaults(suiteName: "group.com.kejk.handover")) var scaleResultData: String = ""
     @AppStorage("baselineResult", store: UserDefaults(suiteName: "group.com.kejk.handover")) var baselineResultData: String = "16px"
+    
+    let classNameItems: [ClassNameItem] = [
+        ClassNameItem(className: "p", classNameTitle: "Padding"),
+        ClassNameItem(className: "pt", classNameTitle: "Padding top"),
+        ClassNameItem(className: "pr", classNameTitle: "Padding right"),
+        ClassNameItem(className: "pb", classNameTitle: "Padding bottom"),
+        ClassNameItem(className: "pl", classNameTitle: "Padding left"),
+        ClassNameItem(className: "m", classNameTitle: "Margin"),
+        ClassNameItem(className: "mt", classNameTitle: "Margin top"),
+        ClassNameItem(className: "mr", classNameTitle: "Margin right"),
+        ClassNameItem(className: "mb", classNameTitle: "Margin bottom"),
+        ClassNameItem(className: "ml", classNameTitle: "Margin left"),
+        ClassNameItem(className: "w", classNameTitle: "Width"),
+        ClassNameItem(className: "h", classNameTitle: "Height"),
+    ]
+    
     
     func resetDefaults() {
         let defaults = UserDefaults.standard
@@ -43,12 +61,14 @@ struct PxToTwView: View {
     
     @State private var baseTextEmpty = ""
     @State private var pixelTextEmpty = ""
+    @State private var classNameEmpty = "{class}"
     
     @Environment(\.presentationMode) private var presentationMode
     @ObservedObject var pxResults: PXResults
     @ObservedObject var emResults: EMResults
     @ObservedObject var lhResults: LHResults
     @ObservedObject var twResults: TWResults
+    @ObservedObject var prResults: PRResults
     
     @State private var show_settings_modal: Bool = false
     @State private var show_saves_modal: Bool = false
@@ -93,19 +113,19 @@ struct PxToTwView: View {
                         self.show_saves_modal = true
                         self.modal.impactOccurred()
                     }) {
-                        Image(systemName: "bookmark.circle.fill")
+                        Image(systemName: "bookmark.circle")
                             .font(.system(size: 24))
                             .foregroundColor(Color("teal"))
                     }
                     .sheet(isPresented: self.$show_saves_modal) {
-                        SavesModalView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+                        SavesModalView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
                     },
             trailing:
                     Button(action: {
                         self.show_settings_modal = true
                         self.modal.impactOccurred()
                     }) {
-                        Image(systemName: "gearshape.fill")
+                        Image(systemName: "gearshape.circle")
                             .font(.system(size: 24))
                             .foregroundColor(Color("teal"))
                     }
@@ -127,14 +147,14 @@ struct PxToTwView: View {
         .background(Color("lightGrey"))
         .clipShape(Capsule())
     }
-    .navigationBarTitle("Px››Tw")
+    .navigationBarTitle("Px››Tailwind")
     .navigationBarItems(
         trailing:
             HStack (spacing: 16) {
                 Button(action: {
                     self.show_saves_modal = true
                 }) {
-                    Image(systemName: "bookmark.circle.fill")
+                    Image(systemName: "bookmark.circle")
                         .font(.system(size: 24))
                         .foregroundColor(Color("teal"))
                 }
@@ -142,12 +162,12 @@ struct PxToTwView: View {
                 .contentShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                 .hoverEffect(.highlight)
                 .sheet(isPresented: self.$show_saves_modal) {
-                    SavesModalView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+                    SavesModalView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
                 }
                 Button(action: {
                     self.show_settings_modal = true
                 }) {
-                    Image(systemName: "gearshape.fill")
+                    Image(systemName: "gearshape.circle")
                         .font(.system(size: 24))
                         .foregroundColor(Color("teal"))
                 }
@@ -166,12 +186,52 @@ struct PxToTwView: View {
         VStack {
             VStack (alignment: .center, content: {
                 Spacer()
-                Text("\(Int(pixelTextEmpty) ?? 16)px is {class}-\(String(format: "%.0f", pxToTws(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16)))")
+                Text("\(Int(pixelTextEmpty) ?? 16)px is \(classNameEmpty)-\(String(format: "%.0f", pxToTws(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16)))")
                     .font(.system(.largeTitle, design: .monospaced))
                     .foregroundColor(.secondary)
                     .padding(.horizontal, 10)
                 Spacer()
             })
+            VStack (alignment: .leading) {
+                Menu {
+                    VStack {
+                        HStack {
+                            Text("Select class name")
+                        }
+                        HStack {
+                            ForEach(classNameItems) { classNameItem in
+                                Button(action: {
+                                    self.classNameEmpty = classNameItem.className
+                                    print(classNameEmpty)
+                                    if device == .phone {
+                                        self.menu.impactOccurred()
+                                    }
+                                }, label: {
+                                    Text(classNameItem.classNameTitle).font(.body).bold()
+                                    Spacer()
+                                    Image(systemName: "text.insert")
+                                })
+                            }
+                        }
+                    }
+                } label: {
+                    if device == .phone || device == .pad {
+                        HStack {
+                            Label(classNameEmpty.isEmpty ? "Insert class name" : "Update class name", systemImage: "plus.circle")
+                                .foregroundColor(Color("teal")).font(.headline)
+                            Spacer()
+                        }
+                        .padding(.horizontal, 20)
+                    } else if device == .mac {
+                    Text("Insert class name")
+                    }
+                }
+                .onTapGesture {
+                    if device == .phone {
+                        self.menuParent.impactOccurred()
+                    }
+                }
+            }
             VStack (alignment: .leading) {
                 Text("Baseline pixel value").font(.headline)
                 TextField("16", text: $baseTextEmpty).modifier(ClearButton(text: $baseTextEmpty))
@@ -198,7 +258,7 @@ struct PxToTwView: View {
                 VStack {
                     Button {
                         save(scaleResult: "", baselineResult: "\(Int(baseTextEmpty) ?? 16)", calcResult: "\(Int(pixelTextEmpty) ?? 16)px is {class}-\(String(format: "%.0f", pxToTws(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16)))")
-                        let item = ResultItem(pxResult: "", emResult: "", lhResult: "", twResult: "\(Int(pixelTextEmpty) ?? 16)px is {class}-\(String(format: "%.0f", pxToTws(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16))) with a baseline of \(Int(baseTextEmpty) ?? 16)px")
+                        let item = ResultItem(pxResult: "", emResult: "", lhResult: "", twResult: "\(Int(pixelTextEmpty) ?? 16)px is {class}-\(String(format: "%.0f", pxToTws(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16))) with a baseline of \(Int(baseTextEmpty) ?? 16)px", prResult: "")
                         self.twResults.items.insert(item, at: 0)
                         self.hideKeyboard()
                         print(item)
@@ -223,7 +283,7 @@ struct PxToTwView: View {
                     VStack {
                         Button(action: {
                             save(scaleResult: "", baselineResult: "\(Int(baseTextEmpty) ?? 16)", calcResult: "\(Int(pixelTextEmpty) ?? 16)px is {class}-\(String(format: "%.0f", pxToTws(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16)))")
-                            let item = ResultItem(pxResult: "", emResult: "", lhResult: "", twResult: "\(Int(pixelTextEmpty) ?? 16)px is {class}-\(String(format: "%.0f", pxToTws(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16))) with a baseline of \(Int(baseTextEmpty) ?? 16)px")
+                            let item = ResultItem(pxResult: "", emResult: "", lhResult: "", twResult: "\(Int(pixelTextEmpty) ?? 16)px is {class}-\(String(format: "%.0f", pxToTws(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16))) with a baseline of \(Int(baseTextEmpty) ?? 16)px", prResult: "")
                             self.twResults.items.insert(item, at: 0)
                             print(item)
                             self.show_toast = true

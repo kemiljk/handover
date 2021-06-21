@@ -20,16 +20,18 @@ struct LineHeight: View {
     @ObservedObject var emResults: EMResults
     @ObservedObject var lhResults: LHResults
     @ObservedObject var twResults: TWResults
+    @ObservedObject var prResults: PRResults
+    
     var device = UIDevice.current.userInterfaceIdiom
     
     var body: some View {
         
         if device == .phone {
             NavigationView {
-                LineHeightContent(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+                LineHeightContent(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
             }
         } else {
-            LineHeightContent(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+            LineHeightContent(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
         }
     }
 }
@@ -49,6 +51,7 @@ struct LineHeightContent: View {
         RatioItem(scaleNumber: "1.414", scaleItem: ": Augmented fourth"),
         RatioItem(scaleNumber: "1.500", scaleItem: ": Perfect fifth"),
         RatioItem(scaleNumber: "1.618", scaleItem: ": Golden ratio"),
+        RatioItem(scaleNumber: "1.700", scaleItem: ": Common Body copy")
     ]
     
     func resetDefaults() {
@@ -59,7 +62,7 @@ struct LineHeightContent: View {
         }
     }
     
-    @State private var fontSizeEmpty = "16"
+    @State private var fontSizeEmpty = ""
     @State private var ratioTextEmpty = ""
     @State private var lineHeightEmpty = ""
 
@@ -70,9 +73,11 @@ struct LineHeightContent: View {
     @ObservedObject var emResults: EMResults
     @ObservedObject var lhResults: LHResults
     @ObservedObject var twResults: TWResults
+    @ObservedObject var prResults: PRResults
     
     @State private var show_settings_modal: Bool = false
     @State private var show_saves_modal: Bool = false
+    @State private var use_percentage: Bool = false
     
     
     func idealLineHeight(fontSizeInt: Double, ratioInt: Double) -> Double {
@@ -82,6 +87,17 @@ struct LineHeightContent: View {
     
     func pxToEms(baseInt: Double, pixelInt: Double, scaleInt: Double) -> Double {
         let emValue = (pixelInt / baseInt) * scaleInt
+        return emValue
+    }
+    
+    
+    func idealLineHeightPercent(fontSizeInt: Double, ratioInt: Double) -> Double {
+        let lineheight = fontSizeInt * (ratioInt / 100)
+        return lineheight
+    }
+    
+    func pxToEmsPercent(baseInt: Double, pixelInt: Double, scaleInt: Double) -> Double {
+        let emValue = (pixelInt / baseInt) * (scaleInt / 100)
         return emValue
     }
     
@@ -121,19 +137,19 @@ struct LineHeightContent: View {
                             self.show_saves_modal = true
                             self.modal.impactOccurred()
                         }) {
-                            Image(systemName: "bookmark.circle.fill")
+                            Image(systemName: "bookmark.circle")
                                 .font(.system(size: 24))
                                 .foregroundColor(Color("teal"))
                         }
                         .sheet(isPresented: self.$show_saves_modal) {
-                            SavesModalView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+                            SavesModalView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
                         },
                 trailing:
                         Button(action: {
                             self.show_settings_modal = true
                             self.modal.impactOccurred()
                         }) {
-                            Image(systemName: "gearshape.fill")
+                            Image(systemName: "gearshape.circle")
                                 .font(.system(size: 24))
                                 .foregroundColor(Color("teal"))
                         }
@@ -174,7 +190,7 @@ struct LineHeightContent: View {
                         self.show_saves_modal = true
                         self.modal.impactOccurred()
                     }) {
-                        Image(systemName: "bookmark.circle.fill")
+                        Image(systemName: "bookmark.circle")
                             .font(.system(size: 24))
                             .foregroundColor(Color("teal"))
                     }
@@ -182,13 +198,13 @@ struct LineHeightContent: View {
                     .contentShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                     .hoverEffect(.highlight)
                     .sheet(isPresented: self.$show_saves_modal) {
-                        SavesModalView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+                        SavesModalView(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
                     }
                     Button(action: {
                         self.show_settings_modal = true
                         self.modal.impactOccurred()
                     }) {
-                        Image(systemName: "gearshape.fill")
+                        Image(systemName: "gearshape.circle")
                             .font(.system(size: 24))
                             .foregroundColor(Color("teal"))
                     }
@@ -207,17 +223,33 @@ struct LineHeightContent: View {
         VStack {
             VStack (alignment: .center, content: {
                 Spacer()
-                Text("\(String(format: "%.0f", idealLineHeight(fontSizeInt: Double(fontSizeEmpty) ?? 16, ratioInt: Double(ratioTextEmpty) ?? 1)))px/\(String(format: "%.3f", pxToEms(baseInt: Double(16), pixelInt: Double(fontSizeEmpty) ?? 16, scaleInt: Double(ratioTextEmpty) ?? 1)))rem line-height")
-                    .font(.system(.largeTitle, design: .monospaced))
-                    .foregroundColor(.secondary)
-                    .padding(.horizontal, 10)
+                if use_percentage == false {
+                    Text("\(String(format: "%.0f", idealLineHeight(fontSizeInt: Double(fontSizeEmpty) ?? 16, ratioInt: Double(ratioTextEmpty) ?? 1)))px/\(String(format: "%.3f", pxToEms(baseInt: Double(16), pixelInt: Double(fontSizeEmpty) ?? 16, scaleInt: Double(ratioTextEmpty) ?? 1)))rem line-height")
+                        .font(.system(.largeTitle, design: .monospaced))
+                        .foregroundColor(.secondary)
+                        .padding(.horizontal, 10)
+                } else {
+                    Text("\(String(format: "%.0f", idealLineHeightPercent(fontSizeInt: Double(fontSizeEmpty) ?? 16, ratioInt: Double(ratioTextEmpty) ?? 1)))px/\(String(format: "%.3f", pxToEmsPercent(baseInt: Double(16), pixelInt: Double(fontSizeEmpty) ?? 16, scaleInt: Double(ratioTextEmpty) ?? 1)))rem line-height")
+                        .font(.system(.largeTitle, design: .monospaced))
+                        .foregroundColor(.secondary)
+                        .padding(.horizontal, 10)
+                }
                 Spacer()
-                let fontSizeDynamic: CGFloat = CGFloat((fontSizeEmpty as NSString).doubleValue)
-                let lineHeightDynamic: CGFloat = CGFloat((ratioTextEmpty as NSString).doubleValue)
-                Text(device == .phone ? "This is how your line-height actually looks in practice. See the spacing between the lines change as you update values." : "This is how your line-height actually looks in practice. See the spacing between the lines change as you update values. On iPad or macOS there's much more to play with so this whole paragraph needs to be a lot longer.")
-                    .font(.system(size: fontSizeDynamic))
-                    .lineSpacing(fontSizeDynamic * lineHeightDynamic - fontSizeDynamic)
-                    .padding(.horizontal, 20)
+                if use_percentage == false {
+                    let fontSizeDynamic: CGFloat = CGFloat((fontSizeEmpty as NSString).doubleValue)
+                    let lineHeightDynamic: CGFloat = CGFloat((ratioTextEmpty as NSString).doubleValue)
+                    Text(device == .phone ? "This is how your line-height actually looks in practice. See the spacing between the lines change as you update values." : "This is how your line-height actually looks in practice. See the spacing between the lines change as you update values. On iPad or macOS there's much more to play with so this whole paragraph needs to be a lot longer.")
+                        .font(.system(size: fontSizeEmpty.isEmpty ? 16 : fontSizeDynamic))
+                        .lineSpacing(ratioTextEmpty.isEmpty ? 0  : (fontSizeDynamic * lineHeightDynamic) - fontSizeDynamic)
+                        .padding(.horizontal, 20)
+                } else {
+                    let fontSizeDynamic: CGFloat = CGFloat((fontSizeEmpty as NSString).doubleValue)
+                    let lineHeightDynamic: CGFloat = CGFloat((ratioTextEmpty as NSString).intValue)
+                    Text(device == .phone ? "This is how your line-height actually looks in practice. See the spacing between the lines change as you update values." : "This is how your line-height actually looks in practice. See the spacing between the lines change as you update values. On iPad or macOS there's much more to play with so this whole paragraph needs to be a lot longer.")
+                        .font(.system(size: fontSizeEmpty.isEmpty ? 16 : fontSizeDynamic))
+                        .lineSpacing(ratioTextEmpty.isEmpty ? 0  : (fontSizeDynamic * (lineHeightDynamic / 100)) - fontSizeDynamic)
+                        .padding(.horizontal, 20)
+                }
                 Spacer()
             })
             VStack (alignment: .leading) {
@@ -232,56 +264,73 @@ struct LineHeightContent: View {
             VStack (alignment: .leading) {
                 HStack {
                     Text("Scale").font(.headline)
-                    Menu {
-                        VStack {
-                            HStack {
-                                Text("Insert a scale")
-                            }
-                            HStack {
-                                ForEach(ratioItems) { ratioItem in
-                                    Button(action: {
-                                        self.ratioTextEmpty = ratioItem.scaleNumber
-                                        print(ratioTextEmpty)
-                                        if device == .phone {
-                                            self.menu.impactOccurred()
-                                        }
-                                    }, label: {
-                                        Text(ratioItem.scaleNumber + "" + ratioItem.scaleItem).font(.system(.body, design: .monospaced)).bold()
-                                        Spacer()
-                                        Image(systemName: "text.insert")
-                                    })
+                    Spacer()
+                    if use_percentage == false {
+                        Menu {
+                            VStack {
+                                HStack {
+                                    Text("Insert a scale")
+                                }
+                                HStack {
+                                    ForEach(ratioItems) { ratioItem in
+                                        Button(action: {
+                                            self.ratioTextEmpty = ratioItem.scaleNumber
+                                            print(ratioTextEmpty)
+                                            if device == .phone {
+                                                self.menu.impactOccurred()
+                                            }
+                                        }, label: {
+                                            Text(ratioItem.scaleNumber + "" + ratioItem.scaleItem).font(.system(.body, design: .monospaced)).bold()
+                                            Spacer()
+                                            Image(systemName: "text.insert")
+                                        })
+                                    }
                                 }
                             }
+                        } label: {
+                            if device == .phone || device == .pad {
+                            Image(systemName: "plus.circle")
+                                .foregroundColor(Color("teal")) .font(.system(size: 20, weight: .semibold))
+                            } else {
+                            Text("Insert a scale")
+                            }
                         }
-                    } label: {
-                        if device == .phone || device == .pad {
-                        Spacer()
-                        Image(systemName: "plus.circle")
-                            .foregroundColor(Color("teal")) .font(.system(size: 20, weight: .semibold))
-                        } else {
-                        Text("Insert a scale")
-                        }
-                    }
-                    .onTapGesture {
-                        if device == .phone {
-                            self.menuParent.impactOccurred()
+                        .onTapGesture {
+                            if device == .phone {
+                                self.menuParent.impactOccurred()
+                            }
                         }
                     }
                 }
-                TextField("1.000", text: $ratioTextEmpty).modifier(ClearButton(text: $ratioTextEmpty))
+                TextField(use_percentage == false ? "1.000" : "100%", text: $ratioTextEmpty).modifier(ClearButton(text: $ratioTextEmpty))
                     .font(.system(device == .mac ? .body : .title, design: .monospaced))
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .overlay(RoundedRectangle(cornerRadius: device == .mac ? 6 : 8).stroke(Color("teal"), lineWidth: device == .mac ? 2.5 : 3))
                     .keyboardType(.decimalPad)
-            }.padding(.horizontal, 20)
+                Button {
+                    use_percentage.toggle()
+                } label: {
+                    Label(use_percentage == false ? "Use percentage" : "Use scale", systemImage: use_percentage == false ? "percent" : "scalemass")
+                }
+            }
+            .padding(.horizontal, 20)
+            
             VStack (alignment: .center) {
                 VStack {
                     Button(action: {
-                        save(scaleResult: "\(String(format: "%.3f", (Double(ratioTextEmpty) ?? 1)))", baselineResult: "\(String(format: "%.0f", (Double(fontSizeEmpty) ?? 16)))", calcResult: "\(String(format: "%.0f", idealLineHeight(fontSizeInt: Double(fontSizeEmpty) ?? 16, ratioInt: Double(ratioTextEmpty) ?? 1)))px/\(String(format: "%.3f", pxToEms(baseInt: Double(16), pixelInt: Double(fontSizeEmpty) ?? 16, scaleInt: Double(ratioTextEmpty) ?? 1)))rem line-height")
-                        let item = ResultItem(pxResult: "", emResult: "", lhResult: "\(String(format: "%.0f", (Double(fontSizeEmpty) ?? 16)))px with \(String(format: "%.0f", idealLineHeight(fontSizeInt: Double(fontSizeEmpty) ?? 16, ratioInt: Double(ratioTextEmpty) ?? 1)))px/\(String(format: "%.3f", pxToEms(baseInt: Double(16), pixelInt: Double(fontSizeEmpty) ?? 16, scaleInt: Double(ratioTextEmpty) ?? 1)))rem line-height at a ratio of \(String(format: "%.3f", (Double(ratioTextEmpty) ?? 1)))", twResult: "")
-                        self.lhResults.items.insert(item, at: 0)
-                        self.hideKeyboard()
-                        print(item)
+                        if use_percentage == false {
+                            save(scaleResult: "\(String(format: "%.3f", (Double(ratioTextEmpty) ?? 1)))", baselineResult: "\(String(format: "%.0f", (Double(fontSizeEmpty) ?? 16)))", calcResult: "\(String(format: "%.0f", idealLineHeight(fontSizeInt: Double(fontSizeEmpty) ?? 16, ratioInt: Double(ratioTextEmpty) ?? 1)))px/\(String(format: "%.3f", pxToEms(baseInt: Double(16), pixelInt: Double(fontSizeEmpty) ?? 16, scaleInt: Double(ratioTextEmpty) ?? 1)))rem line-height")
+                            let item = ResultItem(pxResult: "", emResult: "", lhResult: "\(String(format: "%.0f", (Double(fontSizeEmpty) ?? 16)))px with \(String(format: "%.0f", idealLineHeight(fontSizeInt: Double(fontSizeEmpty) ?? 16, ratioInt: Double(ratioTextEmpty) ?? 1)))px/\(String(format: "%.3f", pxToEms(baseInt: Double(16), pixelInt: Double(fontSizeEmpty) ?? 16, scaleInt: Double(ratioTextEmpty) ?? 1)))rem line-height at a ratio of \(String(format: "%.3f", (Double(ratioTextEmpty) ?? 1)))", twResult: "", prResult: "")
+                            self.lhResults.items.insert(item, at: 0)
+                            self.hideKeyboard()
+                            print(item)
+                        } else {
+                            save(scaleResult: "\(String(format: "%.3f", (Double(ratioTextEmpty) ?? 1)))", baselineResult: "\(String(format: "%.0f", (Double(fontSizeEmpty) ?? 16)))", calcResult: "\(String(format: "%.0f", idealLineHeightPercent(fontSizeInt: Double(fontSizeEmpty) ?? 16, ratioInt: Double(ratioTextEmpty) ?? 1)))px/\(String(format: "%.3f", pxToEmsPercent(baseInt: Double(16), pixelInt: Double(fontSizeEmpty) ?? 16, scaleInt: Double(ratioTextEmpty) ?? 1)))rem line-height")
+                            let item = ResultItem(pxResult: "", emResult: "", lhResult: "\(fontSizeEmpty)px with \(String(format: "%.0f", idealLineHeightPercent(fontSizeInt: Double(fontSizeEmpty) ?? 16, ratioInt: Double(ratioTextEmpty) ?? 1)))px/\(String(format: "%.3f", pxToEmsPercent(baseInt: Double(16), pixelInt: Double(fontSizeEmpty) ?? 16, scaleInt: Double(ratioTextEmpty) ?? 1)))rem line-height at \(ratioTextEmpty)%", twResult: "", prResult: "")
+                            self.lhResults.items.insert(item, at: 0)
+                            self.hideKeyboard()
+                            print(item)
+                        }
                         if device == .phone {
                             save.notificationOccurred(.success)
                         }
@@ -303,7 +352,7 @@ struct LineHeightContent: View {
                     VStack {
                         Button(action: {
                             save(scaleResult: "\(String(format: "%.3f", (Double(ratioTextEmpty) ?? 1)))", baselineResult: "\(String(format: "%.0f", (Double(fontSizeEmpty) ?? 16)))", calcResult: "\(String(format: "%.0f", idealLineHeight(fontSizeInt: Double(fontSizeEmpty) ?? 16, ratioInt: Double(ratioTextEmpty) ?? 1)))px/\(String(format: "%.3f", pxToEms(baseInt: Double(16), pixelInt: Double(fontSizeEmpty) ?? 16, scaleInt: Double(ratioTextEmpty) ?? 1)))rem line-height")
-                            let item = ResultItem(pxResult: "", emResult: "", lhResult: "\(String(format: "%.0f", (Double(fontSizeEmpty) ?? 16)))px with \(String(format: "%.0f", idealLineHeight(fontSizeInt: Double(fontSizeEmpty) ?? 16, ratioInt: Double(ratioTextEmpty) ?? 1)))px/\(String(format: "%.3f", pxToEms(baseInt: Double(16), pixelInt: Double(fontSizeEmpty) ?? 16, scaleInt: Double(ratioTextEmpty) ?? 1)))rem line-height at a ratio of \(String(format: "%.3f", (Double(ratioTextEmpty) ?? 1)))", twResult: "")
+                            let item = ResultItem(pxResult: "", emResult: "", lhResult: "\(String(format: "%.0f", (Double(fontSizeEmpty) ?? 16)))px with \(String(format: "%.0f", idealLineHeight(fontSizeInt: Double(fontSizeEmpty) ?? 16, ratioInt: Double(ratioTextEmpty) ?? 1)))px/\(String(format: "%.3f", pxToEms(baseInt: Double(16), pixelInt: Double(fontSizeEmpty) ?? 16, scaleInt: Double(ratioTextEmpty) ?? 1)))rem line-height at a ratio of \(String(format: "%.3f", (Double(ratioTextEmpty) ?? 1)))", twResult: "", prResult: "")
                             self.lhResults.items.insert(item, at: 0)
                             print(item)
                             self.show_toast = true

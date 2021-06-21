@@ -14,6 +14,12 @@ struct ScaleItem: Identifiable {
     var scaleItem: String
 }
 
+struct ClassNameItem: Identifiable {
+    var id = UUID()
+    var className: String
+    var classNameTitle: String
+}
+
 struct ScalesView: View {
     var device = UIDevice.current.userInterfaceIdiom
     @Environment(\.presentationMode) private var presentationMode

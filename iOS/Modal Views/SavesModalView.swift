@@ -14,6 +14,7 @@ struct SavesModalView: View {
     @ObservedObject var emResults: EMResults
     @ObservedObject var lhResults: LHResults
     @ObservedObject var twResults: TWResults
+    @ObservedObject var prResults: PRResults
     
     var device = UIDevice.current.userInterfaceIdiom
     @State private var showingAddResult = false
@@ -21,7 +22,7 @@ struct SavesModalView: View {
     var body: some View {
         if device == .phone || device == .pad {
             NavigationView {
-                if pxResults.items.count <= 0 && emResults.items.count <= 0 && lhResults.items.count <= 0 && twResults.items.count <= 0 {
+                if pxResults.items.count <= 0 && emResults.items.count <= 0 && lhResults.items.count <= 0 && twResults.items.count <= 0 && prResults.items.count <= 0 {
                     VStack {
                         Text("Your saved conversions will appear here")
                             .font(.system(.body))
@@ -79,6 +80,14 @@ struct SavesModalView: View {
                                     .padding(.vertical, 8)
                                 }
                             .onDelete(perform: removeTwItems)
+                            }
+                        Section (header: Text("PERFECT RADIUS")) {
+                            ForEach(prResults.items) { item in
+                                Text(item.prResult)
+                                    .font(.system(.body, design: .monospaced))
+                                    .padding(.vertical, 8)
+                                }
+                            .onDelete(perform: removePrItems)
                             }
                     }
                     .listStyle(InsetGroupedListStyle())
@@ -163,6 +172,14 @@ struct SavesModalView: View {
                             }
                         .onDelete(perform: removeTwItems)
                         }
+                    Section (header: Text("PERFECT RADIUS")) {
+                        ForEach(prResults.items) { item in
+                            Text(item.prResult)
+                                .font(.system(.body, design: .monospaced))
+                                .padding(.vertical, 8)
+                            }
+                        .onDelete(perform: removePrItems)
+                        }
                 }
                 .listStyle(InsetGroupedListStyle())
                 .ignoresSafeArea()
@@ -184,5 +201,9 @@ struct SavesModalView: View {
     
     func removeTwItems(at offsets: IndexSet) {
         twResults.items.remove(atOffsets: offsets)
+    }
+    
+    func removePrItems(at offsets: IndexSet) {
+        prResults.items.remove(atOffsets: offsets)
     }
 }

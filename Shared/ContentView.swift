@@ -31,35 +31,43 @@ struct ContentView: View {
     @ObservedObject var emResults = EMResults()
     @ObservedObject var lhResults = LHResults()
     @ObservedObject var twResults = TWResults()
+    @ObservedObject var prResults = PRResults()
     var device = UIDevice.current.userInterfaceIdiom
 
     var body: some View {
         if device == .phone {
         TabView {
-            PxToEm(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+            PxToEm(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
                 .tabItem {
                     Label("Px››Rem", systemImage: "arrow.uturn.right.circle")
                 }
                 .onTapGesture {
                     self.hideKeyboard()
                 }
-            EmToPx(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+            EmToPx(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
                 .tabItem {
                     Label("Rem››Px", systemImage: "arrow.uturn.left.circle")
                 }
                 .onTapGesture {
                     self.hideKeyboard()
                 }
-            LineHeight(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+            LineHeight(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
                 .tabItem {
-                    Label("Line››height", systemImage: "lineweight")
+                    Label("Line-height", systemImage: "lineweight")
                 }
                 .onTapGesture {
                     self.hideKeyboard()
                 }
-            PxToTw(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults)
+            PxToTw(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
                 .tabItem {
-                    Label("Px››Tailwind", systemImage: "text.and.command.macwindow")
+                    Label("Tailwind", systemImage: "paintpalette.fill")
+                }
+                .onTapGesture {
+                    self.hideKeyboard()
+                }
+            PerfectRadius(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
+                .tabItem {
+                    Label("Radius", systemImage: "rectangle.inset.fill")
                 }
                 .onTapGesture {
                     self.hideKeyboard()
@@ -83,9 +91,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
-            ContentView()
-                .previewLayout(.sizeThatFits)
-                .previewDevice("iPhone 12")
         }
     }
 }
