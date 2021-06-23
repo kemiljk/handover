@@ -37,7 +37,7 @@ struct LineHeight: View {
 }
 
 struct LineHeightContent: View {
-    @AppStorage("result", store: UserDefaults(suiteName: "group.com.kejk.handover")) var resultData: Data = Data()
+    @AppStorage("result", store: UserDefaults(suiteName: "group.com.kejk.handover")) var resultData: String = ""
     @AppStorage("scaleResult", store: UserDefaults(suiteName: "group.com.kejk.handover")) var scaleResultData: String = "1.000"
     @AppStorage("baselineResult", store: UserDefaults(suiteName: "group.com.kejk.handover")) var baselineResultData: String = "16px"
     
@@ -102,8 +102,7 @@ struct LineHeightContent: View {
     }
     
     func save(scaleResult: String, baselineResult: String, calcResult: String) {
-        guard let calculation = try? JSONEncoder().encode(calcResult) else { return }
-        self.resultData = calculation
+        self.resultData = calcResult
         self.scaleResultData = scaleResult
         self.baselineResultData = baselineResult
         print(resultData, scaleResultData, baselineResultData)
@@ -138,6 +137,7 @@ struct LineHeightContent: View {
                             self.modal.impactOccurred()
                         }) {
                             Image(systemName: "bookmark.circle")
+                                .symbolRenderingMode(.hierarchical)
                                 .font(.system(size: 24))
                                 .foregroundColor(Color("teal"))
                         }
@@ -150,6 +150,7 @@ struct LineHeightContent: View {
                             self.modal.impactOccurred()
                         }) {
                             Image(systemName: "gearshape.circle")
+                                .symbolRenderingMode(.hierarchical)
                                 .font(.system(size: 24))
                                 .foregroundColor(Color("teal"))
                         }
@@ -191,6 +192,7 @@ struct LineHeightContent: View {
                         self.modal.impactOccurred()
                     }) {
                         Image(systemName: "bookmark.circle")
+                            .symbolRenderingMode(.hierarchical)
                             .font(.system(size: 24))
                             .foregroundColor(Color("teal"))
                     }
@@ -205,6 +207,7 @@ struct LineHeightContent: View {
                         self.modal.impactOccurred()
                     }) {
                         Image(systemName: "gearshape.circle")
+                            .symbolRenderingMode(.hierarchical)
                             .font(.system(size: 24))
                             .foregroundColor(Color("teal"))
                     }
@@ -325,7 +328,7 @@ struct LineHeightContent: View {
                             self.hideKeyboard()
                             print(item)
                         } else {
-                            save(scaleResult: "\(String(format: "%.3f", (Double(ratioTextEmpty) ?? 1)))", baselineResult: "\(String(format: "%.0f", (Double(fontSizeEmpty) ?? 16)))", calcResult: "\(String(format: "%.0f", idealLineHeightPercent(fontSizeInt: Double(fontSizeEmpty) ?? 16, ratioInt: Double(ratioTextEmpty) ?? 1)))px/\(String(format: "%.3f", pxToEmsPercent(baseInt: Double(16), pixelInt: Double(fontSizeEmpty) ?? 16, scaleInt: Double(ratioTextEmpty) ?? 1)))rem line-height")
+                            save(scaleResult: "\(String(format: "%.0f", (Double(ratioTextEmpty) ?? 1)))%", baselineResult: "\(String(format: "%.0f", (Double(fontSizeEmpty) ?? 16)))", calcResult: "\(String(format: "%.0f", idealLineHeightPercent(fontSizeInt: Double(fontSizeEmpty) ?? 16, ratioInt: Double(ratioTextEmpty) ?? 0)))px/\(String(format: "%.3f", pxToEmsPercent(baseInt: Double(16), pixelInt: Double(fontSizeEmpty) ?? 16, scaleInt: Double(ratioTextEmpty) ?? 1)))rem line-height")
                             let item = ResultItem(pxResult: "", emResult: "", lhResult: "\(fontSizeEmpty)px with \(String(format: "%.0f", idealLineHeightPercent(fontSizeInt: Double(fontSizeEmpty) ?? 16, ratioInt: Double(ratioTextEmpty) ?? 1)))px/\(String(format: "%.3f", pxToEmsPercent(baseInt: Double(16), pixelInt: Double(fontSizeEmpty) ?? 16, scaleInt: Double(ratioTextEmpty) ?? 1)))rem line-height at \(ratioTextEmpty)%", twResult: "", prResult: "")
                             self.lhResults.items.insert(item, at: 0)
                             self.hideKeyboard()
@@ -343,7 +346,7 @@ struct LineHeightContent: View {
                     })
                     .padding(.vertical, 12)
                     .padding(.horizontal, 32)
-                    .frame(width: UIScreen.main.bounds.width / 2)
+                    .frame(width: device == .phone ? UIScreen.main.bounds.width / 2 : UIScreen.main.bounds.width / 4)
                     .background(Color("teal"))
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                     .hoverEffect(.highlight)

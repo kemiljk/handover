@@ -28,10 +28,11 @@ struct PerfectRadius: View {
 }
 
 struct PerfectRadiusView: View {
-    @AppStorage("result", store: UserDefaults(suiteName: "group.com.kejk.handover")) var resultData: Data = Data()
+    @AppStorage("result", store: UserDefaults(suiteName: "group.com.kejk.handover")) var resultData: String = ""
+    @AppStorage("radiusResult", store: UserDefaults(suiteName: "group.com.kejk.handover")) var radiusResultData: String = ""
     @AppStorage("innerRadiusResult", store: UserDefaults(suiteName: "group.com.kejk.handover")) var innerRadiusResultData: String = ""
     @AppStorage("outerRadiusResult", store: UserDefaults(suiteName: "group.com.kejk.handover")) var outerRadiusResultData: String = ""
-    @AppStorage("paddingResult", store: UserDefaults(suiteName: "group.com.kejk.handover")) var paddingResultData: String = "16px"
+    @AppStorage("paddingResult", store: UserDefaults(suiteName: "group.com.kejk.handover")) var paddingResultData: String = ""
     
     func resetDefaults() {
         let defaults = UserDefaults.standard
@@ -57,6 +58,7 @@ struct PerfectRadiusView: View {
     @State private var show_settings_modal: Bool = false
     @State private var show_saves_modal: Bool = false
     @State private var set_outer_radius: Bool = false
+    @FocusState private var fieldIsFocused: Bool
     
     func perfectOuterRadius(innerRadius: CGFloat, padding: CGFloat) -> CGFloat {
         let prOuterValue = innerRadius + padding
@@ -69,18 +71,20 @@ struct PerfectRadiusView: View {
     }
     
     func saveInnerRadius(innerRadiusResult: String, paddingResult: String, calcResult: String) {
-        guard let calculation = try? JSONEncoder().encode(calcResult) else { return }
-        self.resultData = calculation
+        self.radiusResultData = calcResult + "px outer radius"
         self.innerRadiusResultData = innerRadiusResult
+        self.outerRadiusResultData = outerRadiusEmpty
         self.paddingResultData = paddingResult
+        self.resultData = ""
         WidgetCenter.shared.reloadAllTimelines()
     }
     
     func saveOuterRadius(outerRadiusResult: String, paddingResult: String, calcResult: String) {
-        guard let calculation = try? JSONEncoder().encode(calcResult) else { return }
-        self.resultData = calculation
+        self.radiusResultData = calcResult + "px inner radius"
         self.outerRadiusResultData = outerRadiusResult
+        self.innerRadiusResultData = innerRadiusEmpty
         self.paddingResultData = paddingResult
+        self.resultData = ""
         WidgetCenter.shared.reloadAllTimelines()
     }
     
@@ -112,6 +116,7 @@ struct PerfectRadiusView: View {
                         self.modal.impactOccurred()
                     }) {
                         Image(systemName: "bookmark.circle")
+                            .symbolRenderingMode(.hierarchical)
                             .font(.system(size: 24))
                             .foregroundColor(Color("teal"))
                     }
@@ -124,6 +129,7 @@ struct PerfectRadiusView: View {
                         self.modal.impactOccurred()
                     }) {
                         Image(systemName: "gearshape.circle")
+                            .symbolRenderingMode(.hierarchical)
                             .font(.system(size: 24))
                             .foregroundColor(Color("teal"))
                     }
@@ -153,6 +159,7 @@ struct PerfectRadiusView: View {
                         self.show_saves_modal = true
                     }) {
                         Image(systemName: "bookmark.circle")
+                            .symbolRenderingMode(.hierarchical)
                             .font(.system(size: 24))
                             .foregroundColor(Color("teal"))
                     }
@@ -166,6 +173,7 @@ struct PerfectRadiusView: View {
                         self.show_settings_modal = true
                     }) {
                         Image(systemName: "gearshape.circle")
+                            .symbolRenderingMode(.hierarchical)
                             .font(.system(size: 24))
                             .foregroundColor(Color("teal"))
                     }
@@ -182,7 +190,7 @@ struct PerfectRadiusView: View {
     
     var content: some View {
         VStack {
-            VStack (alignment: .center, content: {
+            VStack (alignment: .center) {
                 Spacer()
                 ZStack {
                     RoundedRectangle(cornerRadius: set_outer_radius == false ? perfectOuterRadius(innerRadius: CGFloat((innerRadiusEmpty as NSString).doubleValue), padding: CGFloat((paddingValueEmpty as NSString).doubleValue)) : CGFloat((outerRadiusEmpty as NSString).doubleValue))
@@ -192,26 +200,32 @@ struct PerfectRadiusView: View {
                         .foregroundColor(set_outer_radius == false ? Color("orange-darker") : Color("orange"))
                         .padding(.horizontal, 20 + CGFloat((paddingValueEmpty as NSString).doubleValue))
                         .padding(.vertical,  CGFloat((paddingValueEmpty as NSString).doubleValue))
-                    VStack {
-                        Text(set_outer_radius == false ? "OUTER RADIUS" : "INNER RADIUS")
-                            .foregroundColor(.white)
-                            .font(.caption)
-                        Text("\(String(format: "%.0f", (set_outer_radius == false ? perfectOuterRadius(innerRadius: CGFloat((innerRadiusEmpty as NSString).doubleValue), padding: CGFloat((paddingValueEmpty as NSString).doubleValue)) : perfectInnerRadius(outerRadius: CGFloat((outerRadiusEmpty as NSString).doubleValue), padding: CGFloat((paddingValueEmpty as NSString).doubleValue)))))")
-                            .foregroundColor(.white)
-                            .font(.title).bold()
+                    if fieldIsFocused == false {
+                        VStack {
+                            Text(set_outer_radius == false ? "OUTER RADIUS" : "INNER RADIUS")
+                                .foregroundColor(.white)
+                                .font(.caption)
+                            Text("\(String(format: "%.0f", (set_outer_radius == false ? perfectOuterRadius(innerRadius: CGFloat((innerRadiusEmpty as NSString).doubleValue), padding: CGFloat((paddingValueEmpty as NSString).doubleValue)) : perfectInnerRadius(outerRadius: CGFloat((outerRadiusEmpty as NSString).doubleValue), padding: CGFloat((paddingValueEmpty as NSString).doubleValue)))))")
+                                .foregroundColor(.white)
+                                .font(.title).bold()
+                        }
                     }
                 }
                 .padding(.bottom, 8)
                 HStack {
                     Button {
                         set_outer_radius.toggle()
+                        outerRadiusEmpty = ""
+                        innerRadiusEmpty = ""
+                        paddingValueEmpty = ""
                     } label: {
                         Label(set_outer_radius == false ? "Set outer radius" : "Set inner radius", systemImage: set_outer_radius == false ? "rectangle" : "rectangle.fill")
+                            .foregroundColor(Color("teal")).font(.headline)
                     }
                 }
                 .padding(.horizontal, 20)
                 Spacer()
-            })
+            }
             VStack (alignment: .leading) {
                 Text(set_outer_radius == false ? "Inner radius" : "Outer radius").font(.headline)
                 if set_outer_radius == false {
@@ -220,12 +234,14 @@ struct PerfectRadiusView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .overlay(RoundedRectangle(cornerRadius: device == .mac ? 6 : 8).stroke(Color("orange"), lineWidth: device == .mac ? 2.5 : 3))
                     .keyboardType(.decimalPad)
+                    .focused($fieldIsFocused)
                 } else if set_outer_radius == true {
                     TextField("16", text: $outerRadiusEmpty).modifier(ClearButton(text: $outerRadiusEmpty))
                         .font(.system(device == .mac ? .body : .title, design: .monospaced))
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .overlay(RoundedRectangle(cornerRadius: device == .mac ? 6 : 8).stroke(Color("orange"), lineWidth: device == .mac ? 2.5 : 3))
                         .keyboardType(.decimalPad)
+                        .focused($fieldIsFocused)
                 }
             }.padding(20)
             VStack (alignment: .leading) {
@@ -237,6 +253,7 @@ struct PerfectRadiusView: View {
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .overlay(RoundedRectangle(cornerRadius: device == .mac ? 6 : 8).stroke(Color("teal"), lineWidth: device == .mac ? 2.5 : 3))
                             .keyboardType(.decimalPad)
+                            .focused($fieldIsFocused)
                     }
                     .padding(.horizontal, 20)
                     .padding(.top, 6)
@@ -246,20 +263,20 @@ struct PerfectRadiusView: View {
                 VStack {
                     Button {
                         if set_outer_radius == false {
-                            saveInnerRadius(innerRadiusResult: innerRadiusEmpty, paddingResult: paddingValueEmpty, calcResult: "\(perfectOuterRadius(innerRadius: CGFloat((innerRadiusEmpty as NSString).doubleValue), padding: CGFloat((paddingValueEmpty as NSString).doubleValue)))")
+                            saveInnerRadius(innerRadiusResult: innerRadiusEmpty, paddingResult: paddingValueEmpty, calcResult: "\(String(format: "%.0f", (perfectOuterRadius(innerRadius: CGFloat((innerRadiusEmpty as NSString).doubleValue), padding: CGFloat((paddingValueEmpty as NSString).doubleValue)))))")
                              let item = ResultItem(pxResult: "", emResult: "", lhResult: "", twResult: "", prResult: "An inner radius of \(innerRadiusEmpty) with a padding value of \(paddingValueEmpty) makes an outer radius of \(String(format: "%.0f", (perfectOuterRadius(innerRadius: CGFloat((innerRadiusEmpty as NSString).doubleValue), padding: CGFloat((paddingValueEmpty as NSString).doubleValue)))))")
                             self.prResults.items.insert(item, at: 0)
-                            self.hideKeyboard()
+                            fieldIsFocused = false
                             print(item)
                             if device == .phone {
                                 save.notificationOccurred(.success)
                             }
                             self.show_toast = true
                         } else if set_outer_radius == true {
-                            saveOuterRadius(outerRadiusResult: outerRadiusEmpty, paddingResult: paddingValueEmpty, calcResult: "\(perfectInnerRadius(outerRadius: CGFloat((outerRadiusEmpty as NSString).doubleValue), padding: CGFloat((paddingValueEmpty as NSString).doubleValue)))")
+                            saveOuterRadius(outerRadiusResult: outerRadiusEmpty, paddingResult: paddingValueEmpty, calcResult: "\(String(format: "%.0f", (perfectInnerRadius(outerRadius: CGFloat((outerRadiusEmpty as NSString).doubleValue), padding: CGFloat((paddingValueEmpty as NSString).doubleValue)))))")
                              let item = ResultItem(pxResult: "", emResult: "", lhResult: "", twResult: "", prResult: "An outer radius of \(outerRadiusEmpty) with a padding value of \(paddingValueEmpty) makes an inner radius of \(String(format: "%.0f", (perfectInnerRadius(outerRadius: CGFloat((outerRadiusEmpty as NSString).doubleValue), padding: CGFloat((paddingValueEmpty as NSString).doubleValue)))))")
                             self.prResults.items.insert(item, at: 0)
-                            self.hideKeyboard()
+                            fieldIsFocused = false
                             print(item)
                             if device == .phone {
                                 save.notificationOccurred(.success)
@@ -274,7 +291,7 @@ struct PerfectRadiusView: View {
                     }
                     .padding(.vertical, 12)
                     .padding(.horizontal, 32)
-                    .frame(width: UIScreen.main.bounds.width / 2)
+                    .frame(width: device == .phone ? UIScreen.main.bounds.width / 2 : UIScreen.main.bounds.width / 4)
                     .background(Color("teal"))
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                     .hoverEffect(.highlight)

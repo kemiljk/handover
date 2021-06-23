@@ -29,9 +29,9 @@ struct PxToTw: View {
 }
 
 struct PxToTwView: View {
-    @AppStorage("result", store: UserDefaults(suiteName: "group.com.kejk.handover")) var resultData: Data = Data()
+    @AppStorage("result", store: UserDefaults(suiteName: "group.com.kejk.handover")) var resultData: String = ""
     @AppStorage("scaleResult", store: UserDefaults(suiteName: "group.com.kejk.handover")) var scaleResultData: String = ""
-    @AppStorage("baselineResult", store: UserDefaults(suiteName: "group.com.kejk.handover")) var baselineResultData: String = "16px"
+    @AppStorage("baselineResult", store: UserDefaults(suiteName: "group.com.kejk.handover")) var baselineResultData: String = ""
     
     let classNameItems: [ClassNameItem] = [
         ClassNameItem(className: "p", classNameTitle: "Padding"),
@@ -79,8 +79,7 @@ struct PxToTwView: View {
     }
     
     func save(scaleResult: String, baselineResult: String, calcResult: String) {
-        guard let calculation = try? JSONEncoder().encode(calcResult) else { return }
-        self.resultData = calculation
+        self.resultData = calcResult
         self.scaleResultData = scaleResult
         self.baselineResultData = baselineResult
         WidgetCenter.shared.reloadAllTimelines()
@@ -114,6 +113,7 @@ struct PxToTwView: View {
                         self.modal.impactOccurred()
                     }) {
                         Image(systemName: "bookmark.circle")
+                            .symbolRenderingMode(.hierarchical)
                             .font(.system(size: 24))
                             .foregroundColor(Color("teal"))
                     }
@@ -126,6 +126,7 @@ struct PxToTwView: View {
                         self.modal.impactOccurred()
                     }) {
                         Image(systemName: "gearshape.circle")
+                            .symbolRenderingMode(.hierarchical)
                             .font(.system(size: 24))
                             .foregroundColor(Color("teal"))
                     }
@@ -155,6 +156,7 @@ struct PxToTwView: View {
                     self.show_saves_modal = true
                 }) {
                     Image(systemName: "bookmark.circle")
+                        .symbolRenderingMode(.hierarchical)
                         .font(.system(size: 24))
                         .foregroundColor(Color("teal"))
                 }
@@ -168,6 +170,7 @@ struct PxToTwView: View {
                     self.show_settings_modal = true
                 }) {
                     Image(systemName: "gearshape.circle")
+                        .symbolRenderingMode(.hierarchical)
                         .font(.system(size: 24))
                         .foregroundColor(Color("teal"))
                 }
@@ -192,9 +195,9 @@ struct PxToTwView: View {
                     .padding(.horizontal, 10)
                 Spacer()
             })
-            VStack (alignment: .leading) {
+            VStack (alignment: .center) {
                 Menu {
-                    VStack {
+                    VStack  {
                         HStack {
                             Text("Select class name")
                         }
@@ -219,9 +222,8 @@ struct PxToTwView: View {
                         HStack {
                             Label(classNameEmpty.isEmpty ? "Insert class name" : "Update class name", systemImage: "plus.circle")
                                 .foregroundColor(Color("teal")).font(.headline)
-                            Spacer()
                         }
-                        .padding(.horizontal, 20)
+                        .padding(.leading, 20)
                     } else if device == .mac {
                     Text("Insert class name")
                     }
@@ -232,6 +234,7 @@ struct PxToTwView: View {
                     }
                 }
             }
+            .frame(width: device == .pad ? UIScreen.main.bounds.width / 4 : nil)
             VStack (alignment: .leading) {
                 Text("Baseline pixel value").font(.headline)
                 TextField("16", text: $baseTextEmpty).modifier(ClearButton(text: $baseTextEmpty))
@@ -257,8 +260,8 @@ struct PxToTwView: View {
             VStack (alignment: .center) {
                 VStack {
                     Button {
-                        save(scaleResult: "", baselineResult: "\(Int(baseTextEmpty) ?? 16)", calcResult: "\(Int(pixelTextEmpty) ?? 16)px is {class}-\(String(format: "%.0f", pxToTws(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16)))")
-                        let item = ResultItem(pxResult: "", emResult: "", lhResult: "", twResult: "\(Int(pixelTextEmpty) ?? 16)px is {class}-\(String(format: "%.0f", pxToTws(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16))) with a baseline of \(Int(baseTextEmpty) ?? 16)px", prResult: "")
+                        save(scaleResult: "", baselineResult: "\(Int(baseTextEmpty) ?? 16)", calcResult: "\(Int(pixelTextEmpty) ?? 16)px is \(classNameEmpty)-\(String(format: "%.0f", pxToTws(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16)))")
+                        let item = ResultItem(pxResult: "", emResult: "", lhResult: "", twResult: "\(Int(pixelTextEmpty) ?? 16)px is \(classNameEmpty)-\(String(format: "%.0f", pxToTws(baseInt: Double(baseTextEmpty) ?? 16, pixelInt: Double(pixelTextEmpty) ?? 16))) with a baseline of \(Int(baseTextEmpty) ?? 16)px", prResult: "")
                         self.twResults.items.insert(item, at: 0)
                         self.hideKeyboard()
                         print(item)
@@ -274,7 +277,7 @@ struct PxToTwView: View {
                     }
                     .padding(.vertical, 12)
                     .padding(.horizontal, 32)
-                    .frame(width: UIScreen.main.bounds.width / 2)
+                    .frame(width: device == .phone ? UIScreen.main.bounds.width / 2 : UIScreen.main.bounds.width / 4)
                     .background(Color("teal"))
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                     .hoverEffect(.highlight)

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ClearButton: ViewModifier {
     @Binding var text: String
+    var device = UIDevice.current.userInterfaceIdiom
 
     public func body(content: Content) -> some View {
         ZStack(alignment: .trailing) {
@@ -18,7 +19,7 @@ struct ClearButton: ViewModifier {
                 Button(action: {
                     self.text = ""
                 }) {
-                    Image(systemName: "delete.left")
+                    Image(systemName: device == .phone || device == .pad ? "delete.left" : "xmark.circle.fill" )
                         .foregroundColor(Color(UIColor.opaqueSeparator))
                 }
                 .padding(.trailing, 12)

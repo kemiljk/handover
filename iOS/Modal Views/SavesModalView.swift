@@ -100,9 +100,9 @@ struct SavesModalView: View {
                                 self.presentationMode.wrappedValue.dismiss()
                             }, label: {
                                 Image(systemName: "xmark")
-                                    .resizable()
-                                    .frame(width: 16, height: 16, alignment: .center)
-                                    .padding(4)
+                                    .symbolRenderingMode(.hierarchical)
+                                    .font(.system(size: 16))
+                                    .foregroundColor(Color("teal"))
                             })
                             .foregroundColor(Color("teal"))
                             .padding(8)

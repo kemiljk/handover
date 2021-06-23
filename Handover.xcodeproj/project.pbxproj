@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CFC198F32680D4D9004EF72B /* PerfectRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC198F22680D4D8004EF72B /* PerfectRadius.swift */; };
 		CFC198F52680D60F004EF72B /* prResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC198F42680D60F004EF72B /* prResult.swift */; };
+		CFC198F7268216CD004EF72B /* PxToRemAndRemToPx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC198F6268216CC004EF72B /* PxToRemAndRemToPx.swift */; };
 		CFC39C4B26793C77006A3FF8 /* PxToTw.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC39C4A26793C77006A3FF8 /* PxToTw.swift */; };
 		CFC39C4D26793CE2006A3FF8 /* TwResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC39C4C26793CE2006A3FF8 /* TwResult.swift */; };
 		CFE3EE3425B10C620059A891 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF4584525B0EA8800E64363 /* WidgetKit.framework */; };
@@ -115,6 +116,7 @@
 /* Begin PBXFileReference section */
 		CFC198F22680D4D8004EF72B /* PerfectRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfectRadius.swift; sourceTree = "<group>"; };
 		CFC198F42680D60F004EF72B /* prResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prResult.swift; sourceTree = "<group>"; };
+		CFC198F6268216CC004EF72B /* PxToRemAndRemToPx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PxToRemAndRemToPx.swift; sourceTree = "<group>"; };
 		CFC39C4A26793C77006A3FF8 /* PxToTw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PxToTw.swift; sourceTree = "<group>"; };
 		CFC39C4C26793CE2006A3FF8 /* TwResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwResult.swift; sourceTree = "<group>"; };
 		CFE3EE3325B10C620059A891 /* LatestSaveWidgetiOSExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LatestSaveWidgetiOSExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +219,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CFC198F8268218DE004EF72B /* Calculator Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				CFF457AD25B0DF5500E64363 /* PxToRem.swift */,
+				CFF457AB25B0DF5500E64363 /* RemToPx.swift */,
+			);
+			path = "Calculator Subviews";
+			sourceTree = "<group>";
+		};
 		CFE3EE3625B10C620059A891 /* LatestSaveWidgetiOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,8 +300,8 @@
 		CFF457AA25B0DF5500E64363 /* Calculator Views */ = {
 			isa = PBXGroup;
 			children = (
-				CFF457AD25B0DF5500E64363 /* PxToRem.swift */,
-				CFF457AB25B0DF5500E64363 /* RemToPx.swift */,
+				CFC198F8268218DE004EF72B /* Calculator Subviews */,
+				CFC198F6268216CC004EF72B /* PxToRemAndRemToPx.swift */,
 				CFF457AC25B0DF5500E64363 /* LineHeight.swift */,
 				CFC39C4A26793C77006A3FF8 /* PxToTw.swift */,
 				CFC198F22680D4D8004EF72B /* PerfectRadius.swift */,
@@ -600,6 +611,7 @@
 				CFF4581A25B0DF5600E64363 /* ResultItem.swift in Sources */,
 				CFF4581D25B0DF5600E64363 /* SettingsModal.swift in Sources */,
 				CFC39C4B26793C77006A3FF8 /* PxToTw.swift in Sources */,
+				CFC198F7268216CD004EF72B /* PxToRemAndRemToPx.swift in Sources */,
 				CFF4582225B0DF5600E64363 /* SavesModalView.swift in Sources */,
 				CFF457EC25B0DF5600E64363 /* LineHeight.swift in Sources */,
 				CFF4581925B0DF5600E64363 /* EmResult.swift in Sources */,

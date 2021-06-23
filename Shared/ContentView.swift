@@ -37,16 +37,9 @@ struct ContentView: View {
     var body: some View {
         if device == .phone {
         TabView {
-            PxToEm(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
+            PxToRem(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
                 .tabItem {
-                    Label("Px››Rem", systemImage: "arrow.uturn.right.circle")
-                }
-                .onTapGesture {
-                    self.hideKeyboard()
-                }
-            EmToPx(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
-                .tabItem {
-                    Label("Rem››Px", systemImage: "arrow.uturn.left.circle")
+                    Label("Px››Rem", systemImage: "arrow.left.arrow.right.square.fill")
                 }
                 .onTapGesture {
                     self.hideKeyboard()
@@ -60,14 +53,14 @@ struct ContentView: View {
                 }
             PxToTw(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
                 .tabItem {
-                    Label("Tailwind", systemImage: "paintpalette.fill")
+                    Label("Px››Tailwind", systemImage: "paintpalette.fill")
                 }
                 .onTapGesture {
                     self.hideKeyboard()
                 }
             PerfectRadius(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
                 .tabItem {
-                    Label("Radius", systemImage: "rectangle.inset.fill")
+                    Label("Perfect››radius", systemImage: "rectangle.inset.fill")
                 }
                 .onTapGesture {
                     self.hideKeyboard()
