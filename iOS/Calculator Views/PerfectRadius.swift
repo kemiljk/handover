@@ -94,6 +94,9 @@ struct PerfectRadiusView: View {
     let save = UINotificationFeedbackGenerator()
     var device = UIDevice.current.userInterfaceIdiom
     @State private var hovering = false
+    @State private var innerRadius = false
+    @State private var outerRadius = false
+    @State private var padding = false
     
     var body: some View {
         if device == .phone {
@@ -184,7 +187,7 @@ struct PerfectRadiusView: View {
                         SettingsModalView()
                     }
                 }
-                )
+            )
         }
     }
     
@@ -229,17 +232,21 @@ struct PerfectRadiusView: View {
             VStack (alignment: .leading) {
                 Text(set_outer_radius == false ? "Inner radius" : "Outer radius").font(.headline)
                 if set_outer_radius == false {
-                TextField("16", text: $innerRadiusEmpty).modifier(ClearButton(text: $innerRadiusEmpty))
+                TextField("16", text: $innerRadiusEmpty, onEditingChanged: { edit in
+                    self.innerRadius = edit
+                })
+                    .modifier(ClearButton(text: $innerRadiusEmpty))
                     .font(.system(device == .mac ? .body : .title, design: .monospaced))
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .overlay(RoundedRectangle(cornerRadius: device == .mac ? 6 : 8).stroke(Color("orange"), lineWidth: device == .mac ? 2.5 : 3))
+                    .textFieldStyle(HandoverTextField(focused: $innerRadius))
                     .keyboardType(.decimalPad)
                     .focused($fieldIsFocused)
                 } else if set_outer_radius == true {
-                    TextField("16", text: $outerRadiusEmpty).modifier(ClearButton(text: $outerRadiusEmpty))
+                    TextField("16", text: $outerRadiusEmpty, onEditingChanged: { edit in
+                        self.outerRadius = edit
+                    })
+                        .modifier(ClearButton(text: $outerRadiusEmpty))
                         .font(.system(device == .mac ? .body : .title, design: .monospaced))
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .overlay(RoundedRectangle(cornerRadius: device == .mac ? 6 : 8).stroke(Color("orange"), lineWidth: device == .mac ? 2.5 : 3))
+                        .textFieldStyle(HandoverTextField(focused: $outerRadius))
                         .keyboardType(.decimalPad)
                         .focused($fieldIsFocused)
                 }
@@ -248,10 +255,12 @@ struct PerfectRadiusView: View {
                 HStack {
                     VStack (alignment: .leading) {
                         Text("Padding").font(.headline)
-                        TextField("16", text: $paddingValueEmpty).modifier(ClearButton(text: $paddingValueEmpty))
+                        TextField("16", text: $paddingValueEmpty, onEditingChanged: { edit in
+                            self.padding = edit
+                        })
+                            .modifier(ClearButton(text: $paddingValueEmpty))
                             .font(.system(device == .mac ? .body : .title, design: .monospaced))
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .overlay(RoundedRectangle(cornerRadius: device == .mac ? 6 : 8).stroke(Color("teal"), lineWidth: device == .mac ? 2.5 : 3))
+                            .textFieldStyle(HandoverTextField(focused: $padding))
                             .keyboardType(.decimalPad)
                             .focused($fieldIsFocused)
                     }
@@ -292,7 +301,7 @@ struct PerfectRadiusView: View {
                     .padding(.vertical, 12)
                     .padding(.horizontal, 32)
                     .frame(width: device == .phone ? UIScreen.main.bounds.width / 2 : UIScreen.main.bounds.width / 4)
-                    .background(Color("teal"))
+                    .background(Color("orange"))
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                     .hoverEffect(.highlight)
                 }

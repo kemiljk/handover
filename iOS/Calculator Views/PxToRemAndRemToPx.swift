@@ -32,7 +32,7 @@ struct PxToRem: View {
                             .frame(width: 96, height: 32, alignment: .center)
                             .shadow(color: .black.opacity(0.1), radius: 4, x: 2, y: 0)
                             .offset(x: selectedSegment == 0 ? -46 : 46)
-                        HStack(spacing: 28) {
+                        HStack(spacing: 32) {
                             Button(action: {
                                 withAnimation(.spring()) {
                                     self.selectedSegment = 0
@@ -90,7 +90,7 @@ struct PxToRem: View {
                         .frame(width: 96, height: 32, alignment: .center)
                         .shadow(color: .black.opacity(0.1), radius: 4, x: 2, y: 0)
                         .offset(x: selectedSegment == 0 ? -46 : 46)
-                    HStack(spacing: 28) {
+                    HStack(spacing: 32) {
                         Button(action: {
                             withAnimation(.spring()) {
                                 self.selectedSegment = 0

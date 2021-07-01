@@ -91,6 +91,8 @@ struct PxToTwView: View {
     let save = UINotificationFeedbackGenerator()
     var device = UIDevice.current.userInterfaceIdiom
     @State private var hovering = false
+    @State private var baseline = false
+    @State private var pixels = false
     
     var body: some View {
         if device == .phone {
@@ -237,20 +239,24 @@ struct PxToTwView: View {
             .frame(width: device == .pad ? UIScreen.main.bounds.width / 4 : nil)
             VStack (alignment: .leading) {
                 Text("Baseline pixel value").font(.headline)
-                TextField("16", text: $baseTextEmpty).modifier(ClearButton(text: $baseTextEmpty))
+                TextField("16", text: $baseTextEmpty, onEditingChanged: { edit in
+                    self.baseline = edit
+                })
+                    .modifier(ClearButton(text: $baseTextEmpty))
                     .font(.system(device == .mac ? .body : .title, design: .monospaced))
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .overlay(RoundedRectangle(cornerRadius: device == .mac ? 6 : 8).stroke(Color("orange"), lineWidth: device == .mac ? 2.5 : 3))
+                    .textFieldStyle(HandoverTextField(focused: $baseline))
                     .keyboardType(.decimalPad)
             }.padding(20)
             VStack (alignment: .leading) {
                 HStack {
                     VStack (alignment: .leading) {
                         Text("Pixels").font(.headline)
-                        TextField("16", text: $pixelTextEmpty).modifier(ClearButton(text: $pixelTextEmpty))
+                        TextField("16", text: $pixelTextEmpty, onEditingChanged: { edit in
+                            self.pixels = edit
+                        })
+                            .modifier(ClearButton(text: $pixelTextEmpty))
                             .font(.system(device == .mac ? .body : .title, design: .monospaced))
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .overlay(RoundedRectangle(cornerRadius: device == .mac ? 6 : 8).stroke(Color("teal"), lineWidth: device == .mac ? 2.5 : 3))
+                            .textFieldStyle(HandoverTextField(focused: $pixels))
                             .keyboardType(.decimalPad)
                     }
                     .padding(.horizontal, 20)
@@ -278,7 +284,7 @@ struct PxToTwView: View {
                     .padding(.vertical, 12)
                     .padding(.horizontal, 32)
                     .frame(width: device == .phone ? UIScreen.main.bounds.width / 2 : UIScreen.main.bounds.width / 4)
-                    .background(Color("teal"))
+                    .background(Color("orange"))
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                     .hoverEffect(.highlight)
                 }

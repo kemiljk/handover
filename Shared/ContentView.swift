@@ -44,16 +44,16 @@ struct ContentView: View {
                 .onTapGesture {
                     self.hideKeyboard()
                 }
-            LineHeight(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
+            PxToTw(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
                 .tabItem {
-                    Label("Line-height", systemImage: "lineweight")
+                    Label("Px››Tailwind", systemImage: "paintpalette.fill")
                 }
                 .onTapGesture {
                     self.hideKeyboard()
                 }
-            PxToTw(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
+            LineHeight(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults)
                 .tabItem {
-                    Label("Px››Tailwind", systemImage: "paintpalette.fill")
+                    Label("Line››height", systemImage: "lineweight")
                 }
                 .onTapGesture {
                     self.hideKeyboard()

@@ -144,7 +144,7 @@ struct SavedStateWidget: Widget {
         }
         .configurationDisplayName("Saved calculation")
         .description("Your last saved calculation.")
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 
@@ -234,7 +234,7 @@ struct PerfectRadiusView: View {
                             Text("PADDING")
                                 .font(.system(size: 10, design: .default))
                                 .foregroundColor(.secondary)
-                            Text("\(data.padding)")
+                            Text("\(data.padding)px")
                                 .font(.system(size: 12, design: .default))
                         }
                         .padding(.leading, family == .systemMedium ? 24 : 0)

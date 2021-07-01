@@ -114,6 +114,8 @@ struct LineHeightContent: View {
     let menuParent = UIImpactFeedbackGenerator(style: .light)
     let save = UINotificationFeedbackGenerator()
     var device = UIDevice.current.userInterfaceIdiom
+    @State private var baseline = false
+    @State private var scale = false
     
     var body: some View {
         if device == .phone {
@@ -257,10 +259,12 @@ struct LineHeightContent: View {
             })
             VStack (alignment: .leading) {
                 Text("Baseline font size").font(.headline)
-                TextField("16", text: $fontSizeEmpty).modifier(ClearButton(text: $fontSizeEmpty))
+                TextField("16", text: $fontSizeEmpty, onEditingChanged: { edit in
+                    self.baseline = edit
+                })
+                    .modifier(ClearButton(text: $fontSizeEmpty))
                     .font(.system(device == .mac ? .body : .title, design: .monospaced))
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .overlay(RoundedRectangle(cornerRadius: device == .mac ? 6 : 8).stroke(Color("orange"), lineWidth: device == .mac ? 2.5 : 3))
+                    .textFieldStyle(HandoverTextField(focused: $baseline))
                     .keyboardType(.decimalPad)
             }
             .padding(20)
@@ -305,10 +309,12 @@ struct LineHeightContent: View {
                         }
                     }
                 }
-                TextField(use_percentage == false ? "1.000" : "100%", text: $ratioTextEmpty).modifier(ClearButton(text: $ratioTextEmpty))
+                TextField(use_percentage == false ? "1.000" : "100%", text: $ratioTextEmpty, onEditingChanged: { edit in
+                    self.scale = edit
+                })
+                    .modifier(ClearButton(text: $ratioTextEmpty))
                     .font(.system(device == .mac ? .body : .title, design: .monospaced))
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .overlay(RoundedRectangle(cornerRadius: device == .mac ? 6 : 8).stroke(Color("teal"), lineWidth: device == .mac ? 2.5 : 3))
+                    .textFieldStyle(HandoverTextField(focused: $scale))
                     .keyboardType(.decimalPad)
                 Button {
                     use_percentage.toggle()
@@ -347,7 +353,7 @@ struct LineHeightContent: View {
                     .padding(.vertical, 12)
                     .padding(.horizontal, 32)
                     .frame(width: device == .phone ? UIScreen.main.bounds.width / 2 : UIScreen.main.bounds.width / 4)
-                    .background(Color("teal"))
+                    .background(Color("orange"))
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                     .hoverEffect(.highlight)
                 }

@@ -29,17 +29,17 @@ struct SidebarView: View {
                         }
                     }).tag(0)
                 NavigationLink(
-                    destination: LineHeight(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults),
-                    label: {
-                        HStack {
-                            Label("Line››height", systemImage: "lineweight")
-                        }
-                    }).tag(1)
-                NavigationLink(
                     destination: PxToTw(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults),
                     label: {
                         HStack {
                             Label("Px››Tailwind", systemImage: "paintpalette.fill")
+                        }
+                    }).tag(1)
+                NavigationLink(
+                    destination: LineHeight(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults),
+                    label: {
+                        HStack {
+                            Label("Line››height", systemImage: "lineweight")
                         }
                     }).tag(2)
                 NavigationLink(
@@ -64,17 +64,17 @@ struct SidebarView: View {
                         }
                     }).tag(0)
                 NavigationLink(
-                    destination: LineHeight(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults),
-                    label: {
-                        HStack {
-                            Label("Line››height", systemImage: "lineweight")
-                        }
-                    }).tag(1)
-                NavigationLink(
                     destination: PxToTw(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults),
                     label: {
                         HStack {
                             Label("Px››Tailwind", systemImage: "paintpalette.fill")
+                        }
+                    }).tag(1)
+                NavigationLink(
+                    destination: LineHeight(pxResults: self.pxResults, emResults: self.emResults, lhResults: self.lhResults, twResults: self.twResults, prResults: self.prResults),
+                    label: {
+                        HStack {
+                            Label("Line››height", systemImage: "lineweight")
                         }
                     }).tag(2)
                 NavigationLink(
