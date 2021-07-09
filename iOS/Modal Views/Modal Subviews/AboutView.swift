@@ -13,7 +13,7 @@ struct AboutView: View {
     private let screenWidth = UIScreen.main.bounds.size.width
     
     var body: some View {
-        VStack (alignment: .leading) {
+        ScrollView(.vertical, showsIndicators: false) {
             VStack (alignment: .leading,  spacing: 8) {
                 Text("What is Hand››over?")
                     .font(.title)
@@ -54,6 +54,21 @@ struct AboutView: View {
                         }
                         .padding(.top, 4)
                     }
+                    GroupBox("PIXELS TO TAILWIND") {
+                        VStack(alignment: .leading, spacing: 8) {
+                            HStack(alignment: .top) {
+                                Image(systemName: "chevron.right.2")
+                                Text("Find the correct Tailwind class value")
+                                Spacer()
+                            }
+                            HStack(alignment: .top) {
+                                Image(systemName: "chevron.right.2")
+                                Text("Change the baseline pixel value")
+                                Spacer()
+                            }
+                        }
+                        .padding(.top, 4)
+                    }
                     GroupBox("LINE-HEIGHT") {
                         VStack(alignment: .leading, spacing: 8) {
                             HStack(alignment: .top) {
@@ -69,16 +84,11 @@ struct AboutView: View {
                         }
                         .padding(.top, 4)
                     }
-                    GroupBox("PIXELS TO TAILWIND") {
+                    GroupBox("PERFECT RADIUS") {
                         VStack(alignment: .leading, spacing: 8) {
                             HStack(alignment: .top) {
                                 Image(systemName: "chevron.right.2")
-                                Text("Find the correct Tailwind class value")
-                                Spacer()
-                            }
-                            HStack(alignment: .top) {
-                                Image(systemName: "chevron.right.2")
-                                Text("Change the baseline pixel value")
+                                Text("Find perfect inner or outer radii")
                                 Spacer()
                             }
                         }

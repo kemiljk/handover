@@ -24,10 +24,10 @@ struct PxToRem: View {
             NavigationView {
                 VStack {
                     ZStack {
-                        RoundedRectangle(cornerRadius: 8)
+                        RoundedRectangle(cornerRadius: .infinity)
                             .foregroundColor(.secondary).opacity(colorScheme == .light ? 0.2 : 0.4)
                             .frame(width: 196, height: 38, alignment: .center)
-                        RoundedRectangle(cornerRadius: 6)
+                        RoundedRectangle(cornerRadius: .infinity)
                             .foregroundColor(colorScheme == .light ? .white : .secondary.opacity(0.5))
                             .frame(width: 96, height: 32, alignment: .center)
                             .shadow(color: .black.opacity(0.1), radius: 4, x: 2, y: 0)
@@ -41,15 +41,15 @@ struct PxToRem: View {
                                 Text("Px››Rem")
                                     .foregroundColor(.primary)
                             })
-                            .tag(0)
-                            .gesture(
-                                DragGesture()
-                                    .onEnded { _ in
+                                .tag(0)
+                                .gesture(
+                                    DragGesture()
+                                        .onEnded { _ in
                                     withAnimation(.spring()) {
                                         self.selectedSegment = 1
                                     }
                                 }
-                            )
+                                )
                             Button(action: {
                                 withAnimation(.spring()) {
                                     self.selectedSegment = 1
@@ -58,15 +58,15 @@ struct PxToRem: View {
                                 Text("Rem››Px")
                                     .foregroundColor(.primary)
                             })
-                            .tag(1)
-                            .gesture(
-                                DragGesture()
-                                    .onEnded { _ in
+                                .tag(1)
+                                .gesture(
+                                    DragGesture()
+                                        .onEnded { _ in
                                     withAnimation(.spring()) {
                                         self.selectedSegment = 0
                                     }
                                 }
-                            )
+                                )
                         }
                     }
                     .frame(width: UIScreen.main.bounds.width / 2)

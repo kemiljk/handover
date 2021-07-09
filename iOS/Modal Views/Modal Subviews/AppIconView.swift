@@ -16,7 +16,7 @@ struct AppIconView: View {
     
     
     let icons: [IconItem] = [
-        IconItem(name: "AppIcon", image: "classicIcon"),
+        IconItem(name: "classic", image: "classicIcon"),
         IconItem(name: "shadow", image: "shadowIcon"),
         IconItem(name: "innerShadow", image: "innerShadowIcon"),
         IconItem(name: "neuomorphic", image: "neuomorphicIcon"),

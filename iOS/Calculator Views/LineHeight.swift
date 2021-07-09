@@ -62,7 +62,7 @@ struct LineHeightContent: View {
         }
     }
     
-    @State private var fontSizeEmpty = ""
+    @State private var fontSizeEmpty = "16"
     @State private var ratioTextEmpty = ""
     @State private var lineHeightEmpty = ""
 
